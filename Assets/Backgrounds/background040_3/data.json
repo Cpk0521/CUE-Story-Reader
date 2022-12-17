@@ -1,0 +1,49 @@
+{
+    "ID": 40,
+    "SubId": 3,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png"
+        },
+        {
+            "Name": "light_left",
+            "Textures": "light_left.png"
+        },
+        {
+            "Name": "light_right",
+            "Textures": "light_right.png"
+        },
+        {
+            "Name": "RedLight_Random_output",
+            "Textures": "RedLight_Random_output.png"
+        },
+        {
+            "Name": "red_light",
+            "Textures": "red_light.png"
+        },
+        {
+            "Name": "room_light",
+            "Textures": "room_light.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

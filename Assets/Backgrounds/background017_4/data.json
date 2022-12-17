@@ -1,0 +1,37 @@
+{
+    "ID": 17,
+    "SubId": 4,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "Default-ParticleSystem",
+            "Textures": "Default-ParticleSystem.png"
+        },
+        {
+            "Name": "RainTrail_output",
+            "Textures": "RainTrail_output.png"
+        },
+        {
+            "Name": "road",
+            "Textures": "road.png"
+        },
+        {
+            "Name": "road_noise",
+            "Textures": "road_noise.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

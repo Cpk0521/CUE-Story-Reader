@@ -1,0 +1,33 @@
+{
+    "ID": 45,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud_trim",
+            "Textures": "cloud_trim.png"
+        },
+        {
+            "Name": "poster",
+            "Textures": "poster.png"
+        },
+        {
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

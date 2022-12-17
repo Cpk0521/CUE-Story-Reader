@@ -1,0 +1,49 @@
+{
+    "ID": 17,
+    "SubId": 5,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "Default-ParticleSystem",
+            "Textures": "Default-ParticleSystem.png"
+        },
+        {
+            "Name": "road",
+            "Textures": "road.png"
+        },
+        {
+            "Name": "road_noise",
+            "Textures": "road_noise.png"
+        },
+        {
+            "Name": "Snow_output",
+            "Textures": "Snow_output.png"
+        },
+        {
+            "Name": "Snow_output_far",
+            "Textures": "Snow_output_far.png"
+        },
+        {
+            "Name": "Snow_output_near",
+            "Textures": "Snow_output_near.png"
+        },
+        {
+            "Name": "Snow_output_nearest",
+            "Textures": "Snow_output_nearest.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

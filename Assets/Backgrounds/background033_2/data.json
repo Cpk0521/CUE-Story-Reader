@@ -1,0 +1,37 @@
+{
+    "ID": 33,
+    "SubId": 2,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "shadow",
+            "Textures": "shadow.png"
+        },
+        {
+            "Name": "tree_base",
+            "Textures": "tree_base.png"
+        },
+        {
+            "Name": "tree_leaf",
+            "Textures": "tree_leaf.png"
+        },
+        {
+            "Name": "tree_leaf_back",
+            "Textures": "tree_leaf_back.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

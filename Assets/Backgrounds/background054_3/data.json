@@ -1,0 +1,41 @@
+{
+    "ID": 54,
+    "SubId": 3,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "center_light",
+            "Textures": "center_light.png"
+        },
+        {
+            "Name": "chouchin_left",
+            "Textures": "chouchin_left.png"
+        },
+        {
+            "Name": "chouchin_light",
+            "Textures": "chouchin_light.png"
+        },
+        {
+            "Name": "chouchin_right",
+            "Textures": "chouchin_right.png"
+        },
+        {
+            "Name": "right_light",
+            "Textures": "right_light.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

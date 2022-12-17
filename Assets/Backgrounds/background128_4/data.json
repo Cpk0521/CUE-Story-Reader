@@ -1,0 +1,53 @@
+{
+    "ID": 128,
+    "SubId": 4,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud1",
+            "Textures": "cloud1.png"
+        },
+        {
+            "Name": "cloud2",
+            "Textures": "cloud2.png"
+        },
+        {
+            "Name": "light",
+            "Textures": "light.png"
+        },
+        {
+            "Name": "RainTrail_output",
+            "Textures": "RainTrail_output.png"
+        },
+        {
+            "Name": "rain_mist",
+            "Textures": "rain_mist.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        },
+        {
+            "Name": "water",
+            "Textures": "water.png"
+        },
+        {
+            "Name": "water_noise",
+            "Textures": "water_noise.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "ID": 123,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "light_left",
+            "Textures": "light_left.png"
+        },
+        {
+            "Name": "light_up",
+            "Textures": "light_up.png"
+        },
+        {
+            "Name": "ramen_steam",
+            "Textures": "ramen_steam.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

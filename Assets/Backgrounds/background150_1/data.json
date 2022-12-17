@@ -1,0 +1,41 @@
+{
+    "ID": 150,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud1_loop",
+            "Textures": "cloud1_loop.png"
+        },
+        {
+            "Name": "cloud2",
+            "Textures": "cloud2.png"
+        },
+        {
+            "Name": "cloud3_loop",
+            "Textures": "cloud3_loop.png"
+        },
+        {
+            "Name": "effect",
+            "Textures": "effect.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

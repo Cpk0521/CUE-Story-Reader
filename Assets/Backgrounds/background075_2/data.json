@@ -1,0 +1,37 @@
+{
+    "ID": 75,
+    "SubId": 2,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "bg",
+            "Textures": "bg.png"
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png"
+        },
+        {
+            "Name": "Default-ParticleSystem",
+            "Textures": "Default-ParticleSystem.png"
+        },
+        {
+            "Name": "window_glass",
+            "Textures": "window_glass.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

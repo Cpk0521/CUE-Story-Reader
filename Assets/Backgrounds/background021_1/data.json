@@ -1,0 +1,37 @@
+{
+    "ID": 21,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "outside",
+            "Textures": "outside.png"
+        },
+        {
+            "Name": "truck",
+            "Textures": "truck.png"
+        },
+        {
+            "Name": "turi_left",
+            "Textures": "turi_left.png"
+        },
+        {
+            "Name": "turi_right",
+            "Textures": "turi_right.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

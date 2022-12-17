@@ -1,0 +1,41 @@
+{
+    "ID": 149,
+    "SubId": 2,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "base_mask",
+            "Textures": "base_mask.png"
+        },
+        {
+            "Name": "cloud1",
+            "Textures": "cloud1.png"
+        },
+        {
+            "Name": "cloud2",
+            "Textures": "cloud2.png"
+        },
+        {
+            "Name": "distortion_01",
+            "Textures": "distortion_01.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

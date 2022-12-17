@@ -1,0 +1,57 @@
+{
+    "ID": 49,
+    "SubId": 2,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png"
+        },
+        {
+            "Name": "flag_A1",
+            "Textures": "flag_A1.png"
+        },
+        {
+            "Name": "flag_A2",
+            "Textures": "flag_A2.png"
+        },
+        {
+            "Name": "flag_B1",
+            "Textures": "flag_B1.png"
+        },
+        {
+            "Name": "flag_B2",
+            "Textures": "flag_B2.png"
+        },
+        {
+            "Name": "pole_left",
+            "Textures": "pole_left.png"
+        },
+        {
+            "Name": "pole_right",
+            "Textures": "pole_right.png"
+        },
+        {
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png"
+        },
+        {
+            "Name": "UvWarpTexture_output",
+            "Textures": "UvWarpTexture_output.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

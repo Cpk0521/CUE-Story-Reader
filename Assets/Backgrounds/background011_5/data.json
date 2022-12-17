@@ -1,0 +1,33 @@
+{
+    "ID": 11,
+    "SubId": 5,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "left_object",
+            "Textures": "left_object.png"
+        },
+        {
+            "Name": "light",
+            "Textures": "light.png"
+        },
+        {
+            "Name": "light_far",
+            "Textures": "light_far.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

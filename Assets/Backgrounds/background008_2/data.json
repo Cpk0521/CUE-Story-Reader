@@ -1,0 +1,37 @@
+{
+    "ID": 8,
+    "SubId": 2,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud1_trim",
+            "Textures": "cloud1_trim.png"
+        },
+        {
+            "Name": "cloud2_trim",
+            "Textures": "cloud2_trim.png"
+        },
+        {
+            "Name": "cloud3_trim",
+            "Textures": "cloud3_trim.png"
+        },
+        {
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

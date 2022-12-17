@@ -1,0 +1,41 @@
+{
+    "ID": 39,
+    "SubId": 3,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png"
+        },
+        {
+            "Name": "light_center",
+            "Textures": "light_center.png"
+        },
+        {
+            "Name": "light_left",
+            "Textures": "light_left.png"
+        },
+        {
+            "Name": "light_over",
+            "Textures": "light_over.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

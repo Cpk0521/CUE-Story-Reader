@@ -1,0 +1,37 @@
+{
+    "ID": 129,
+    "SubId": 4,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "base_left_front",
+            "Textures": "base_left_front.png"
+        },
+        {
+            "Name": "light",
+            "Textures": "light.png"
+        },
+        {
+            "Name": "RainTrail_output",
+            "Textures": "RainTrail_output.png"
+        },
+        {
+            "Name": "rain_mist",
+            "Textures": "rain_mist.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

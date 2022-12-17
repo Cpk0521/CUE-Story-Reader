@@ -1,0 +1,33 @@
+{
+    "ID": 59,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "base_left_no_light",
+            "Textures": "base_left_no_light.png"
+        },
+        {
+            "Name": "base_right_no_light",
+            "Textures": "base_right_no_light.png"
+        },
+        {
+            "Name": "text",
+            "Textures": "text.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

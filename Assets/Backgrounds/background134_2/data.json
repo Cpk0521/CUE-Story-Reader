@@ -1,0 +1,37 @@
+{
+    "ID": 134,
+    "SubId": 2,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "city",
+            "Textures": "city.png"
+        },
+        {
+            "Name": "cloud2",
+            "Textures": "cloud2.png"
+        },
+        {
+            "Name": "light",
+            "Textures": "light.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

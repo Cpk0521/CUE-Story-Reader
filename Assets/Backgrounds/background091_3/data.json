@@ -1,0 +1,45 @@
+{
+    "ID": 91,
+    "SubId": 3,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "building",
+            "Textures": "building.png"
+        },
+        {
+            "Name": "light_building",
+            "Textures": "light_building.png"
+        },
+        {
+            "Name": "light_left_window",
+            "Textures": "light_left_window.png"
+        },
+        {
+            "Name": "light_right_window",
+            "Textures": "light_right_window.png"
+        },
+        {
+            "Name": "side",
+            "Textures": "side.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

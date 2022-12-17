@@ -1,0 +1,37 @@
+{
+    "ID": 16,
+    "SubId": 2,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloudA",
+            "Textures": "cloudA.png"
+        },
+        {
+            "Name": "cloudB",
+            "Textures": "cloudB.png"
+        },
+        {
+            "Name": "sun_Additive",
+            "Textures": "sun_Additive.png"
+        },
+        {
+            "Name": "WaterMask_output",
+            "Textures": "WaterMask_output.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

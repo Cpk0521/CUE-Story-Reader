@@ -1,0 +1,49 @@
+{
+    "ID": 85,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png"
+        },
+        {
+            "Name": "Default-ParticleSystem",
+            "Textures": "Default-ParticleSystem.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        },
+        {
+            "Name": "WaterEffect_output_WaterLow",
+            "Textures": "WaterEffect_output_WaterLow.png"
+        },
+        {
+            "Name": "WaterNoise_High_output",
+            "Textures": "WaterNoise_High_output.png"
+        },
+        {
+            "Name": "WaterNoise_Low_output",
+            "Textures": "WaterNoise_Low_output.png"
+        },
+        {
+            "Name": "WaterNoise_Middle_output",
+            "Textures": "WaterNoise_Middle_output.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

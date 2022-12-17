@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: "FOT-RodinCattleyaPro-B";
+    src: url('../font/FOT_RodinCattleya_Pro_B.otf');
+}

@@ -1,0 +1,45 @@
+{
+    "ID": 14,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "base23_shadow_replace",
+            "Textures": "base23_shadow_replace.png"
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png"
+        },
+        {
+            "Name": "sky",
+            "Textures": "sky.png"
+        },
+        {
+            "Name": "tree_base",
+            "Textures": "tree_base.png"
+        },
+        {
+            "Name": "tree_leaf_1",
+            "Textures": "tree_leaf_1.png"
+        },
+        {
+            "Name": "tree_leaf_2",
+            "Textures": "tree_leaf_2.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

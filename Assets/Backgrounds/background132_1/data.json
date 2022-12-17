@@ -1,0 +1,29 @@
+{
+    "ID": 132,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "Default-ParticleSystem",
+            "Textures": "Default-ParticleSystem.png"
+        },
+        {
+            "Name": "dust",
+            "Textures": "dust.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}

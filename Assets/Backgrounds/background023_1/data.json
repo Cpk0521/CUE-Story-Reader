@@ -1,0 +1,37 @@
+{
+    "ID": 23,
+    "SubId": 1,
+    "Layer": [
+        {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "Default-ParticleSystem",
+            "Textures": "Default-ParticleSystem.png"
+        },
+        {
+            "Name": "ParticleLarge_Near_output",
+            "Textures": "ParticleLarge_Near_output.png"
+        },
+        {
+            "Name": "ParticleLarge_output",
+            "Textures": "ParticleLarge_output.png"
+        },
+        {
+            "Name": "Particle_output",
+            "Textures": "Particle_output.png"
+        }
+    ],
+    "CanvasScaler": {
+        "Width": 1334,
+        "Height": 750
+    }
+}
