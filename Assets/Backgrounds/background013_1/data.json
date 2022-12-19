@@ -14,24 +14,79 @@
             }
         },
         {
-            "Name": "EF",
-            "Textures": "EF.png"
-        },
-        {
             "Name": "shadow",
-            "Textures": "shadow.png"
+            "Textures": "shadow.png",
+            "Type": "Sprite",
+            "Width": 989.12,
+            "Height": 213.58,
+            "Position" : {
+                "x": 618.5,
+                "y": 643
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "tree_base",
-            "Textures": "tree_base.png"
-        },
-        {
-            "Name": "tree_leaf",
-            "Textures": "tree_leaf.png"
+            "Textures": "tree_base.png",
+            "Type": "Sprite",
+            "Width": 463.57,
+            "Height": 750,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "tree_leaf_back",
-            "Textures": "tree_leaf_back.png"
+            "Textures": "tree_leaf_back.png",
+            "Type": "Sprite",
+            "Width": 563.09,
+            "Height": 297.78,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+            
+        },
+        {
+            "Name": "tree_leaf",
+            "Textures": "tree_leaf.png",
+            "Type": "Sprite",
+            "Width": 455.05,
+            "Height": 170.14,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "EF",
+            "Textures": "EF.png",
+            "Width": 658.24,
+            "Height": 750,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         }
     ],
     "CanvasScaler": {

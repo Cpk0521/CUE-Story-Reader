@@ -7,6 +7,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
         this._frontcontainer = new PIXI.Container();
         this._backcontainer = new PIXI.Container();
         this._update = () => {}
+        this._animations = []
 
         this._bgMap = new Map()
     }
@@ -42,12 +43,15 @@ class backgroundManager extends PIXI.utils.EventEmitter {
         return new Promise((res) => {
             this._frontcontainer.removeChildren()
             this._backcontainer.removeChildren()
-            GameApp.Ticker.remove(this._update)
+            this._animations.map((anim)=> GameApp.Ticker.remove(anim))
+            // GameApp.Ticker.remove(this._update)
 
             this._frontcontainer.addChild(new_bg.front)
             this._backcontainer.addChild(new_bg.back)
-            this._update = new_bg.motion
-            GameApp.Ticker.add(this._update)
+            this._animations = new_bg.motion
+            console.log(this._animations)
+            this._animations.map((anim)=> GameApp.Ticker.add(anim))
+            // GameApp.Ticker.add(this._update)
             res()
         })
 
@@ -110,7 +114,8 @@ class backgroundManager extends PIXI.utils.EventEmitter {
         
         let frontBgContainer = new PIXI.Container();
         let backBgContainer = new PIXI.Container();
-        let updatemotion = () => {}
+        let animations = []
+        // let updatemotion = () => {}
 
         let ratio = (GameApp.appSize.width / jsonResult.CanvasScaler.Width)
         let scale = (jsonResult.CanvasScaler.Height * ratio - GameApp.appSize.height) /2
@@ -137,9 +142,11 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                         movingspeed = obj.Movingspeed
                     }
 
-                    updatemotion = ()=>{
+                    let updatemotion = ()=>{
                         sprite.tilePosition.x -= movingspeed;
                     }
+
+                    animations.push(updatemotion)
 
                     if(obj.Level == 'front'){
                         frontBgContainer.addChild(sprite)
@@ -164,6 +171,28 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                         sprite.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
                     }
 
+                    if(obj.Aimation) {
+                        let movingspeed = 0.075
+                        let min = obj.Aimation.min ?? 0
+                        let max = obj.Aimation.max ?? GameApp.appSize.width
+                        let count = max
+                        if(obj.Movingspeed != undefined) {
+                            movingspeed = obj.Movingspeed
+
+                        }
+
+                        let updatemotion = ()=>{
+                            sprite.position.x -= movingspeed;
+                            count = count - Math.abs(movingspeed)
+                            if(count < min) {
+                                sprite.position.x = Math.floor(obj.Position.x * ratio)
+                                count = max
+                            }
+                        }
+    
+                        animations.push(updatemotion)
+                    }
+
                     if(obj.Level == 'front'){
                         frontBgContainer.addChild(sprite)
                     }
@@ -175,10 +204,9 @@ class backgroundManager extends PIXI.utils.EventEmitter {
 
         })
 
-        this._bgMap.set(`${jsonResult.ID}_${jsonResult.SubId}`, {front : frontBgContainer, back : backBgContainer, motion : updatemotion})
-
+        this._bgMap.set(`${jsonResult.ID}_${jsonResult.SubId}`, {front : frontBgContainer, back : backBgContainer, motion : animations})
         // console.log((backBgContainer.width * 0.5) / backBgContainer.scale.x)
-        return Promise.resolve({front : frontBgContainer, back : backBgContainer, motion : updatemotion})
+        return Promise.resolve({front : frontBgContainer, back : backBgContainer, motion : animations})
     }
 
 

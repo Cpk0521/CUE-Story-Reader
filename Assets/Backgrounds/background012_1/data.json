@@ -3,52 +3,191 @@
     "SubId": 1,
     "Layer": [
         {
-            "Name": "base1",
-            "Textures": "base1.png"
-        },
-        {
-            "Name": "base2",
-            "Textures": "base2.png"
-        },
-        {
-            "Name": "boat1",
-            "Textures": "boat1.png"
-        },
-        {
-            "Name": "boat2",
-            "Textures": "boat2.png"
-        },
-        {
-            "Name": "boat3",
-            "Textures": "boat3.png"
-        },
-        {
-            "Name": "boat4",
-            "Textures": "boat4.png"
-        },
-        {
-            "Name": "boat5",
-            "Textures": "boat5.png"
-        },
-        {
-            "Name": "boat6",
-            "Textures": "boat6.png"
-        },
-        {
-            "Name": "boat7",
-            "Textures": "boat7.png"
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 280,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "cloud1",
-            "Textures": "cloud1.png"
+            "Textures": "cloud1.png",
+            "Type": "TilingSprite",
+            "Width": 900,
+            "Height": 221,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "cloud2",
-            "Textures": "cloud2.png"
+            "Textures": "cloud2.png",
+            "Type": "TilingSprite",
+            "Width": 921,
+            "Height": 329,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
-            "Name": "sky_trim",
-            "Textures": "sky_trim.png"
+            "Name": "base2",
+            "Textures": "base2.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "boat7",
+            "Textures": "boat7.png",
+            "Type": "Sprite",
+            "Aimation" : {
+                "min" : 0,
+                "max" : 1700
+            },
+            "Movingspeed" : 0.125,
+            "Width": 161,
+            "Height": 93,
+            "Position" : {
+                "x": 1700,
+                "y": 298.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "boat6",
+            "Textures": "boat6.png",
+            "Type": "Sprite",
+            "Width": 161,
+            "Height": 113,
+            "Position" : {
+                "x": 682.5,
+                "y": 303.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "boat5",
+            "Textures": "boat5.png",
+            "Type": "Sprite",
+            "Aimation" : {
+                "min" : 0,
+                "max" : 1500
+            },
+            "Movingspeed" : 0.125,
+            "Width": 201,
+            "Height": 126,
+            "Position" : {
+                "x": 1334,
+                "y": 310
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "boat4",
+            "Textures": "boat4.png",
+            "Type": "Sprite",
+            "Aimation" : {
+                "min" : 0,
+                "max" : 1500
+            },
+            "Movingspeed" : -0.125,
+            "Width": 201,
+            "Height": 126,
+            "Position" : {
+                "x": 50,
+                "y": 329
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "boat3",
+            "Textures": "boat3.png",
+            "Type": "Sprite",
+            "Width": 201,
+            "Height": 134,
+            "Position" : {
+                "x": 1151.5,
+                "y": 366
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "boat2",
+            "Textures": "boat2.png",
+            "Type": "Sprite",
+            "Width": 288,
+            "Height": 174,
+            "Position" : {
+                "x": 907,
+                "y": 329
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "boat1",
+            "Textures": "boat1.png",
+            "Type": "Sprite",
+            "Width": 288,
+            "Height": 183,
+            "Position" : {
+                "x": 740,
+                "y": 346
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "base1",
+            "Textures": "base1.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "WaterMask",

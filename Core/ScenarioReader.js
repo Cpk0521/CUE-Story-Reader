@@ -68,11 +68,11 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         return new this(gameapp, config)
     }
 
-    static loadMasterList(masterlist){
-        return this.instance?._loadMasterList(masterlist)
+    static loadMasterList(masterlist, language){
+        return this.instance?._loadMasterList(masterlist, language)
     }
 
-    async _loadMasterList(masterlist) {
+    async _loadMasterList(masterlist, language) {
 
         let {storyType, storyID, phase, heroineId, title, mainCommands, Assets} = await this._loader.load(masterlist)
 
@@ -83,25 +83,31 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         this._Storytitle = title
         this._CommandSet = mainCommands 
 
+        if(language) {
+            console.log(language)
+            this._isTranslate = true
+            this._TranLang = language
+        }
+
         return Promise.all([
-            // this._L2dManager.initialize(Assets.heroines, this._checkHeroSort()),
-            // this._BGManager.initialize(Assets.backgrounds),
-            this._BGManager.initialize([{
-                "id": 11,
-                "subId": 5
-              }
-            ]),
-            // this._MessageManager.initialize(Assets.heroines),
-            // this._MovieManager.initialize(Assets.movieNames),
+            this._L2dManager.initialize(Assets.heroines, this._checkHeroSort()),
+            this._BGManager.initialize(Assets.backgrounds),
+            // this._BGManager.initialize([{
+            //     "id": 14,
+            //     "subId": 1
+            //   }
+            // ]),
+            this._MessageManager.initialize(Assets.heroines),
+            this._MovieManager.initialize(Assets.movieNames),
             new Promise((res)=>{
                 this._isTranslate ? res(this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId))) : res()
             })
         ]).then(async ()=>{
             this.emit('AssestsOnSetUp')
-            this._BGManager.execute(11, 5)
+            // this._BGManager.execute(14, 1)
 
 
-            // this._waitingTouch()
+            this._waitingTouch()
         })
     }
 
