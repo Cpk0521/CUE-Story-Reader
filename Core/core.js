@@ -11,6 +11,8 @@ window.onload = () => {
     const app = GameApp.create(element, {
         width : 1480, //1480
         height : 720, //720
+        // width : 1334, //1480
+        // height : 750, //720
         // background : 0xFFFFFF,
     })
     

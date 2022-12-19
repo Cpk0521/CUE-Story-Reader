@@ -3,6 +3,63 @@
     "SubId": 2,
     "Layer": [
         {
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 260,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud1_trim",
+            "Textures": "cloud1_trim.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 179,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud2_trim",
+            "Textures": "cloud2_trim.png",
+            "Type": "TilingSprite",
+            "Movingspeed": -0.075,
+            "Width": 1249,
+            "Height": 205,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "base_merge",
+            "Textures": "base_merge.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
             "Name": "AN1",
             "Textures": "AN1.png"
         },
@@ -15,24 +72,8 @@
             "Textures": "AN3.png"
         },
         {
-            "Name": "base_merge",
-            "Textures": "base_merge.png"
-        },
-        {
-            "Name": "cloud1_trim",
-            "Textures": "cloud1_trim.png"
-        },
-        {
-            "Name": "cloud2_trim",
-            "Textures": "cloud2_trim.png"
-        },
-        {
             "Name": "Default-ParticleSystem",
             "Textures": "Default-ParticleSystem.png"
-        },
-        {
-            "Name": "EF",
-            "Textures": "EF.png"
         },
         {
             "Name": "leaf",
@@ -40,11 +81,32 @@
         },
         {
             "Name": "left_object",
-            "Textures": "left_object.png"
+            "Textures": "left_object.png",
+            "Type": "Sprite",
+            "Width": 450,
+            "Height": 562.5,
+            "Position" : {
+                "x": 225,
+                "y": 375.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+
         },
         {
-            "Name": "sky_trim",
-            "Textures": "sky_trim.png"
+            "Name": "EF",
+            "Textures": "EF.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.5
+
         }
     ],
     "CanvasScaler": {

@@ -3,6 +3,52 @@
     "SubId": 4,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 393.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud1",
+            "Textures": "cloud1.png",
+            "Type": "TilingSprite",
+            "Movingspeed": -0.075,
+            "Width": 1334,
+            "Height": 393,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud2",
+            "Textures": "cloud2.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 393,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -12,14 +58,6 @@
                 "x": 0.5,
                 "y": 0.5
             }
-        },
-        {
-            "Name": "cloud1",
-            "Textures": "cloud1.png"
-        },
-        {
-            "Name": "cloud2",
-            "Textures": "cloud2.png"
         },
         {
             "Name": "Default-ParticleSystem",
@@ -36,10 +74,6 @@
         {
             "Name": "RainTrail_output",
             "Textures": "RainTrail_output.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         },
         {
             "Name": "tree1",

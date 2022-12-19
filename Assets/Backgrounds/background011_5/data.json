@@ -19,7 +19,18 @@
         },
         {
             "Name": "light",
-            "Textures": "light.png"
+            "Textures": "light.png",
+            "Type": "Sprite",
+            "Width": 1258,
+            "Height": 252,
+            "Position" : {
+                "x": 705,
+                "y": 126
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "light_far",

@@ -3,6 +3,51 @@
     "SubId": 6,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 399,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud2",
+            "Textures": "cloud2.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 259,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud1",
+            "Textures": "cloud1.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 259,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,14 +59,6 @@
             }
         },
         {
-            "Name": "cloud1",
-            "Textures": "cloud1.png"
-        },
-        {
-            "Name": "cloud2",
-            "Textures": "cloud2.png"
-        },
-        {
             "Name": "RainTrail_output",
             "Textures": "RainTrail_output.png"
         },
@@ -31,15 +68,22 @@
         },
         {
             "Name": "road",
-            "Textures": "road.png"
+            "Textures": "road.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 289.5,
+            "Position" : {
+                "x": 1334,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 1
+            }
         },
         {
             "Name": "road_noise",
             "Textures": "road_noise.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         }
     ],
     "CanvasScaler": {

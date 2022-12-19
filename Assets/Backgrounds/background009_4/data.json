@@ -4,7 +4,14 @@
     "Layer": [
         {
             "Name": "base_monitor_off",
-            "Textures": "base_monitor_off.png"
+            "Textures": "base_monitor_off.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "base_monitor_on",

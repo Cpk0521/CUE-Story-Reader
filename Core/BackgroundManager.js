@@ -6,6 +6,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
 
         this._frontcontainer = new PIXI.Container();
         this._backcontainer = new PIXI.Container();
+        this._update = () => {}
 
         this._bgMap = new Map()
     }
@@ -21,6 +22,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
             return new Promise((res) => {
                 this._backcontainer.removeChildren()
                 this._frontcontainer.removeChildren()
+                GameApp.Ticker.remove(this._update)
     
                 let bg = new PIXI.Sprite(PIXI.Texture.WHITE)
                 bg.tint = 0x000000
@@ -34,15 +36,18 @@ class backgroundManager extends PIXI.utils.EventEmitter {
         let new_bg = this._getBG(id, subid)
 
         if(!new_bg){
-            throw new Error(`Background ${id}_${sub}  not found.`);
+            throw new Error(`Background ${id}_${sub} not found.`);
         }
 
         return new Promise((res) => {
             this._frontcontainer.removeChildren()
             this._backcontainer.removeChildren()
+            GameApp.Ticker.remove(this._update)
 
             this._frontcontainer.addChild(new_bg.front)
             this._backcontainer.addChild(new_bg.back)
+            this._update = new_bg.motion
+            GameApp.Ticker.add(this._update)
             res()
         })
 
@@ -75,7 +80,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
 
     //v2
 
-    async initialize2(Assets){
+    async initialize(Assets){
 
         if(!Assets) {
             return new Promise(()=>{})
@@ -102,32 +107,78 @@ class backgroundManager extends PIXI.utils.EventEmitter {
         // let src = `./Backgrounds/background${id.toString().padStart(3,'0')}_${subid}/`
         let src = ResourcePath.getBGSrc(id, subid)
         let jsonResult = await this._loader.load(`${src}/data.json`)
-        // console.log(jsonResult)
-
+        
         let frontBgContainer = new PIXI.Container();
         let backBgContainer = new PIXI.Container();
+        let updatemotion = () => {}
 
         let ratio = (GameApp.appSize.width / jsonResult.CanvasScaler.Width)
+        let scale = (jsonResult.CanvasScaler.Height * ratio - GameApp.appSize.height) /2
 
         jsonResult.Layer.map((obj)=>{
 
             if(obj.Type != undefined) {
-                let sprite = PIXI.Sprite.from(`${src}/${obj.Textures}`)
-    
-                sprite.width = obj.Width * ratio
-                sprite.height = obj.Height * ratio
-    
-                sprite.anchor.set(obj.Anchor.x, obj.Anchor.y)
-                sprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
-                backBgContainer.addChild(sprite)
+
+                let texture = PIXI.Texture.from(`${src}/${obj.Textures}`);
+                if(obj.Type == 'TilingSprite') {
+                    let sprite = PIXI.TilingSprite.from(texture, 1, 1)
+                    sprite.width = 1334 * ratio
+                    sprite.height = 206 * ratio
+
+                    if(obj.Position) {
+                        sprite.position.set( Math.floor(obj.Position.x * ratio) , Math.floor(obj.Position.y * ratio - scale) )
+                    }
+                    else {
+                        sprite.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
+                    }
+
+                    let movingspeed = 0.075
+                    if(obj.Movingspeed != undefined) {
+                        movingspeed = obj.Movingspeed
+                    }
+
+                    updatemotion = ()=>{
+                        sprite.tilePosition.x -= movingspeed;
+                    }
+
+                    if(obj.Level == 'front'){
+                        frontBgContainer.addChild(sprite)
+                    }
+                    else {
+                        backBgContainer.addChild(sprite)
+                    }
+                    
+                }else{
+                    let sprite = PIXI.Sprite.from(texture)
+                    sprite.width = obj.Width * ratio
+                    sprite.height = obj.Height * ratio
+                    sprite.anchor.set(obj.Anchor.x, obj.Anchor.y)
+                    if(obj.Alpha) {
+                        sprite.alpha = obj.Alpha
+                    }
+
+                    if(obj.Position) {
+                        sprite.position.set( Math.floor(obj.Position.x * ratio) , Math.floor(obj.Position.y * ratio - scale) )
+                    }
+                    else {
+                        sprite.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
+                    }
+
+                    if(obj.Level == 'front'){
+                        frontBgContainer.addChild(sprite)
+                    }
+                    else {
+                        backBgContainer.addChild(sprite)
+                    }
+                }
             }
 
         })
 
-        this._bgMap.set(`${jsonResult.ID}_${jsonResult.SubId}`, {front : frontBgContainer, back : backBgContainer})
+        this._bgMap.set(`${jsonResult.ID}_${jsonResult.SubId}`, {front : frontBgContainer, back : backBgContainer, motion : updatemotion})
 
         // console.log((backBgContainer.width * 0.5) / backBgContainer.scale.x)
-        return Promise.resolve({front : frontBgContainer, back : backBgContainer})
+        return Promise.resolve({front : frontBgContainer, back : backBgContainer, motion : updatemotion})
     }
 
 

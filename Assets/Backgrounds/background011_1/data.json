@@ -3,8 +3,50 @@
     "SubId": 1,
     "Layer": [
         {
-            "Name": "base #94",
-            "Textures": "base #94.png"
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 260,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_A",
+            "Textures": "cloud_A.png",
+            "Type": "Sprite",
+            "Width": 2048,
+            "Height": 291,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_B",
+            "Textures": "cloud_B.png",
+            "Type": "TilingSprite",
+            "Movingspeed": -0.075,
+            "Width": 2499.8,
+            "Height": 389.4,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "base",
@@ -18,26 +60,6 @@
             }
         },
         {
-            "Name": "cloud_A #85",
-            "Textures": "cloud_A #85.png"
-        },
-        {
-            "Name": "cloud_A",
-            "Textures": "cloud_A.png"
-        },
-        {
-            "Name": "cloud_B #47",
-            "Textures": "cloud_B #47.png"
-        },
-        {
-            "Name": "cloud_B",
-            "Textures": "cloud_B.png"
-        },
-        {
-            "Name": "Default-ParticleSystem #41",
-            "Textures": "Default-ParticleSystem #41.png"
-        },
-        {
             "Name": "Default-ParticleSystem",
             "Textures": "Default-ParticleSystem.png"
         },
@@ -46,24 +68,19 @@
             "Textures": "leaf.png"
         },
         {
-            "Name": "LightCurtain #61",
-            "Textures": "LightCurtain #61.png"
-        },
-        {
-            "Name": "object_left #10",
-            "Textures": "object_left #10.png"
-        },
-        {
             "Name": "object_left",
-            "Textures": "object_left.png"
-        },
-        {
-            "Name": "sky_trim #6",
-            "Textures": "sky_trim #6.png"
-        },
-        {
-            "Name": "sky_trim",
-            "Textures": "sky_trim.png"
+            "Textures": "object_left.png",
+            "Type": "Sprite",
+            "Width": 440,
+            "Height": 552.5,
+            "Position" : {
+                "x": 220,
+                "y": 375.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "tree_leaf",

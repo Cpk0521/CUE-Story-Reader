@@ -15,11 +15,23 @@
         },
         {
             "Name": "monitor",
-            "Textures": "monitor.png"
+            "Textures": "monitor.png",
+            "Type": "Sprite",
+            "Width": 532,
+            "Height": 207,
+            "Position" : {
+                "x": 532,
+                "y": 103
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {
         "Width": 1334,
         "Height": 750
     }
+
 }

@@ -3,28 +3,90 @@
     "SubId": 3,
     "Layer": [
         {
-            "Name": "base2",
-            "Textures": "base2.png"
-        },
-        {
-            "Name": "cable",
-            "Textures": "cable.png"
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 400,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "cloud",
-            "Textures": "cloud.png"
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 750,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "base2",
+            "Textures": "base2.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "light_left",
-            "Textures": "light_left.png"
+            "Textures": "light_left.png",
+            "Type": "Sprite",
+            "Width": 184.5,
+            "Height": 127.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cable",
+            "Textures": "cable.png",
+            "Type": "Sprite",
+            "Width": 143.36,
+            "Height": 86.57,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "light_right",
-            "Textures": "light_right.png"
-        },
-        {
-            "Name": "sky_trim",
-            "Textures": "sky_trim.png"
+            "Textures": "light_right.png",
+            "Type": "Sprite",
+            "Width": 451.5,
+            "Height": 750,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         }
     ],
     "CanvasScaler": {
