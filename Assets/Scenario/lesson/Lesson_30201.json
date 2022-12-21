@@ -1,0 +1,1820 @@
+{
+    "storyType": "Lesson",
+    "storyID": 30201,
+    "phase": 1,
+    "heroineId": 13,
+    "title": "C.Q. 利恵編 -1-",
+    "mainCommands": [
+        {
+            "index": 1,
+            "commandType": 1,
+            "id": 1,
+            "time": 0.0,
+            "values": [
+                3,
+                1,
+                1,
+                0,
+                0
+            ],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": []
+        },
+        {
+            "index": 2,
+            "commandType": 3,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                13,
+                2
+            ],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": []
+        },
+        {
+            "index": 3,
+            "commandType": 3,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                14,
+                2
+            ],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": []
+        },
+        {
+            "index": 5,
+            "commandType": 8,
+            "id": 0,
+            "time": 0.5,
+            "values": [],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 4,
+                    "commandType": 11,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [
+                        1,
+                        1,
+                        1,
+                        -230,
+                        -230
+                    ],
+                    "rates": [
+                        0.0,
+                        1.0
+                    ],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.5,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 7,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                1
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "『櫻乃ハクア！\n桜の海で、泳ぎます！』",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 6,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                11,
+                                3,
+                                1
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 9,
+            "commandType": 8,
+            "id": 0,
+            "time": 0.5,
+            "values": [],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 8,
+                    "commandType": 11,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [
+                        1,
+                        1,
+                        3,
+                        330,
+                        230
+                    ],
+                    "rates": [
+                        0.0,
+                        1.0
+                    ],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.5,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 13,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                2
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "マジメね。\n休みの日にもレッスンなんて。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 10,
+                    "commandType": 16,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                90
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 11,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0,
+                                7,
+                                1
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 12,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                7,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 15,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                3
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "そりゃそうでしょ。\n我輩達をキャスティングしてくれた人達の期待に応えなきゃ。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 14,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                8,
+                                1,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 17,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                4
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "そういうとこ、ハクアに似ているかもね。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 16,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 19,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                5
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "我輩がハクアと？\nん？　どういうこと？",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 18,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0,
+                                5,
+                                2
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 1.5,
+                            "values": [
+                                7,
+                                13,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 25,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                6
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "妙に生真面目というか、取り組む姿勢がね。\nキャスティングの時にそれも見抜かれていたのかしら。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 20,
+                    "commandType": 16,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 21,
+                    "commandType": 17,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 22,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0,
+                                12,
+                                3
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 4.7,
+                            "values": [
+                                12,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 23,
+                    "commandType": 16,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                330
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 4.7,
+                            "values": [
+                                0
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 24,
+                    "commandType": 17,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                1
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 4.7,
+                            "values": [
+                                0
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 27,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                7
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "あんまりそういう実感は無いんだけどね。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 26,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0,
+                                13,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 29,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                8
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "あ、別に邪魔しに来たわけじゃないのよ。\n私も自主練しないといけないしね。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 28,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                15,
+                                10,
+                                3
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 3.4,
+                            "values": [
+                                7,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 31,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                9
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "じゃあ、せっかくだし読み合わせでもする？",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 30,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                8,
+                                1,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 33,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                10
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "そうね。\n1人でやるよりは効率もいいし。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 32,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                11,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 35,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                11
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "よし、じゃあ2人で読み合わせね！",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 34,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                7,
+                                2,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 37,
+            "commandType": 8,
+            "id": 0,
+            "time": 0.1,
+            "values": [],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 36,
+                    "commandType": 27,
+                    "id": 0,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 39,
+            "commandType": 9,
+            "id": 1,
+            "time": 0.0,
+            "values": [
+                3,
+                1,
+                0,
+                0,
+                0
+            ],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 38,
+                    "commandType": 18,
+                    "id": 0,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 42,
+            "commandType": 8,
+            "id": 0,
+            "time": 0.5,
+            "values": [],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 40,
+                    "commandType": 11,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [
+                        8,
+                        7,
+                        2,
+                        -230,
+                        -230
+                    ],
+                    "rates": [
+                        0.0,
+                        1.0
+                    ],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.5,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 41,
+                    "commandType": 11,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [
+                        1,
+                        1,
+                        3,
+                        230,
+                        230
+                    ],
+                    "rates": [
+                        0.0,
+                        1.0
+                    ],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.5,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 46,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                12
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "うーん、ここはもっと声張る演技のほうがいいのかなぁ。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 43,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                7,
+                                13,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 44,
+                    "commandType": 16,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                250
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 45,
+                    "commandType": 17,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                1
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 50,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                13
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "でも、ボロボロになってるんだから、\n張りすぎても変じゃない？",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 47,
+                    "commandType": 16,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 48,
+                    "commandType": 17,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 49,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                7,
+                                10,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 54,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                14
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "疲労感を出しつつも、\n絞り出すような感じとか入れてもいいかも。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 51,
+                    "commandType": 16,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 52,
+                    "commandType": 17,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 53,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                11,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 56,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                15
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "なるほど、確かにそうか……。\nやっぱり聡里のアドバイスは的確ね。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 55,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                18,
+                                1,
+                                2
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 3.5,
+                            "values": [
+                                8,
+                                2,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 58,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                16
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "よしてよ。私だって探り探りなんだから。\n機会があればあらかじめ監督さんに聞くほうがいいかもね。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 57,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                15,
+                                10,
+                                3
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 4.4,
+                            "values": [
+                                11,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 60,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                17
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "そうだね。でも、今は自分の中でキャラクターを完成させないと。\nちぐはぐな演技になったら最悪だし。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 59,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                0,
+                                1,
+                                2
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 1.3,
+                            "values": [
+                                0,
+                                7,
+                                2
+                            ],
+                            "rate": 0.0
+                        },
+                        {
+                            "time": 5.8,
+                            "values": [
+                                0,
+                                10,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 62,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                18
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "まぁ、メインの4人はみんな同じチームなんだから、\n掛け合いの部分とかしっかり話し合っておきたいわね。",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 61,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                7,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 64,
+            "commandType": 4,
+            "id": 13,
+            "time": 0.0,
+            "values": [
+                19
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "よし！\nそうと決まれば凛音と鳴も呼んでこよう！",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 63,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                12,
+                                2,
+                                2
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 67,
+            "commandType": 8,
+            "id": 0,
+            "time": 0.5,
+            "values": [],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 65,
+                    "commandType": 27,
+                    "id": 0,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                },
+                {
+                    "index": 66,
+                    "commandType": 14,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                1,
+                                1,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 69,
+            "commandType": 8,
+            "id": 0,
+            "time": 1.0,
+            "values": [],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 68,
+                    "commandType": 12,
+                    "id": 13,
+                    "time": 0.0,
+                    "values": [
+                        -330
+                    ],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.5,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 71,
+            "commandType": 4,
+            "id": 14,
+            "time": 0.0,
+            "values": [
+                20
+            ],
+            "rates": [
+                1.0,
+                1.0
+            ],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "今日はレッスン休みだし、\nあの子達来るかしら……？",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 70,
+                    "commandType": 14,
+                    "id": 14,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [
+                        {
+                            "time": 0.0,
+                            "values": [
+                                15,
+                                10,
+                                3
+                            ],
+                            "rate": 0.0
+                        }
+                    ],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 73,
+            "commandType": 8,
+            "id": 0,
+            "time": 1.5,
+            "values": [],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": [
+                {
+                    "index": 72,
+                    "commandType": 27,
+                    "id": 0,
+                    "time": 0.0,
+                    "values": [],
+                    "rates": [],
+                    "isActive": 0,
+                    "commandParams": [],
+                    "name": "",
+                    "message": "",
+                    "voieCueName": "",
+                    "fadeTime": 0.0,
+                    "selectParams": [],
+                    "multiHeroineParams": []
+                }
+            ]
+        },
+        {
+            "index": 74,
+            "commandType": 2,
+            "id": 1,
+            "time": 0.0,
+            "values": [],
+            "rates": [],
+            "isActive": 0,
+            "commandParams": [],
+            "name": "",
+            "message": "",
+            "voieCueName": "",
+            "fadeTime": 0.0,
+            "selectParams": [],
+            "multiHeroineParams": [],
+            "subCommands": []
+        }
+    ],
+    "Assets": {
+        "heroines": [
+            {
+                "dataId": 13,
+                "heroineId": 13,
+                "costumeId": 2
+            },
+            {
+                "dataId": 14,
+                "heroineId": 14,
+                "costumeId": 2
+            }
+        ],
+        "backgrounds": [
+            {
+                "id": 3,
+                "subId": 1
+            }
+        ],
+        "bgmIds": [
+            1
+        ],
+        "seIds": [],
+        "voiceIds": [],
+        "movieNames": []
+    }
+}

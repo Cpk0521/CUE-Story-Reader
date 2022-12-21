@@ -113,7 +113,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
     async _waitingTouch(){
         this._isLoading = false
 
-        let touchToStartimg = await this._loader.load('./Images/ui/Common_TouchScreenText.png')
+        let touchToStartimg = await this._loader.load('./Assets/Images/ui/Common_TouchScreenText.png')
         let touchToStart = new PIXI.Sprite(touchToStartimg);
         this._gameapp.mainContainer.addChild(touchToStart)
 

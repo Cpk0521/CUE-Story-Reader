@@ -9,14 +9,14 @@ class MessageManager extends PIXI.utils.EventEmitter {
         this._container.visible = false
 
         this._loader.addBundle('MessageAssets', {
-            nameTag : './Images/ui/Scenario_NameBg1.png',
-            messgaePanel : './Images/ui/Scenario_TalkPanel.png',
-            RodinCattleya_DB : './Font/FOT_RodinCattleya_Pro_DB.otf',
-            RodinCattleya_B : './Font/FOT_RodinCattleya_Pro_B.otf',
-            RodinCattleya_EB : './Font/FOT_RodinCattleya_Pro_EB.otf',
-            NotoSansTC_Medium : './Font/NotoSansTC_Medium.otf',
-            NotoSansTC_Bold : './Font/NotoSansTC_Bold.otf',
-            NotoSansTC_Black : './Font/NotoSansTC_Black.otf',
+            nameTag : './Assets/Images/ui/Scenario_NameBg1.png',
+            messgaePanel : './Assets/Images/ui/Scenario_TalkPanel.png',
+            RodinCattleya_DB : './Assets/Font/FOT_RodinCattleya_Pro_DB.otf',
+            RodinCattleya_B : './Assets/Font/FOT_RodinCattleya_Pro_B.otf',
+            RodinCattleya_EB : './Assets/Font/FOT_RodinCattleya_Pro_EB.otf',
+            NotoSansTC_Medium : './Assets/Font/NotoSansTC_Medium.otf',
+            NotoSansTC_Bold : './Assets/Font/NotoSansTC_Bold.otf',
+            NotoSansTC_Black : './Assets/Font/NotoSansTC_Black.otf',
         })
 
         this._loader.backgroundLoadBundle('MessageAssets')

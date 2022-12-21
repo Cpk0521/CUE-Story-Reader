@@ -7,12 +7,12 @@ class MiscManager {
         this._TranContainer = new PIXI.Container();
 
         this._loader.addBundle('Misc', {
-            RodinCattleya_DB : './Font/FOT_RodinCattleya_Pro_DB.otf',
-            RodinCattleya_B : './Font/FOT_RodinCattleya_Pro_B.otf',
-            RodinCattleya_EB : './Font/FOT_RodinCattleya_Pro_EB.otf',
-            NotoSansTC_Medium : './Font/NotoSansTC_Medium.otf',
-            NotoSansTC_Bold : './Font/NotoSansTC_Bold.otf',
-            NotoSansTC_Black : './Font/NotoSansTC_Black.otf',
+            RodinCattleya_DB : './Assets/Font/FOT_RodinCattleya_Pro_DB.otf',
+            RodinCattleya_B : './Assets/Font/FOT_RodinCattleya_Pro_B.otf',
+            RodinCattleya_EB : './Assets/Font/FOT_RodinCattleya_Pro_EB.otf',
+            NotoSansTC_Medium : './Assets/Font/NotoSansTC_Medium.otf',
+            NotoSansTC_Bold : './Assets/Font/NotoSansTC_Bold.otf',
+            NotoSansTC_Black : './Assets/Font/NotoSansTC_Black.otf',
         })
 
     }
@@ -49,7 +49,8 @@ class MiscManager {
             this._TranContainer.addChild(back)
 
             for (let index = 0; index < 4; index++) {
-                T9[index] = PIXI.Sprite.from('./Images/misc/T9.png')
+                // T9[index] = PIXI.Sprite.from('./Images/misc/T9.png')
+                T9[index] = PIXI.Sprite.from('./Assets/Images/misc/T9.png')
                 T9[index].anchor.set(0.5)
                 T9[index].position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
                 T9[index].alpha = 0
@@ -61,7 +62,8 @@ class MiscManager {
             this._TranContainer.addChild(mask)
 
             for (let index = 0; index < 4; index++) {
-                T4[index] = PIXI.Sprite.from('./Images/misc/T4.png')
+                // T4[index] = PIXI.Sprite.from('./Images/misc/T4.png')
+                T4[index] = PIXI.Sprite.from('./Assets/Images/misc/T4.png')
                 T4[index].anchor.set(0.5)
                 T4[index].position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
                 T4[index].alpha = 0

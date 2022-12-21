@@ -49,7 +49,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
             this._frontcontainer.addChild(new_bg.front)
             this._backcontainer.addChild(new_bg.back)
             this._animations = new_bg.motion
-            console.log(this._animations)
+            // console.log(this._animations)
             this._animations.map((anim)=> GameApp.Ticker.add(anim))
             // GameApp.Ticker.add(this._update)
             res()
