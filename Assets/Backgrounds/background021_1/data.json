@@ -3,6 +3,22 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "truck",
+            "Textures": "truck.png",
+            "Type": "Sprite",
+            "Width": 400,
+            "Height": 510,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Position" : {
+                "x": 667,
+                "y": 360
+            }
+
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -16,10 +32,6 @@
         {
             "Name": "outside",
             "Textures": "outside.png"
-        },
-        {
-            "Name": "truck",
-            "Textures": "truck.png"
         },
         {
             "Name": "turi_left",

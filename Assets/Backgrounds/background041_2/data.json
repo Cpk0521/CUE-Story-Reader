@@ -15,7 +15,15 @@
         },
         {
             "Name": "front",
-            "Textures": "front.png"
+            "Textures": "front.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Level" : "front"
         },
         {
             "Name": "light",

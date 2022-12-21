@@ -4,7 +4,14 @@
     "Layer": [
         {
             "Name": "base1",
-            "Textures": "base1.png"
+            "Textures": "base1.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "base2",

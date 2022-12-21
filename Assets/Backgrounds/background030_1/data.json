@@ -4,7 +4,14 @@
     "Layer": [
         {
             "Name": "base_no_flare",
-            "Textures": "base_no_flare.png"
+            "Textures": "base_no_flare.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "flare",

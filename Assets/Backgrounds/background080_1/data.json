@@ -4,7 +4,14 @@
     "Layer": [
         {
             "Name": "base_nofire",
-            "Textures": "base_nofire.png"
+            "Textures": "base_nofire.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "fire",

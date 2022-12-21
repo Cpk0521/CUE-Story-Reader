@@ -4,7 +4,14 @@
     "Layer": [
         {
             "Name": "base_light",
-            "Textures": "base_light.png"
+            "Textures": "base_light.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "base_no_light",

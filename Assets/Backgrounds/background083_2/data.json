@@ -3,13 +3,27 @@
     "SubId": 2,
     "Layer": [
         {
-            "Name": "base1",
-            "Textures": "base1.png"
+            "Name": "base2",
+            "Textures": "base2.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
-            "Name": "base2",
-            "Textures": "base2.png"
-        },
+            "Name": "base1",
+            "Textures": "base1.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }, 
         {
             "Name": "cloud",
             "Textures": "cloud.png"

@@ -3,6 +3,21 @@
     "SubId": 3,
     "Layer": [
         {
+            "Name": "truck",
+            "Textures": "truck.png",
+            "Type": "Sprite",
+            "Width": 400,
+            "Height": 510,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Position" : {
+                "x": 667,
+                "y": 360
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -18,52 +33,169 @@
             "Textures": "outside.png"
         },
         {
-            "Name": "truck",
-            "Textures": "truck.png"
-        },
-        {
             "Name": "turi_left_1",
-            "Textures": "turi_left_1.png"
+            "Textures": "turi_left_1.png",
+            "Type": "Sprite",
+            "Width": 41,
+            "Height": 189,
+            "Position" : {
+                "x": 388.5,
+                "y": 105.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_left_2",
-            "Textures": "turi_left_2.png"
+            "Textures": "turi_left_2.png",
+            "Type": "Sprite",
+            "Width": 35,
+            "Height": 163,
+            "Position" : {
+                "x": 426.5,
+                "y": 133.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_left_3",
-            "Textures": "turi_left_3.png"
+            "Textures": "turi_left_3.png",
+            "Type": "Sprite",
+            "Width": 29,
+            "Height": 136,
+            "Position" : {
+                "x": 468.5,
+                "y": 161
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_left_4",
-            "Textures": "turi_left_4.png"
+            "Textures": "turi_left_4.png",
+            "Type": "Sprite",
+            "Width": 25,
+            "Height": 118,
+            "Position" : {
+                "x": 495.5,
+                "y": 180
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_left_5",
-            "Textures": "turi_left_5.png"
+            "Textures": "turi_left_5.png",
+            "Type": "Sprite",
+            "Width": 21,
+            "Height": 102,
+            "Position" : {
+                "x": 520.5,
+                "y": 196
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_right_1",
-            "Textures": "turi_right_1.png"
+            "Textures": "turi_right_1.png",
+            "Type": "Sprite",
+            "Width": 70,
+            "Height": 110,
+            "Position" : {
+                "x": 1132,
+                "y": 23
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_right_2",
-            "Textures": "turi_right_2.png"
+            "Textures": "turi_right_2.png",
+            "Type": "Sprite",
+            "Width": 63,
+            "Height": 155,
+            "Position" : {
+                "x": 1055.5,
+                "y": 45
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_right_3",
-            "Textures": "turi_right_3.png"
+            "Textures": "turi_right_3.png",
+            "Type": "Sprite",
+            "Width": 44,
+            "Height": 203,
+            "Position" : {
+                "x": 966,
+                "y": 94.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_right_4",
-            "Textures": "turi_right_4.png"
+            "Textures": "turi_right_4.png",
+            "Type": "Sprite",
+            "Width": 37,
+            "Height": 171,
+            "Position" : {
+                "x": 916.5,
+                "y": 135.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_right_5",
-            "Textures": "turi_right_5.png"
+            "Textures": "turi_right_5.png",
+            "Type": "Sprite",
+            "Width": 32,
+            "Height": 142,
+            "Position" : {
+                "x": 878,
+                "y": 172
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "turi_right_6",
-            "Textures": "turi_right_6.png"
+            "Textures": "turi_right_6.png",
+            "Type": "Sprite",
+            "Width": 27,
+            "Height": 126,
+            "Position" : {
+                "x": 855,
+                "y": 195
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {

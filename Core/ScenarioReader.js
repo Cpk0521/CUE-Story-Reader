@@ -92,8 +92,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             // this._L2dManager.initialize(Assets.heroines, this._checkHeroSort()),
             // this._BGManager.initialize(Assets.backgrounds),
             this._BGManager.initialize([{
-                "id": 19,
-                "subId": 4
+                "id": 21,
+                "subId": 3
               }
             ]),
             // this._MessageManager.initialize(Assets.heroines),
@@ -103,7 +103,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             })
         ]).then(async ()=>{
             this.emit('AssestsOnSetUp')
-            this._BGManager.execute(19, 4)
+            this._BGManager.execute(21, 3)
 
 
             // this._waitingTouch()
