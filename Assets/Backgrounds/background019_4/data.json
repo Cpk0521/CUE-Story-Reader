@@ -3,12 +3,34 @@
     "SubId": 4,
     "Layer": [
         {
+            "Name": "outside",
+            "Textures": "outside.png",
+            "Type": "Sprite",
+            "Width": 890,
+            "Height": 357,
+            "Position" : {
+                "x": 445,
+                "y": 316
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
             "Name": "base_off",
             "Textures": "base_off.png"
         },
         {
             "Name": "base_on",
-            "Textures": "base_on.png"
+            "Textures": "base_on.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "Default-ParticleSystem",
@@ -17,10 +39,6 @@
         {
             "Name": "fans_tex",
             "Textures": "fans_tex.png"
-        },
-        {
-            "Name": "outside",
-            "Textures": "outside.png"
         },
         {
             "Name": "RainTrail_output",

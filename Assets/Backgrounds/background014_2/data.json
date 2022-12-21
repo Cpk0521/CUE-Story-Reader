@@ -3,6 +3,36 @@
     "SubId": 2,
     "Layer": [
         {
+            "Name": "sky_trim2",
+            "Textures": "sky_trim2.png",
+            "Type": "Sprite",
+            "Width": 1032,
+            "Height": 206,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_trim",
+            "Textures": "cloud_trim.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 211,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,28 +44,64 @@
             }
         },
         {
-            "Name": "base23_shadow_replace",
-            "Textures": "base23_shadow_replace.png"
-        },
-        {
-            "Name": "cloud_trim",
-            "Textures": "cloud_trim.png"
-        },
-        {
-            "Name": "sky_trim2",
-            "Textures": "sky_trim2.png"
-        },
-        {
             "Name": "tree_base",
-            "Textures": "tree_base.png"
+            "Textures": "tree_base.png",
+            "Type": "Sprite",
+            "Width": 505,
+            "Height": 574,
+            "Position" : {
+                "x": 287.5,
+                "y": 287
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "tree_leaf_1",
-            "Textures": "tree_leaf_1.png"
+            "Textures": "tree_leaf_1.png",
+            "Type": "Sprite",
+            "Width": 202,
+            "Height": 289,
+            "Position" : {
+                "x": 186,
+                "y": 167
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "tree_leaf_2",
-            "Textures": "tree_leaf_2.png"
+            "Textures": "tree_leaf_2.png",
+            "Type": "Sprite",
+            "Width": 105,
+            "Height": 182,
+            "Position" : {
+                "x": 455.5,
+                "y": 248
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "base23_shadow_replace",
+            "Textures": "base23_shadow_replace.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 596,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         }
     ],
     "CanvasScaler": {

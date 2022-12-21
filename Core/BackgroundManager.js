@@ -90,7 +90,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
             return new Promise(()=>{})
         }
 
-        return Promise.all(Assets.map((bg) => this._combineBG(bg.id, bg.subId)))
+        return Promise.all(Assets.map(async(bg) =>  await this._combineBG(bg.id, bg.subId)))
         // .then(()=>{
         //     console.log(this._bgMap)
         // })
@@ -120,89 +120,104 @@ class backgroundManager extends PIXI.utils.EventEmitter {
         let ratio = (GameApp.appSize.width / jsonResult.CanvasScaler.Width)
         let scale = (jsonResult.CanvasScaler.Height * ratio - GameApp.appSize.height) /2
 
-        jsonResult.Layer.map((obj)=>{
+        for (let index = 0; index < jsonResult.Layer.length; index++) {
+            const element = jsonResult.Layer[index];
 
-            if(obj.Type != undefined) {
+            if(element.Type == undefined) {
+                continue;
+            }
 
-                let texture = PIXI.Texture.from(`${src}/${obj.Textures}`);
-                if(obj.Type == 'TilingSprite') {
-                    let sprite = PIXI.TilingSprite.from(texture, 1, 1)
-                    sprite.width = 1334 * ratio
-                    sprite.height = 206 * ratio
+            let texture = await PIXI.Assets.load(`${src}/${element.Textures}`)
+            
+            if(element.Type == 'TilingSprite'){
+                let tile = PIXI.TilingSprite.from(texture, element.Width*ratio, element.Height*ratio)
+                
+                let scalewidth =  element.Width * ratio / texture.orig.width
+                let scaleheight = element.Height * ratio / texture.orig.height
+                
+                tile.width = element.Width*ratio
+                tile.height = element.Height*ratio - 1
+                tile.tileScale.set(scalewidth, scaleheight)
+                tile.anchor.set(element.Anchor.x, element.Anchor.y)
 
-                    if(obj.Position) {
-                        sprite.position.set( Math.floor(obj.Position.x * ratio) , Math.floor(obj.Position.y * ratio - scale) )
-                    }
-                    else {
-                        sprite.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
-                    }
+                if(element.Position) {
+                    tile.position.set( Math.floor(element.Position.x * ratio) , Math.floor(element.Position.y * ratio - scale) )
+                }
+                else {
+                    tile.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
+                }
 
-                    let movingspeed = 0.075
-                    if(obj.Movingspeed != undefined) {
-                        movingspeed = obj.Movingspeed
+                if(element.Level == 'front'){
+                    frontBgContainer.addChild(tile)
+                }
+                else {
+                    backBgContainer.addChild(tile)
+                }
+
+                let movingspeed = 0.075
+                if(element.Movingspeed != undefined) {
+                    movingspeed = element.Movingspeed
+                }
+
+                let updatemotion = ()=>{
+                    tile.tilePosition.x -= movingspeed;
+                }
+
+                animations.push(updatemotion)
+            }
+            else {
+                let sprite = PIXI.Sprite.from(texture)
+
+                sprite.width = element.Width * ratio
+                sprite.height = element.Height * ratio
+
+                sprite.anchor.set(element.Anchor.x, element.Anchor.y)
+
+                if(element.Alpha) {
+                    sprite.alpha = element.Alpha
+                }
+
+                if(element.Position) {
+                    sprite.position.set( Math.floor(element.Position.x * ratio) , Math.floor(element.Position.y * ratio - scale) )
+                }
+                else {
+                    sprite.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
+                }
+
+                if(element.Aimation) {
+                    let movingspeed = 0.050
+                    let min = element.Aimation.min ?? 0
+                    let max = element.Aimation.max ?? GameApp.appSize.width
+                    let count = max
+                    if(element.Movingspeed != undefined) {
+                        movingspeed = element.Movingspeed
+
                     }
 
                     let updatemotion = ()=>{
-                        sprite.tilePosition.x -= movingspeed;
+                        sprite.position.x -= movingspeed;
+                        count = count - Math.abs(movingspeed)
+                        if(count < min) {
+                            sprite.position.x = Math.floor(element.Position.x * ratio)
+                            count = max
+                        }
                     }
 
                     animations.push(updatemotion)
+                }
 
-                    if(obj.Level == 'front'){
-                        frontBgContainer.addChild(sprite)
-                    }
-                    else {
-                        backBgContainer.addChild(sprite)
-                    }
-                    
-                }else{
-                    let sprite = PIXI.Sprite.from(texture)
-                    sprite.width = obj.Width * ratio
-                    sprite.height = obj.Height * ratio
-                    sprite.anchor.set(obj.Anchor.x, obj.Anchor.y)
-                    if(obj.Alpha) {
-                        sprite.alpha = obj.Alpha
-                    }
-
-                    if(obj.Position) {
-                        sprite.position.set( Math.floor(obj.Position.x * ratio) , Math.floor(obj.Position.y * ratio - scale) )
-                    }
-                    else {
-                        sprite.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
-                    }
-
-                    if(obj.Aimation) {
-                        let movingspeed = 0.075
-                        let min = obj.Aimation.min ?? 0
-                        let max = obj.Aimation.max ?? GameApp.appSize.width
-                        let count = max
-                        if(obj.Movingspeed != undefined) {
-                            movingspeed = obj.Movingspeed
-
-                        }
-
-                        let updatemotion = ()=>{
-                            sprite.position.x -= movingspeed;
-                            count = count - Math.abs(movingspeed)
-                            if(count < min) {
-                                sprite.position.x = Math.floor(obj.Position.x * ratio)
-                                count = max
-                            }
-                        }
-    
-                        animations.push(updatemotion)
-                    }
-
-                    if(obj.Level == 'front'){
-                        frontBgContainer.addChild(sprite)
-                    }
-                    else {
-                        backBgContainer.addChild(sprite)
-                    }
+                if(element.Level == 'front'){
+                    frontBgContainer.addChild(sprite)
+                }
+                else {
+                    backBgContainer.addChild(sprite)
                 }
             }
 
-        })
+            
+            
+        }
+
 
         this._bgMap.set(`${jsonResult.ID}_${jsonResult.SubId}`, {front : frontBgContainer, back : backBgContainer, motion : animations})
         // console.log((backBgContainer.width * 0.5) / backBgContainer.scale.x)

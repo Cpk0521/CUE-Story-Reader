@@ -20,7 +20,11 @@
         {
             "Name": "cloud_trim",
             "Textures": "cloud_trim.png",
-            "Type": "TilingSprite",
+            "Type": "Sprite",
+            "Aimation":{
+                "min" : 0,
+                "max" : 1334
+            },
             "Width": 1334,
             "Height": 206,
             "Position" : {

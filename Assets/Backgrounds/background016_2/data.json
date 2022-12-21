@@ -14,20 +14,67 @@
             }
         },
         {
+            "Name": "sun_Additive",
+            "Textures": "sun_Additive.png",
+            "Type": "Sprite",
+            "Width": 1311,
+            "Height": 576,
+            "Position" : {
+                "x": 667,
+                "y": 462
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.3
+        },
+        {
             "Name": "cloudA",
-            "Textures": "cloudA.png"
+            "Textures": "cloudA.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 336,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+            
         },
         {
             "Name": "cloudB",
-            "Textures": "cloudB.png"
-        },
-        {
-            "Name": "sun_Additive",
-            "Textures": "sun_Additive.png"
+            "Textures": "cloudB.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 203,
+            "Position" : {
+                "x": 667,
+                "y": 365.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "WaterMask_output",
-            "Textures": "WaterMask_output.png"
+            "Textures": "WaterMask_output.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 316.1,
+            "Position" : {
+                "x": 667,
+                "y": 592
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.25
         }
     ],
     "CanvasScaler": {

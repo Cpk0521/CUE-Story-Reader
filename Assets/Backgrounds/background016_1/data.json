@@ -4,23 +4,75 @@
     "Layer": [
         {
             "Name": "BG",
-            "Textures": "BG.png"
-        },
-        {
-            "Name": "cloud_A",
-            "Textures": "cloud_A.png"
-        },
-        {
-            "Name": "cloud_B",
-            "Textures": "cloud_B.png"
+            "Textures": "BG.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "cloud_C",
-            "Textures": "cloud_C.png"
+            "Textures": "cloud_C.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 370,
+            "Position" : {
+                "x": 667,
+                "y": 89
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud_B",
+            "Textures": "cloud_B.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 185,
+            "Position" : {
+                "x": 667,
+                "y": 180
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud_A",
+            "Textures": "cloud_A.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 185,
+            "Position" : {
+                "x": 667,
+                "y": 336.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "WaterMask_output",
-            "Textures": "WaterMask_output.png"
+            "Textures": "WaterMask_output.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 96,
+            "Position" : {
+                "x": 667,
+                "y": 384
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.9
         }
     ],
     "CanvasScaler": {

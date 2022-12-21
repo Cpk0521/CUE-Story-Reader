@@ -20,9 +20,9 @@ window.onload = () => {
     ScenarioReader.create(app)
     // ScenarioReader.loadMasterList('./Test/Card_1010001_1.json')
     // ScenarioReader.loadMasterList('./Test/Card_3010004_2.json')
-    ScenarioReader.loadMasterList('./Test/Card_1130001_1.json', lang)
+    // ScenarioReader.loadMasterList('./Test/Card_1130001_1.json', lang)
     // ScenarioReader.loadMasterList('./Test/Card_4010012_3.json')
-    // ScenarioReader.loadMasterList('./Test/Card_4010005_3.json')
+    ScenarioReader.loadMasterList('./Test/Card_4010005_3.json')
     // ScenarioReader.loadMasterList('./Test/Card_2150002_2.json')
 
 
