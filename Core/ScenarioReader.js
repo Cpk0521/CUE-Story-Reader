@@ -74,6 +74,11 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
     async _loadMasterList(masterlist, language) {
 
+
+        if(masterlist == undefined) {
+            return
+        }
+
         let {storyType, storyID, phase, heroineId, title, mainCommands, Assets} = await this._loader.load(masterlist)
 
         this._StoryType = storyType
@@ -105,6 +110,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             this.emit('AssestsOnSetUp')
             // this._BGManager.execute(21, 3)
 
+            // console.log(this._CommandSet.filter((c)=> c.commandType == 4))
 
             this._waitingTouch()
         })
@@ -248,9 +254,11 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         }
         else if(commandType == 4){
             // console.log(index, '說話')
-            let {message, rates} = content
+            let {message, rates, voieCueName} = content
 
-            _priority.push(() => this._L2dManager.loadAudio(ResourcePath.getAudioSrc(values[0], this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine)))
+            let voiceIndex = values[0] == 0? voieCueName : values[0]
+
+            _priority.push(() => this._L2dManager.loadAudio(ResourcePath.getAudioSrc(voiceIndex, this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine)))
             _executes.push(() => this._L2dManager.speaking(id, rates))
 
             let tran_message = this._isTranslate ? this._TranslateReader.next(this._TranLang): undefined

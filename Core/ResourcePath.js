@@ -5,8 +5,33 @@ class ResourcePath{
     static image_src = 'https://raw.githubusercontent.com/Cpk0521/CUECardsViewer/master/public/Cards/'
     static translate_src = 'https://raw.githubusercontent.com/Cpk0521/CueStoryResource/main/scenario/'
     
-    static getScenarioSrc(storyType, storyId, storyPhase, storyheroine){
-        return ''
+    static getScenarioSrc(storyType, storyId, storyPhase){
+
+        if(storyType == undefined || storyId == undefined) {
+            return
+        }
+
+        let src = ''
+
+        switch (storyType) {
+            case "Main":
+                src = `./Assets/Scenario/main_01/Main_01_${storyId.toString().padStart(2, '0')}/Main_01_${storyId.toString().padStart(2, '0')}_${storyPhase.toString().padStart(2, '0')}.json`
+                break;
+            case "Event":
+                src = `./Assets/Scenario/event/Event_${storyId.toString().padStart(3, '0')}/Event_${storyId.toString().padStart(3, '0')}_${storyPhase.toString().padStart(2, '0')}.json`
+                break;
+            case "Card":
+                src = `./Assets/Scenario/card/Card_${storyId.toString()[1]}${storyId.toString()[2]}/Card_${storyId}_${storyPhase}.json`
+                break;
+            case "Link":
+                src = `./Assets/Scenario/link/Link_${storyId.toString().padStart(3, '0')}.json`
+                break;
+            case "Lesson":
+                src = `./Assets/Scenario/lesson/Lesson_${storyId.toString().padStart(5, '0')}.json`
+                break;
+        }
+
+        return src
     }
 
     static getL2dSrc(heroineId, costumeId){
@@ -29,13 +54,16 @@ class ResourcePath{
                 src = `${this.resource_path}/main_01/Main_01_${storyId.toString().padStart(2, '0')}/Main_01_${storyId.toString().padStart(2, '0')}_${storyPhase.toString().padStart(2, '0')}/main_01_${storyId.toString().padStart(2, '0')}_${storyPhase.toString().padStart(2, '0')}_${index.toString().padStart(3, '0')}.mp3`
                 break;
             case "Event":
+                src = `${this.resource_path}/event/Event_${storyId.toString().padStart(3, '0')}/Event_${storyId.toString().padStart(3, '0')}_${storyPhase.toString().padStart(2, '0')}/Event_${storyId.toString().padStart(3, '0')}_${storyPhase.toString().padStart(2, '0')}_${index.toString().padStart(3, '0')}.mp3`
                 break;
             case "Card":
-                src = `${this.resource_path}/${storyType.toLowerCase()}/${storyType}_${storyheroine.toString().padStart(2, '0')}/${storyType}_${storyId}_${storyPhase}/${storyType.toLowerCase()}_${storyId}_${storyPhase}_${index.toString().padStart(3, '0')}.mp3`
+                src = `${this.resource_path}/card/Card_${storyheroine.toString().padStart(2, '0')}/Card_${storyId}_${storyPhase}/card_${storyId}_${storyPhase}_${index.toString().padStart(3, '0')}.mp3`
                 break;
             case "Link":
+                src = `${this.resource_path}/link/Link_${storyId.toString().padStart(3, '0')}/Link_${storyId.toString().padStart(3, '0')}_${index.toString().padStart(3, '0')}.mp3`
                 break;
             case "Lesson":
+                src = `${this.resource_path}/lesson/Lesson_${storyId.toString().padStart(5, '0')}/Lesson_${storyId.toString().padStart(5, '0')}_${index.toString().padStart(3, '0')}.mp3`
                 break;
         }
 
@@ -62,15 +90,19 @@ class ResourcePath{
         let src = ''
         switch (storyType) {
             case "Main":
+                src = `${this.translate_src}/main_01/Main_01_${storyId.toString().padStart(2, '0')}/Main_01_${storyId.toString().padStart(2, '0')}_${storyPhase.toString().padStart(2, '0')}.json`
                 break;
             case "Event":
+                src = `${this.translate_src}/event/Event_${storyId.toString().padStart(3, '0')}/Event_${storyId.toString().padStart(3, '0')}_${storyPhase.toString().padStart(2, '0')}.json`
                 break;
             case "Card":
-                src = `${this.translate_src}/${storyType.toLowerCase()}/${storyType}_${storyheroine.toString().padStart(2, '0')}/${storyType}_${storyId}_${storyPhase}.json`
+                src = `${this.translate_src}/card/Card_${storyheroine.toString().padStart(2, '0')}/Card_${storyId}_${storyPhase}.json`
                 break;
             case "Link":
+                src = `${this.translate_src}/link/Link_${storyId.toString().padStart(3, '0')}.json`
                 break;
             case "Lesson":
+                src = `${this.translate_src}/lesson/Lesson_${storyId.toString().padStart(5, '0')}.json`
                 break;
         }
 
