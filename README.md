@@ -2,7 +2,7 @@
 
 **A reader to render the CUE! game stories**
 
-[online demo](cpk0521.github.io/CUE-Story-Reader/?type=Card&id=1130001&phase=1)
+[online demo](https://cpk0521.github.io/CUE-Story-Reader/?type=Card&id=1130001&phase=1)
 
 ### These parameters are required to fetch the story
 
