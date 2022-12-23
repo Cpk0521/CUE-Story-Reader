@@ -12,22 +12,72 @@ class TranslateReader extends PIXI.utils.EventEmitter {
     }
 
     async initialize(src){
-        return await this._loader.load(src).then(({Dialogue, Language, Translator})=>{
-            this._messageLog = Dialogue
+        return await this._loader.load(src).then(({Logs, Language, Translator})=>{
+            this._messageLog = Logs
             this._language = Language
             this._translator = Translator
         })
     }
 
-    next(Language = ''){
-        this._curr += 1
-        let log = this.getTranslateLog(this._curr)
-        return {name : log.name[Language], message : log.message[Language]}
+    getMessageLogsByScenarioIndex(scenarioIndex, language = "default") {
+        let log = this._findLogByScenarioIndex(scenarioIndex)
+        if(!log){
+            return 
+        }
+
+        if(language == "default" || !(this._language.includes(language))){
+            return {name : log.name["default"], message : log.message["default"]}
+        }
+
+        return {name : log.name[language], message : log.message[language]}
     }
-    
-    getTranslateLog(index){
-        if(this._messageLog.length <= 1) {
-            return undefined
+
+    getMessageLogsByIndex(index, language = "default") {
+        let log = this._findLogByIndex(index)
+        if(!log){
+            return 
+        }
+
+        if(language == "default" || !(this._language.includes(language))){
+            return {name : log.name["default"], message : log.message["default"]}
+        }
+
+        return {name : log.name[language], message : log.message[language]}
+    }
+
+    getTextByScenarioIndex(scenarioIndex, language = "default") {
+        let log = this._findLogByScenarioIndex(scenarioIndex)
+        if(!log){
+            return 
+        }
+
+        if(language == "default" || !(this._language.includes(language))){
+            return {text : log.message["default"]}
+        }
+
+        return {text : log.message[language]}
+    }
+
+    getTextByIndex(index, language = "default") {
+        let log = this._findLogByIndex(index)
+        if(!log){
+            return 
+        }
+
+        if(language == "default" || !(this._language.includes(language))){
+            return {text : log.message["default"]}
+        }
+
+        return {text : log.message[language]}
+    }
+
+    _findLogByScenarioIndex(scenarioIndex){
+        return this._messageLog.find(log => log.scenarioIndex == scenarioIndex)
+    }
+
+    _findLogByIndex(index){
+        if(index < 0 || index > this._messageLog.length) {
+            return
         }
 
         return this._messageLog[index]

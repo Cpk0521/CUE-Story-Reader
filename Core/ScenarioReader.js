@@ -59,7 +59,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
         //Translate
         this._isTranslate = false
-        this._TranLang = 'zh'
+        this._TranLang = ''
 
         this.emit('ReaderOnCreated')
     }
@@ -91,27 +91,25 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         if(language == 'zh' || language == 'eng' ) {
             this._isTranslate = true
             this._TranLang = language
+
         }
 
         return Promise.all([
             this._L2dManager.initialize(Assets.heroines, this._checkHeroSort()),
             this._BGManager.initialize(Assets.backgrounds),
+            this._MessageManager.initialize(Assets.heroines, this._TranLang),
+            this._MovieManager.initialize(Assets.movieNames),
             // this._BGManager.initialize([{
             //     "id": 21,
             //     "subId": 3
             //   }
             // ]),
-            this._MessageManager.initialize(Assets.heroines),
-            this._MovieManager.initialize(Assets.movieNames),
             new Promise((res)=>{
                 this._isTranslate ? res(this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId))) : res()
             })
         ]).then(async ()=>{
             this.emit('AssestsOnSetUp')
             // this._BGManager.execute(21, 3)
-
-            // console.log(this._CommandSet.filter((c)=> c.commandType == 4))
-
             this._waitingTouch()
         })
     }
@@ -146,9 +144,9 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         }
         
         // this.next()
-
         for (let index = 0; index < this._CommandSet.length; index++) {
             let _curr = this._CommandSet[index];
+            // console.log(_curr)
             this._current = index
             this._commIndex = _curr.index
             // console.log(index, _curr.index)
@@ -198,9 +196,10 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
     _finish() {
         console.log('故事完結')
+        this._destroy()
     }
 
-    async destroy(){
+    _destroy(){
         console.log('destory')
     }
 
@@ -214,8 +213,9 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             //     resolve()
             // }, (command.time * 1000)) 
             
-            let {priority, executes, waiting} = this._loadCommand(command)
+            let {priority, second, executes, waiting} = this._loadCommand(command)
             await Promise.all(priority.map(task => task()))
+            await Promise.all(second.map(task => task()))
             await Promise.all(executes.map(task => task()))
             await this.delay(waiting + (command.time * 1000))
             resolve()
@@ -225,14 +225,16 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
     _loadCommand(command){
         let {index, commandType, subCommands, values, commandParams, time, id, ...content} = command
 
-        let _priority = []
-        let _executes = []
+        let _priority = [] //最優先
+        let _second = [] //次級
+        let _executes = [] //正常執行
         let _waiting = 0
 
         if(subCommands?.length > 0) {
             subCommands?.map((sub)=>{
                 let sub_com = this._loadCommand(sub)
                 _priority = _priority.concat(sub_com.priority)
+                _second = _second.concat(sub_com.second)
                 _executes = _executes.concat(sub_com.executes)
                 _waiting += sub_com.waiting
             })
@@ -261,11 +263,14 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             _priority.push(() => this._L2dManager.loadAudio(ResourcePath.getAudioSrc(voiceIndex, this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine)))
             _executes.push(() => this._L2dManager.speaking(id, rates))
 
-            let tran_message = this._isTranslate ? this._TranslateReader.next(this._TranLang): undefined
-
-            if(tran_message != undefined) {
-                _executes.push(() => this._MessageManager.singleShow(id, tran_message.message, tran_message.name))
-            }else{
+            if(this._isTranslate) {
+                let log =  this._TranslateReader.getMessageLogsByScenarioIndex(index, this._TranLang)
+                console.log(log)
+                if(log != undefined){
+                    _executes.push(() => this._MessageManager.singleShow(id, log.message, log.name))
+                }
+            }
+            else{
                 _executes.push(() => this._MessageManager.singleShow(id, message))
             }
 
@@ -275,11 +280,13 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             // console.log(index, 'マネージャー說話')
             let {message} = content
             
-            let tran_message = this._isTranslate ? this._TranslateReader.next(this._TranLang): undefined
-            
-            if(tran_message != undefined) {
-                _executes.push(() => this._MessageManager.singleShow(id, tran_message.message, tran_message.name))
-            }else{
+            if(this._isTranslate) {
+                let log =  this._TranslateReader.getMessageLogsByScenarioIndex(index, this._TranLang)
+                if(log != undefined){
+                    _executes.push(() => this._MessageManager.singleShow(id, log.message, log.name))
+                }
+            }
+            else{
                 _executes.push(() => this._MessageManager.singleShow(id, message, 'マネージャー'))
             }
 
@@ -288,12 +295,20 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         else if(commandType == 6){
             // console.log(index, '別人說話')
             let {name, message} = content
-            let tran_message = this._isTranslate ? this._TranslateReader.next(this._TranLang): undefined
 
-            if(tran_message != undefined) {
-                _executes.push(() => this._MessageManager.singleShow(100, tran_message.message, tran_message.name))
-            }else{
-                _executes.push(() => this._MessageManager.singleShow(100, message, name))
+            let isvoice =  values.length > 1 ? values[0] > 0 : false
+            if(isvoice) {
+                _executes.push(() => this._SoundManager.playAudio_Full(ResourcePath.getAudioSrc(values[0], this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine))) 
+            }
+
+            if(this._isTranslate) {
+                let log =  this._TranslateReader.getMessageLogsByScenarioIndex(index, this._TranLang)
+                if(log != undefined){
+                    _executes.push(() => this._MessageManager.singleShow(id, log.message, log.name))
+                }
+            }
+            else{
+                _executes.push(() => this._MessageManager.singleShow(id, message, name))
             }
 
             _waiting += 2000
@@ -315,24 +330,25 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         else if(commandType == 10){
             // console.log(index, '多人說話')
             let {multiHeroineParams, message} = content
-            let tran_message = this._isTranslate ? this._TranslateReader.next(this._TranLang): undefined
-
-            if(tran_message != undefined) {
-                _executes.push(() => this._MessageManager.multiShow(multiHeroineParams, tran_message.message))
-            }else{
+           
+            if(this._isTranslate) {
+                let log =  this._TranslateReader.getMessageLogsByScenarioIndex(index, this._TranLang)
+                if(log != undefined){
+                    _executes.push(() => this._MessageManager.multiShow(multiHeroineParams, log.message))
+                }
+            }
+            else{
                 _executes.push(() => this._MessageManager.multiShow(multiHeroineParams, message))
             }
 
             _waiting += 2000
-
         }
 
         else if(commandType == 11){
             // console.log(index, 'live2d出場')
             let {fadeTime, rates} = content
 
-            //優先處理
-            _priority.push(async () => {
+            _second.push(async () => {
                 await this._L2dManager.action(id, {
                     motion : values[0],
                     expression : values[1],
@@ -420,7 +436,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         }
         else if(commandType == 18){
             // console.log(index, 'live2d消失')
-            _executes.push(() => this._L2dManager.hideAll())
+            _priority.push(() => this._L2dManager.hideAll())
         }
 
         else if(commandType == 21){
@@ -483,7 +499,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         }
         else if(commandType == 27){
             // console.log(index, '對話框隱藏')
-            _executes.push(() => this._MessageManager.hide())
+            _priority.push(() => this._MessageManager.hide())
         }
         else if(commandType == 29){
             // console.log(index, '???')
@@ -495,8 +511,17 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         }
         else if(commandType == 31){
             // console.log(index, '中間出字')
-            let {message} = content
-            this._MiscManager.showText(message)
+            let {name} = content
+            if(this._isTranslate) {
+                let log =  this._TranslateReader.getTextByScenarioIndex(index, this._TranLang)
+                if(log != undefined){
+                    _executes.push(()=> this._MiscManager.showText(log.text))
+                }
+            }
+            else{
+                _executes.push(()=> this._MiscManager.showText(name))
+            }
+
         }
         else if(commandType == 32){
             // console.log(index, '???')
@@ -532,7 +557,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             // console.log(index, '???')
         }
 
-        return {priority: _priority, executes : _executes, waiting : _waiting}
+        return {priority: _priority, second : _second, executes : _executes, waiting : _waiting}
     }
 
     delay(time) {

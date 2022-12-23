@@ -15,6 +15,8 @@ class SoundManager extends PIXI.utils.EventEmitter {
 
         this._SEaudio = new Audio()
         this._BGMaudio = new Audio()
+
+        this._Miscaudio = new Audio()
     }
 
     async playBGMAudio(src){
@@ -45,6 +47,18 @@ class SoundManager extends PIXI.utils.EventEmitter {
             this._SEaudio.play()
             this._SEaudio.volume = 0.7
             res()
+        })
+    }
+
+    async playAudio_Full(src) {
+        return new Promise((res)=>{
+            this._Miscaudio.src = src
+            this._Miscaudio.play()
+            this._Miscaudio.volume = 0.7
+
+            this._Miscaudio.onended = () => {
+                res()
+            }
         })
     }
 

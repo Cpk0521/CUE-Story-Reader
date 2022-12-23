@@ -15,23 +15,32 @@ class MiscManager {
             NotoSansTC_Black : './Assets/Font/NotoSansTC_Black.otf',
         })
 
+        this._loader.loadBundle('Misc')
+
     }
 
     async showText(text){
 
+        this._TextContainer.alpha = 0
         this._TextContainer.removeChildren()
 
-        await this._loader.loadBundle('Misc')
-            let Text = new PIXI.Text(text, new PIXI.TextStyle({
+        let Text = new PIXI.Text(text, new PIXI.TextStyle({
             fontFamily: "FOT RodinCattleya Pro DB",
             fill: 0xffffff,
             fontSize: 30,
             letterSpacing: 1,
+            dropShadow: true,
+            dropShadowAngle: 0,
+            dropShadowDistance: 1,
         }));
         Text.anchor.set(0.5)
         Text.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
 
         this._TextContainer.addChild(Text)
+
+        let t1 = gsap.timeline()
+        return t1.to(this._TextContainer, {alpha : 1, duration : .5})
+                 .to(this._TextContainer, {alpha : 0, duration : .5}, "+=2")
     }
 
     transition(id) {

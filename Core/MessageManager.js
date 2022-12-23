@@ -52,7 +52,7 @@ class MessageManager extends PIXI.utils.EventEmitter {
         }
     }
 
-    async initialize(data) {
+    async initialize(data, language = 'normal') {
 
         let default_data = Heroine[0]
         this._charMap.set(0, default_data)
@@ -99,6 +99,10 @@ class MessageManager extends PIXI.utils.EventEmitter {
             }
 
             this._nameTag.push({nameTag : nameTag, messageNameText : messageNameText})
+        }
+
+        if(language == 'zh') {
+            this.switchStyle(language)
         }
         
         // this.visible = true
@@ -194,7 +198,7 @@ class MessageManager extends PIXI.utils.EventEmitter {
         this._nameTag.forEach(nametag => {
             nametag.messageNameText.style = this._NameTextStyle[style]
         });
-        this._messageText.style = this._NameTextStyle[style]
+        this._messageText.style = this._messageTextStyle[style]
     }
 
 
