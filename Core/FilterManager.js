@@ -1,6 +1,5 @@
 class FilterManager {
     
-    _loader = PIXI.Assets
     constructor(){
         this._container = new PIXI.Container();
 
@@ -34,6 +33,8 @@ class FilterManager {
             this._container.addChild(...child)
         }
         this._container.addChild(this._fontcontainer)
+
+        return this._container
     }
 
     async showMask(id){

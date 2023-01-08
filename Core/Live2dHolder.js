@@ -6,7 +6,7 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         this.isBuild = false
         this._Model = {}
     }
-
+    
     static async create(jsonurl, onloaded, onError) {
         return new Live2dHolder().create(jsonurl).then(onloaded).catch(onError)
     }
@@ -218,6 +218,15 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
     moveTo(x, time = 1){
         return gsap.to(this._Model, {
             x: x,
+            aplha : 0,
+            duration : time
+        })
+    }
+
+    moveFrom(x, time = 1){
+        return gsap.from(this._Model, {
+            x: x,
+            alpha : 0,
             duration : time
         })
     }

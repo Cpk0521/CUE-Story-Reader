@@ -24,17 +24,15 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         this._MiscManager = new MiscManager() // Transitions & Text
         this._FilterManager = new FilterManager() // Filter
 
-        // add to Filter Container 
-        this._FilterManager.addContainer(
-            this._BGManager.backcontainer,
-            this._L2dManager.container,
-            this._BGManager.frontcontainer,
-            this._StillManager.container,
-        )
 
         //add to main Container 
         this._gameapp.mainContainer.addChild(
-            this._FilterManager.container,
+            this._FilterManager.addContainer( // add to Filter Container 
+                this._BGManager.backcontainer,
+                this._L2dManager.container,
+                this._BGManager.frontcontainer,
+                this._StillManager.container,
+            ),
             this._MessageManager.container,
             this._MovieManager.container,
             this._MiscManager.TextContainer,
@@ -67,13 +65,20 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
     static create(gameapp, config) {
         return new this(gameapp, config)
     }
+    
+    static loadAssets(...args){
+        return this.instance?._loadAssets(...args)
+    }
+
+    async _loadAssets(...args){
+
+    }
 
     static loadMasterList(masterlist, language){
         return this.instance?._loadMasterList(masterlist, language)
     }
 
     async _loadMasterList(masterlist, language) {
-
 
         if(masterlist == undefined) {
             return
@@ -91,7 +96,6 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         if(language == 'zh' || language == 'eng' ) {
             this._isTranslate = true
             this._TranLang = language
-
         }
 
         return Promise.all([
@@ -100,8 +104,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             this._MessageManager.initialize(Assets.heroines, this._TranLang),
             this._MovieManager.initialize(Assets.movieNames),
             // this._BGManager.initialize([{
-            //     "id": 21,
-            //     "subId": 3
+            //     "id": 34,
+            //     "subId": 1
             //   }
             // ]),
             new Promise((res)=>{
@@ -109,7 +113,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             })
         ]).then(async ()=>{
             this.emit('AssestsOnSetUp')
-            // this._BGManager.execute(21, 3)
+            // this._BGManager.execute(34, 1)
             this._waitingTouch()
         })
     }
@@ -135,7 +139,6 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         GameApp.App.view.addEventListener('touchstart', callback);
     }   
 
-
     async start(){
         console.log('start')
 
@@ -146,10 +149,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         // this.next()
         for (let index = 0; index < this._CommandSet.length; index++) {
             let _curr = this._CommandSet[index];
-            // console.log(_curr)
             this._current = index
             this._commIndex = _curr.index
-            // console.log(index, _curr.index)
             await this._render(_curr)            
         }
 
@@ -196,11 +197,17 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
     _finish() {
         console.log('故事完結')
-        this._destroy()
+        // this._destroy()
     }
 
     _destroy(){
         console.log('destory')
+        this._StoryType = ''
+        this._StoryId = ''
+        this._StoryPhase = 0
+        this._StoryHeroine = 0
+        this._Storytitle = ''
+        this._CommandSet = []
     }
 
     async _render(command) {
@@ -360,8 +367,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             _executes.push(async () => {
                 await this.delay(time * 1000)
                 await this._L2dManager.display(id, {
-                    x1 : values[3],
-                    x2 : values[4],
+                    from_x : values[3],
+                    to_x : values[4],
                     fadeTime : fadeTime,
                 })
                 return Promise.resolve()

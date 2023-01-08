@@ -3,26 +3,6 @@
     "SubId": 1,
     "Layer": [
         {
-            "Name": "balloon",
-            "Textures": "balloon.png"
-        },
-        {
-            "Name": "cloud_A",
-            "Textures": "cloud_A.png"
-        },
-        {
-            "Name": "cloud_B",
-            "Textures": "cloud_B.png"
-        },
-        {
-            "Name": "cloud_C",
-            "Textures": "cloud_C.png"
-        },
-        {
-            "Name": "EF_trim",
-            "Textures": "EF_trim.png"
-        },
-        {
             "Name": "sky",
             "Textures": "sky.png",
             "Type": "Sprite",
@@ -32,6 +12,71 @@
                 "x": 0.5,
                 "y": 0.5
             }
+        },
+        {
+            "Name": "balloon",
+            "Textures": "balloon.png"
+        },
+        {
+            "Name": "cloud_A",
+            "Textures": "cloud_A.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 277,
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            }
+        },
+        {
+            "Name": "cloud_B",
+            "Textures": "cloud_B.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 229,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_C",
+            "Textures": "cloud_C.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 353,
+            "Position" : {
+                "x": 667,
+                "y": 374.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "EF_trim",
+            "Textures": "EF_trim.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Alpha" : 0.3
         }
     ],
     "CanvasScaler": {

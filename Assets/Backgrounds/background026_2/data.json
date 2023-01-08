@@ -3,6 +3,55 @@
     "SubId": 2,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 320,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 270,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "wheel",
+            "Textures": "wheel.png",
+            "Type": "Sprite",
+            "Width": 391.21,
+            "Height": 391.21,
+            "Position" : {
+                "x": 41,
+                "y": 102.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Aimation":{
+                "type" : "rotation"
+            },
+            "Movingspeed" : 0.02
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -12,10 +61,6 @@
                 "x": 0.5,
                 "y": 0.5
             }
-        },
-        {
-            "Name": "cloud",
-            "Textures": "cloud.png"
         },
         {
             "Name": "gondola_01_green",
@@ -48,14 +93,6 @@
         {
             "Name": "gondola_7_yellow",
             "Textures": "gondola_7_yellow.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
-        },
-        {
-            "Name": "wheel",
-            "Textures": "wheel.png"
         }
     ],
     "CanvasScaler": {

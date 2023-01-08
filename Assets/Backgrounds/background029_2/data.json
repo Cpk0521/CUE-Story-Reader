@@ -3,31 +3,68 @@
     "SubId": 2,
     "Layer": [
         {
-            "Name": "base",
-            "Textures": "base.png",
+            "Name": "sky",
+            "Textures": "sky.png",
             "Type": "Sprite",
             "Width": 1334,
-            "Height": 750,
+            "Height": 390,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud1",
+            "Textures": "cloud1.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 162,
+            "Position" : {
+                "x": 667,
+                "y": 279
+            },
             "Anchor": {
                 "x": 0.5,
                 "y": 0.5
             }
         },
         {
-            "Name": "cloud1",
-            "Textures": "cloud1.png"
+            "Name": "cloud23",
+            "Textures": "cloud23.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 276.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
-            "Name": "cloud23",
-            "Textures": "cloud23.png"
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 624.5,
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            },
+            "Position" : {
+                "x": 0,
+                "y": 750
+            }
         },
         {
             "Name": "Sandstorm_output",
             "Textures": "Sandstorm_output.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         }
     ],
     "CanvasScaler": {

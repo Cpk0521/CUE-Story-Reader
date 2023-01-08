@@ -15,7 +15,18 @@
         },
         {
             "Name": "flare",
-            "Textures": "flare.png"
+            "Textures": "flare.png",
+            "Type": "Sprite",
+            "Width": 1012,
+            "Height": 298,
+            "Position" : {
+                "x": 764,
+                "y": 159
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {

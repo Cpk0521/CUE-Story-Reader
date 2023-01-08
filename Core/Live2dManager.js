@@ -67,13 +67,13 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
     //==============================================
 
-    async display(id, {x1, x2, fadeTime}, ...content){
+    async display(id, {from_x, to_x, fadeTime}, ...content){
         let holder = this._getBuiltHolder(id)
-        let new_x1 = ( GameApp.appSize.width / 2 ) + x1
-        holder.setPosition(new_x1, GameApp.appSize.height * 0.895)
-        let new_x2 = ( GameApp.appSize.width / 2 ) + x2
-        if(new_x1 != new_x2) {
-            await holder.moveTo(new_x2, fadeTime)
+        let new_to_x = ( GameApp.appSize.width / 2 ) + to_x
+        holder.setPosition(new_to_x, GameApp.appSize.height * 0.895)
+        if(from_x != to_x) {
+            let new_from_x = ( GameApp.appSize.width / 2 ) + from_x
+            await holder.moveFrom(new_from_x, fadeTime)
         }
 
         if(this._savingMode) {
@@ -117,7 +117,6 @@ class Live2dManager extends PIXI.utils.EventEmitter {
     async moving(id, {newpoint, rate}){
         let holder = this._getBuiltHolder(id)
         let new_x = ( GameApp.appSize.width / 2 ) + newpoint
-        // holder.setPosition(new_x, GameApp.appSize.height * 0.895)
         await holder.moveTo(new_x, rate)
         return Promise.resolve(holder)
     }

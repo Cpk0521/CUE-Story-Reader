@@ -3,14 +3,48 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 300,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1704.4,
+            "Height": 213.1,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
             "Width": 1334,
-            "Height": 750,
+            "Height": 590,
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
             "Anchor": {
-                "x": 0.5,
-                "y": 0.5
+                "x": 0,
+                "y": 1
             }
         },
         {
@@ -20,14 +54,6 @@
         {
             "Name": "BG027_WaterMask",
             "Textures": "BG027_WaterMask.png"
-        },
-        {
-            "Name": "cloud",
-            "Textures": "cloud.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         }
     ],
     "CanvasScaler": {

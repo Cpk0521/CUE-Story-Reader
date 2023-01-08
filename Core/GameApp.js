@@ -33,8 +33,13 @@ class GameApp extends PIXI.utils.EventEmitter {
         this._app.stage.addChild(this._mainContainer)
 
         //ticker
+        // this._gsapTicker = gsap.ticker
         this._ticker = PIXI.Ticker.shared;
         this._ticker.autoStart = true
+        // this._gsapTicker.add(() => { 
+        //     this._ticker.update();
+        // });
+        // this._gsapTicker.fps(30);
 
         //resize the PIXI Application and add event listener
         this._resize();

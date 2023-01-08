@@ -188,20 +188,28 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                     let movingspeed = 0.050
                     let min = element.Aimation.min ?? 0
                     let max = element.Aimation.max ?? GameApp.appSize.width
+                    let updatemotion = ()=>{}
                     let count = max
                     if(element.Movingspeed != undefined) {
                         movingspeed = element.Movingspeed
 
                     }
 
-                    let updatemotion = ()=>{
-                        sprite.position.x -= movingspeed;
-                        count = count - Math.abs(movingspeed)
-                        if(count < min) {
-                            sprite.position.x = Math.floor(element.Position.x * ratio)
-                            count = max
+                    if(element.Aimation.type == "rotation") {
+                        updatemotion = () => {
+                            sprite.rotation += 0.01 * movingspeed
+                        }
+                    }else{
+                        updatemotion = ()=>{
+                            sprite.position.x -= movingspeed;
+                            count = count - Math.abs(movingspeed)
+                            if(count < min) {
+                                sprite.position.x = Math.floor(element.Position.x * ratio)
+                                count = max
+                            }
                         }
                     }
+
 
                     animations.push(updatemotion)
                 }

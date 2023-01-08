@@ -3,6 +3,36 @@
     "SubId": 3,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 320,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 270,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -12,10 +42,6 @@
                 "x": 0.5,
                 "y": 0.5
             }
-        },
-        {
-            "Name": "cloud",
-            "Textures": "cloud.png"
         },
         {
             "Name": "frame_back",
@@ -72,10 +98,6 @@
         {
             "Name": "round_4",
             "Textures": "round_4.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         },
         {
             "Name": "wheel_dark",

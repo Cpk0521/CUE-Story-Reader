@@ -18,18 +18,16 @@ window.onload = () => {
     
     ScenarioReader.create(app)
     // ScenarioReader.loadMasterList('./Assets/Scenario/card/Card_01/Card_1010001_1.json')
-    // ScenarioReader.loadMasterList('./Test/Card_3010004_2.json')
-    // ScenarioReader.loadMasterList('./Assets/Scenario/card/Card_13/Card_1130001_1.json', 'zh')
-    // ScenarioReader.loadMasterList('./Test/Card_4010012_3.json')
-    // ScenarioReader.loadMasterList('./Test/Card_4010005_3.json')
-    // ScenarioReader.loadMasterList('./Test/Card_2150002_2.json')
 
     let src = ResourcePath.getScenarioSrc(story_type, story_id, phase)
     if(src != undefined) {
-        ScenarioReader.loadMasterList(ResourcePath.getScenarioSrc(story_type, story_id, phase), lang)
+        ScenarioReader.loadMasterList(src, lang)
+    }
+    else{
+        alert('please enter the correct parameters <type, id, phase>')
     }
 
-    
+
 
 
 }
