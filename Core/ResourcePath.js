@@ -1,6 +1,7 @@
 class ResourcePath{
 
-    static l2dsrc = 'https://cpk0521.github.io/CUE-live2d-Viewer'
+    // static l2dsrc = 'https://cpk0521.github.io/CUE-live2d-Viewer'
+    static l2dsrc = 'https://raw.githubusercontent.com/Cpk0521/CueStoryResource/main/'
     static resource_path = 'https://raw.githubusercontent.com/Cpk0521/CueStoryResource/main/voice/'
     static image_src = 'https://raw.githubusercontent.com/Cpk0521/CUECardsViewer/master/public/Cards/'
     static translate_src = 'https://raw.githubusercontent.com/Cpk0521/CueStoryResource/main/scenario/'

@@ -3,19 +3,34 @@
     "SubId": 2,
     "Layer": [
         {
-            "Name": "base",
-            "Textures": "base.png",
+            "Name": "sky",
+            "Textures": "sky.png",
             "Type": "Sprite",
             "Width": 1334,
-            "Height": 750,
+            "Height": 500,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
             "Anchor": {
-                "x": 0.5,
-                "y": 0.5
+                "x": 0,
+                "y": 0
             }
         },
         {
             "Name": "cloud1",
-            "Textures": "cloud1.png"
+            "Textures": "cloud1.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 460.6469,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "cloud2",
@@ -26,8 +41,15 @@
             "Textures": "cloud3.png"
         },
         {
-            "Name": "sky",
-            "Textures": "sky.png"
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {

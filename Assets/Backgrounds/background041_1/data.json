@@ -15,11 +15,34 @@
         },
         {
             "Name": "front",
-            "Textures": "front.png"
+            "Textures": "front.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 286,
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            },
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Level" : "front"
         },
         {
             "Name": "light",
-            "Textures": "light.png"
+            "Textures": "light.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 403.5,
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "Position" : {
+                "x": 0,
+                "y": 0
+            }
         }
     ],
     "CanvasScaler": {

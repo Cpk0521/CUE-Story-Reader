@@ -7,8 +7,6 @@ class TranslateReader extends PIXI.utils.EventEmitter {
         this._messageLog = []
         this._language = []
         this._translator = []
-
-        this._curr = -1
     }
 
     async initialize(src){

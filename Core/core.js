@@ -9,23 +9,23 @@ window.onload = () => {
     const element = document.getElementById('app')
 
     const app = GameApp.create(element, {
-        width : 1480, //1480
-        height : 720, //720
-        // width : 1334, //1480
-        // height : 750, //720
+        width : 1480,
+        height : 720,
+        // width : 1334,
+        // height : 750,
         // background : 0xFFFFFF,
     })
     
     ScenarioReader.create(app)
-    // ScenarioReader.loadMasterList('./Assets/Scenario/card/Card_01/Card_1010001_1.json')
+    ScenarioReader.loadMasterList('./Assets/Scenario/card/Card_01/Card_1010001_1.json')
 
-    let src = ResourcePath.getScenarioSrc(story_type, story_id, phase)
-    if(src != undefined) {
-        ScenarioReader.loadMasterList(src, lang)
-    }
-    else{
-        alert('please enter the correct parameters <type, id, phase>')
-    }
+    // let src = ResourcePath.getScenarioSrc(story_type, story_id, phase)
+    // if(src != undefined) {
+    //     ScenarioReader.loadMasterList(src, lang)
+    // }
+    // else{
+    //     alert('please enter the correct parameters <type, id, phase>')
+    // }
 
 
 
