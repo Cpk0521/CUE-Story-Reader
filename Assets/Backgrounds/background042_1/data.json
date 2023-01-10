@@ -3,6 +3,52 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 361,
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "Position" : {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_shadow",
+            "Textures": "cloud_shadow.png",
+            "Type": "Sprite",
+            "Width": 1334.2,
+            "Height": 284,
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Alpha" : 0.5
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1333,
+            "Height": 308.5,
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "Position" : {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,20 +60,19 @@
             }
         },
         {
-            "Name": "cloud",
-            "Textures": "cloud.png"
-        },
-        {
-            "Name": "cloud_shadow",
-            "Textures": "cloud_shadow.png"
-        },
-        {
             "Name": "shadow_mask",
-            "Textures": "shadow_mask.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
+            "Textures": "shadow_mask.png",
+            "Width": 1334.2,
+            "Height": 284,
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            },
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Alpha" : 0.15
         }
     ],
     "CanvasScaler": {

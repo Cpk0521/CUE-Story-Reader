@@ -3,6 +3,36 @@
     "SubId": 2,
     "Layer": [
         {
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 400,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_trim",
+            "Textures": "cloud_trim.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 253,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,44 +44,125 @@
             }
         },
         {
-            "Name": "cloud_trim",
-            "Textures": "cloud_trim.png"
-        },
-        {
             "Name": "deco_left",
-            "Textures": "deco_left.png"
+            "Textures": "deco_left.png",
+            "Type": "Sprite",
+            "Width": 412,
+            "Height": 479,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "deco_right",
-            "Textures": "deco_right.png"
+            "Textures": "deco_right.png",
+            "Type": "Sprite",
+            "Width": 388,
+            "Height": 300.5,
+            "Position" : {
+                "x": 813,
+                "y": 321.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "flare_trim",
-            "Textures": "flare_trim.png"
-        },
-        {
-            "Name": "sky_trim",
-            "Textures": "sky_trim.png"
+            "Textures": "flare_trim.png",
+            "Type": "Sprite",
+            "Width": 908,
+            "Height": 702,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "Alpha" : 0.2
         },
         {
             "Name": "star_A",
-            "Textures": "star_A.png"
+            "Textures": "star_A.png",
+            "Type": "Sprite",
+            "Width": 46.5,
+            "Height": 54.5,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Position" : {
+                "x": 98.5,
+                "y": 27.5
+            }
         },
         {
             "Name": "star_B",
-            "Textures": "star_B.png"
+            "Textures": "star_B.png",
+            "Type": "Sprite",
+            "Width": 39.5,
+            "Height": 84,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Position" : {
+                "x": 188,
+                "y": 42
+            }
         },
         {
             "Name": "star_C",
-            "Textures": "star_C.png"
+            "Textures": "star_C.png",
+            "Type": "Sprite",
+            "Width": 34,
+            "Height": 116.5,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Position" : {
+                "x": 284,
+                "y": 58.5
+            }
         },
         {
             "Name": "star_D",
-            "Textures": "star_D.png"
+            "Textures": "star_D.png",
+            "Type": "Sprite",
+            "Width": 34,
+            "Height": 149,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Position" : {
+                "x": 347,
+                "y": 74.5
+            }
         },
         {
             "Name": "star_E",
-            "Textures": "star_E.png"
+            "Textures": "star_E.png",
+            "Type": "Sprite",
+            "Width": 29,
+            "Height": 158.5,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Position" : {
+                "x": 400.5,
+                "y": 97.5
+            }
         }
     ],
     "CanvasScaler": {

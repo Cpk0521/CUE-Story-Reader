@@ -3,6 +3,51 @@
     "SubId": 3,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 400,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud1",
+            "Textures": "cloud1.png",
+            "Type": "Sprite",
+            "Width": 1102.5,
+            "Height": 190,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud2",
+            "Textures": "cloud2.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 237,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,20 +59,19 @@
             }
         },
         {
-            "Name": "cloud1",
-            "Textures": "cloud1.png"
-        },
-        {
-            "Name": "cloud2",
-            "Textures": "cloud2.png"
-        },
-        {
             "Name": "poster",
-            "Textures": "poster.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
+            "Textures": "poster.png",
+            "Type": "Sprite",
+            "Width": 82,
+            "Height": 134,
+            "Position" : {
+                "x": 528,
+                "y": 266
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {

@@ -3,6 +3,36 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "sky_trim",
+            "Textures": "sky_trim.png",
+            "Type": "Sprite",
+            "Width": 760,
+            "Height": 400,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_trim",
+            "Textures": "cloud_trim.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 206,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,16 +44,19 @@
             }
         },
         {
-            "Name": "cloud_trim",
-            "Textures": "cloud_trim.png"
-        },
-        {
             "Name": "poster",
-            "Textures": "poster.png"
-        },
-        {
-            "Name": "sky_trim",
-            "Textures": "sky_trim.png"
+            "Textures": "poster.png",
+            "Type": "Sprite",
+            "Width": 82,
+            "Height": 134,
+            "Position" : {
+                "x": 528,
+                "y": 266
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {
