@@ -3,12 +3,47 @@
     "SubId": 4,
     "Layer": [
         {
+            "Name": "base",
+            "Textures": "base.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
             "Name": "base_left_nolight",
-            "Textures": "base_left_nolight.png"
+            "Textures": "base_left_nolight.png",
+            "Type": "Sprite",
+            "Width": 743.5,
+            "Height": 655.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "Alpha" : 0.3
         },
         {
             "Name": "flare_lamp",
-            "Textures": "flare_lamp.png"
+            "Textures": "flare_lamp.png",
+            "Type": "Sprite",
+            "Width": 1146,
+            "Height": 256,
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            },
+            "Alpha" : 0.25
         },
         {
             "Name": "Particle_output",

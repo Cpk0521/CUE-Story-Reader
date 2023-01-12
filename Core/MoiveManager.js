@@ -19,7 +19,9 @@ class MoiveManager {
         let ratio = (GameApp.appSize.height / 1080)
 
         for (let index = 0; index < Assets.length; index++) {
+
             let texture = PIXI.Texture.from(ResourcePath.getMovieSrc(Assets[index]));
+            
             texture.baseTexture.resource.autoPlay = false
             let videoSprite = new PIXI.Sprite(texture);
             
@@ -29,6 +31,7 @@ class MoiveManager {
             videoSprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
 
             this._movieMap.set(Assets[index], videoSprite)
+            
         }
     }
 
@@ -39,27 +42,36 @@ class MoiveManager {
             let video = this._getMovie(name)
             // let videotexture = this._getMovie(name)
 
-            // let videoSprite = new PIXI.Sprite(videotexture);
-            // videoSprite.width = 1920 * ratio
-            // videoSprite.height = 1080 * ratio;
-            // videoSprite.anchor.set(0.5)
-            // videoSprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
-
-            let controller = video.texture.baseTexture.resource.source;
-
-            if(this._container.children.length > 1){
-                this._container.removeChildAt(1)
-            }
-
-            this._container.addChild(video)
-            this._container.visible = true
-            
-            controller.play()
-            controller.onended = ()=>{
-                this._container.removeChild(video);
+            if(!video || !video?.texture.valid){
                 this._container.visible = false
                 resolve()
+            }else{
+
+                // let videoSprite = new PIXI.Sprite(videotexture);
+                // videoSprite.width = 1920 * ratio
+                // videoSprite.height = 1080 * ratio;
+                // videoSprite.anchor.set(0.5)
+                // videoSprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+    
+                let controller = video.texture.baseTexture.resource.source;
+    
+                if(this._container.children.length > 1){
+                    this._container.removeChildAt(1)
+                }
+    
+                this._container.addChild(video)
+                this._container.visible = true
+                
+                controller.play()
+                controller.onended = ()=>{
+                    this._container.removeChild(video);
+                    this._container.visible = false
+                    resolve()
+                }
+
             }
+           
+
         })
     }
 

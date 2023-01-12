@@ -78,16 +78,17 @@ class Live2dAudioPlayer extends PIXI.utils.EventEmitter {
 
         return new Promise((resolve, reject) => {
             
+
             this._audio.src = src
             this._audio.muted = false
             this._audio.load()
-
+            
             this._audio.oncanplaythrough = () => {
                 resolve()
             }
 
             this._audio.onerror = () => {
-                reject()
+                resolve()
             }
         })
     }
@@ -98,19 +99,27 @@ class Live2dAudioPlayer extends PIXI.utils.EventEmitter {
             // this._audio.src = src
             // this._audio.muted = false
             
-            this._playAudio()
-            this._audio.play()
-            
-            this._audio.onended = () =>{
-                if(this._audioContext.state === 'running') {
-                    this._audioContext.suspend()
+            // console.log(this._audio.error)
+
+            if(this._audio.networkState != 3) {
+                this._playAudio()
+                this._audio.play()
+
+                this._audio.onended = () =>{
+                    if(this._audioContext.state === 'running') {
+                        this._audioContext.suspend()
+                    }
+                    resolve()
                 }
+    
+                this._audio.onerror = () => {
+                    reject()
+                }
+                
+            }else{
                 resolve()
             }
-
-            this._audio.onerror = () => {
-                reject()
-            }
+            
         })
 
     }

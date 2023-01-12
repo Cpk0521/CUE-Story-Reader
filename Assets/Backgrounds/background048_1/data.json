@@ -14,20 +14,65 @@
             }
         },
         {
-            "Name": "base2",
-            "Textures": "base2.png"
+            "Name": "light",
+            "Textures": "light.png",
+            "Type": "Sprite",
+            "Width": 317.5198,
+            "Height": 150.7698,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            },
+            "Alpha" : 0.4
         },
         {
-            "Name": "light",
-            "Textures": "light.png"
+            "Name": "base2",
+            "Textures": "base2.png",
+            "Type": "Sprite",
+            "Width": 680.8958,
+            "Height": 750.375,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
             "Name": "poster",
-            "Textures": "poster.png"
+            "Textures": "poster.png",
+            "Type": "Sprite",
+            "Width": 136.1792,
+            "Height": 143.8219,
+            "Position" : {
+                "x": 350,
+                "y": 72
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "tapestry",
-            "Textures": "tapestry.png"
+            "Textures": "tapestry.png",
+            "Type": "Sprite",
+            "Width": 81.98542,
+            "Height": 128.5365,
+            "Position" : {
+                "x": 651,
+                "y": 360.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {

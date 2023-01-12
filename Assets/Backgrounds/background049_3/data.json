@@ -3,6 +3,36 @@
     "SubId": 3,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 130,
+            "Height": 199.5,
+            "Position" : {
+                "x": 688,
+                "y": 100
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 340,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,40 +44,110 @@
             }
         },
         {
-            "Name": "cloud",
-            "Textures": "cloud.png"
-        },
-        {
-            "Name": "flag_A1",
-            "Textures": "flag_A1.png"
-        },
-        {
-            "Name": "flag_A2",
-            "Textures": "flag_A2.png"
-        },
-        {
-            "Name": "flag_B1",
-            "Textures": "flag_B1.png"
-        },
-        {
-            "Name": "flag_B2",
-            "Textures": "flag_B2.png"
-        },
-        {
-            "Name": "light",
-            "Textures": "light.png"
-        },
-        {
             "Name": "pole_left",
-            "Textures": "pole_left.png"
+            "Textures": "pole_left.png",
+            "Type": "Sprite",
+            "Width": 192,
+            "Height": 595.5,
+            "Position" : {
+                "x": 267,
+                "y": 298
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "pole_right",
-            "Textures": "pole_right.png"
+            "Textures": "pole_right.png",
+            "Type": "Sprite",
+            "Width": 220,
+            "Height": 630,
+            "Position" : {
+                "x": 1122,
+                "y": 315
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
-            "Name": "sky",
-            "Textures": "sky.png"
+            "Name": "flag_A1",
+            "Textures": "flag_A1.png",
+            "Type": "Sprite",
+            "Width": 88,
+            "Height": 249.5,
+            "Position" : {
+                "x": 1056,
+                "y": 155
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "flag_A2",
+            "Textures": "flag_A2.png",
+            "Type": "Sprite",
+            "Width": 88,
+            "Height": 251.5,
+            "Position" : {
+                "x": 1188,
+                "y": 156
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "flag_B1",
+            "Textures": "flag_B1.png",
+            "Type": "Sprite",
+            "Width": 63,
+            "Height": 188,
+            "Position" : {
+                "x": 235.5,
+                "y": 204
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "flag_B2",
+            "Textures": "flag_B2.png",
+            "Type": "Sprite",
+            "Width": 62,
+            "Height": 189,
+            "Position" : {
+                "x": 330,
+                "y": 204.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "light",
+            "Textures": "light.png",
+            "Type": "Sprite",
+            "Width": 1258.5,
+            "Height": 623,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "Alpha" : 0.4
         },
         {
             "Name": "UvWarpTexture_output",

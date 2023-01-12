@@ -107,14 +107,14 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
                 this._isTranslate ? res(this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId))) : res()
             })
             // this._BGManager.initialize([{
-            //     "id": 45,
-            //     "subId": 3
+            //     "id": 53,
+            //     "subId": 1
             //   }
             // ]),
         ]).then(async ()=>{
             this.emit('AssestsOnSetUp')
 
-            // this._BGManager.execute(45, 3)
+            // this._BGManager.execute(53, 1)
             this._waitingTouch()
         })
     }

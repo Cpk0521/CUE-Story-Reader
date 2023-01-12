@@ -4,11 +4,49 @@
     "Layer": [
         {
             "Name": "base1_left",
-            "Textures": "base1_left.png"
+            "Textures": "base1_left.png",
+            "Type": "Sprite",
+            "Width": 392,
+            "Height": 586,
+            "Position" : {
+                "x": 400,
+                "y": 331
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "base1_right",
-            "Textures": "base1_right.png"
+            "Textures": "base1_right.png",
+            "Type": "Sprite",
+            "Width": 203,
+            "Height": 586,
+            "Position" : {
+                "x": 1232.5,
+                "y": 331
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "city_light",
+            "Textures": "city_light.png",
+            "Type": "Sprite",
+            "Width": 1200,
+            "Height": 324,
+            "Position" : {
+                "x": 734,
+                "y": 493
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.2
         },
         {
             "Name": "base2",
@@ -20,10 +58,6 @@
                 "x": 0.5,
                 "y": 0.5
             }
-        },
-        {
-            "Name": "city_light",
-            "Textures": "city_light.png"
         },
         {
             "Name": "RedLight_Random_output",

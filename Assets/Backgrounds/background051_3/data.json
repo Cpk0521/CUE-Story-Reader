@@ -15,7 +15,19 @@
         },
         {
             "Name": "flare_lamp",
-            "Textures": "flare_lamp.png"
+            "Textures": "flare_lamp.png",
+            "Type": "Sprite",
+            "Width": 1146,
+            "Height": 256,
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            },
+            "Alpha" : 0.25
         }
     ],
     "CanvasScaler": {

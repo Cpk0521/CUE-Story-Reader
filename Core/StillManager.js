@@ -9,21 +9,62 @@ class StillManager {
 
     async show(src) {
         this._container.removeChildren()
-        await this._loader.load(src).then((img)=>{
-            this._stillImage = PIXI.Sprite.from(img)
-
-            let ratio = (GameApp.appSize.width / 1334)
-
-            this._stillImage.width = 1334 * ratio
-            this._stillImage.height = 750 * ratio
-            this._stillImage.anchor.set(0.5)
-            this._stillImage.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
-
-            this._container.addChild(this._stillImage)
+        let image =  await this._loader.load(src).catch(()=>{
+            return Promise.resolve()
         })
+
+        if(!image){
+            // console.log(image)
+
+            let sprite = this._createEmptySprite({})
+            this._container.addChild(sprite)
+
+            let text = src.split('/').pop()
+
+            let Text = new PIXI.Text(text, new PIXI.TextStyle({
+                fill: 0x000000,
+                fontSize: 30,
+                letterSpacing: 1,
+                dropShadow: true,
+                dropShadowAngle: 0,
+                dropShadowDistance: 1,
+            }));
+            Text.anchor.set(0.5)
+            Text.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+
+            this._container.addChild(Text)
+
+            this._container.visible = true
+            return Promise.resolve()
+        }
+        
+        this._stillImage = PIXI.Sprite.from(image)
+
+        let ratio = (GameApp.appSize.width / 1334)
+
+        this._stillImage.width = 1334 * ratio
+        this._stillImage.height = 750 * ratio
+        this._stillImage.anchor.set(0.5)
+        this._stillImage.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+
+        this._container.addChild(this._stillImage)
 
         this._container.visible = true
         return Promise.resolve()
+    }
+
+    _createEmptySprite({color , alpha = 1}){
+        let sprite = new PIXI.Sprite(PIXI.Texture.WHITE)
+        sprite.width = GameApp.appSize.width
+        sprite.height = GameApp.appSize.height
+        sprite.anchor.set(0.5)
+        sprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+        sprite.alpha = alpha
+        if(color != undefined) {
+            sprite.tint = color
+        }
+
+        return sprite
     }
 
     async hide(){

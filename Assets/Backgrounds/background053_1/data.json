@@ -26,24 +26,79 @@
             "Textures": "shadow.png"
         },
         {
-            "Name": "tree1",
-            "Textures": "tree1.png"
-        },
-        {
-            "Name": "tree2",
-            "Textures": "tree2.png"
-        },
-        {
-            "Name": "tree3",
-            "Textures": "tree3.png"
+            "Name": "tree5",
+            "Textures": "tree5.png",
+            "Type": "Sprite",
+            "Width": 447,
+            "Height": 271,
+            "Position" : {
+                "x": 363.5,
+                "y": 135.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "tree4",
-            "Textures": "tree4.png"
+            "Textures": "tree4.png",
+            "Type": "Sprite",
+            "Width": 298,
+            "Height": 138,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
-            "Name": "tree5",
-            "Textures": "tree5.png"
+            "Name": "tree1",
+            "Textures": "tree1.png",
+            "Type": "Sprite",
+            "Width": 434.5,
+            "Height": 202,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
+        },
+        {
+            "Name": "tree3",
+            "Textures": "tree3.png",
+            "Type": "Sprite",
+            "Width": 370,
+            "Height": 261,
+            "Position" : {
+                "x": 587,
+                "y": 130.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "tree2",
+            "Textures": "tree2.png",
+            "Type": "Sprite",
+            "Width": 435,
+            "Height": 202,
+            "Position" : {
+                "x": 836.5,
+                "y": 100
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {
