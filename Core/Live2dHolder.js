@@ -218,7 +218,7 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
     moveTo(x, time = 1){
         return gsap.to(this._Model, {
             x: x,
-            aplha : 0,
+            // aplha : 0,
             duration : time
         })
     }
@@ -226,7 +226,7 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
     moveFrom(x, time = 1){
         return gsap.from(this._Model, {
             x: x,
-            alpha : 0,
+            // alpha : 0,
             duration : time
         })
     }
