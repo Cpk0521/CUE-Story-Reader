@@ -53,6 +53,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         this._autoplay = true
 
         //Loading Screen
+        this._loadingScene = new PIXI.Container()
         this._isLoading = true
 
         //Translate
@@ -66,13 +67,13 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         return new this(gameapp, config)
     }
     
-    static loadAssets(...args){
-        return this.instance?._loadAssets(...args)
-    }
+    // static loadAssets(...args){
+    //     return this.instance?._loadAssets(...args)
+    // }
 
-    async _loadAssets(...args){
+    // async _loadAssets(...args){
 
-    }
+    // }
 
     static loadMasterList(masterlist, language){
         return this.instance?._loadMasterList(masterlist, language)
@@ -80,13 +81,17 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
     async _loadMasterList(masterlist, language) {
 
-        if(masterlist == undefined) {
-            alert('please enter the correct parameters <type, id, phase>')
-            return
-        }
+        // if(masterlist == undefined) {
+        //     alert('please enter the correct parameters <type, id, phase>')
+        //     return
+        // }
 
-        let {storyType, storyID, phase, heroineId, title, mainCommands, Assets} = await this._loader.load(masterlist)
+        let {storyType, storyID, phase, heroineId, title, mainCommands, Assets} = await this._loader.load(masterlist).catch(()=>{
+            alert('wromg parameters or please check your network')
+        })
 
+        this._waitingload()
+         
         this._StoryType = storyType
         this._StoryId = storyID
         this._StoryPhase = phase
@@ -120,8 +125,107 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         })
     }
 
+    async _waitingload(){
+        let atlasData = {
+            frames: {
+                book1: {
+                    frame: { x: 0, y:0, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book2: {
+                    frame: { x: 128, y:0, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book3: {
+                    frame: { x: 256, y:0, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book4: {
+                    frame: { x: 384, y:0, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+
+                book5: {
+                    frame: { x: 0, y:128, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book6: {
+                    frame: { x: 128, y:128, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book7: {
+                    frame: { x: 256, y:128, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book8: {
+                    frame: { x: 384, y:128, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+
+                book9: {
+                    frame: { x: 0, y:256, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book10: {
+                    frame: { x: 128, y:256, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book11: {
+                    frame: { x: 255, y:256, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+                book12: {
+                    frame: { x: 383, y:256, w:97, h:85 },
+                    sourceSize: { w: 97, h: 85 },
+                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
+                },
+            },
+            meta: {
+                image: './Assets/Images/misc/ef_book_anm_reverse.png',
+                format: 'RGBA8888',
+                size: { w: 481, h: 341 },
+                scale: 1
+            },
+            animations: {
+                enemy: ['book1','book2','book3','book4',
+                        'book5','book6','book7','book8',
+                        'book9','book10','book11','book12',] 
+            }
+        }
+
+        let book_back_img = await this._loader.load('./Assets/Images/misc/ef_book_shadow.png')
+        let book_back = new PIXI.Sprite(book_back_img);
+        book_back.anchor.set(0.5);        
+        book_back.position.set(GameApp.appSize.width / 2  , GameApp.appSize.height / 2);
+        this._loadingScene.addChild(book_back)
+
+        let spritesheet = new PIXI.Spritesheet(PIXI.BaseTexture.from(atlasData.meta.image),atlasData);
+        await spritesheet.parse();
+
+        let anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
+        anim.animationSpeed = 0.4;
+        anim.anchor.set(0.5);        
+        anim.position.set(GameApp.appSize.width / 2  , GameApp.appSize.height / 2);
+        anim.play();
+        this._loadingScene.addChild(anim)
+
+        this._gameapp.mainContainer.addChild(this._loadingScene)
+    }
+
     async _waitingTouch(){
         this._isLoading = false
+        this._gameapp.mainContainer.removeChild(this._loadingScene)
 
         let touchToStartimg = await this._loader.load('./Assets/Images/ui/Common_TouchScreenText.png')
         let touchToStart = new PIXI.Sprite(touchToStartimg);
