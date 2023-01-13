@@ -3,6 +3,36 @@
     "SubId": 2,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 462,
+            "Height": 250.5,
+            "Position" : {
+                "x": 740,
+                "y": 125.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 247.5,
+            "Height": 169,
+            "Position" : {
+                "x": 757,
+                "y": 84.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,16 +44,20 @@
             }
         },
         {
-            "Name": "cloud",
-            "Textures": "cloud.png"
-        },
-        {
             "Name": "flare_lamp",
-            "Textures": "flare_lamp.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
+            "Textures": "flare_lamp.png",
+            "Type": "Sprite",
+            "Width": 517.5,
+            "Height": 291,
+            "Position" : {
+                "x": 821,
+                "y": 145.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.6
         }
     ],
     "CanvasScaler": {

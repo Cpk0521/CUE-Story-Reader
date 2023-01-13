@@ -3,6 +3,51 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 328.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_A",
+            "Textures": "cloud_A.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 206,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_B",
+            "Textures": "cloud_B.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 189.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,20 +59,64 @@
             }
         },
         {
+            "Name": "tree_left_leaf",
+            "Textures": "tree_left_leaf.png",
+            "Type": "Sprite",
+            "Width": 366,
+            "Height": 327.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "book_left",
-            "Textures": "book_left.png"
+            "Textures": "book_left.png",
+            "Type": "Sprite",
+            "Width": 440,
+            "Height": 552.5,
+            "Position" : {
+                "x": 220,
+                "y": 381.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "tree_right_leaf",
+            "Textures": "tree_right_leaf.png",
+            "Type": "Sprite",
+            "Width": 322.5,
+            "Height": 301.5,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
             "Name": "book_right",
-            "Textures": "book_right.png"
-        },
-        {
-            "Name": "cloud_A",
-            "Textures": "cloud_A.png"
-        },
-        {
-            "Name": "cloud_B",
-            "Textures": "cloud_B.png"
+            "Textures": "book_right.png",
+            "Type": "Sprite",
+            "Width": 234,
+            "Height": 750,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
             "Name": "Default-ParticleSystem",
@@ -36,18 +125,6 @@
         {
             "Name": "leaf",
             "Textures": "leaf.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
-        },
-        {
-            "Name": "tree_left_leaf",
-            "Textures": "tree_left_leaf.png"
-        },
-        {
-            "Name": "tree_right_leaf",
-            "Textures": "tree_right_leaf.png"
         }
     ],
     "CanvasScaler": {

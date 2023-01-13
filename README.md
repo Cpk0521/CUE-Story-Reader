@@ -21,10 +21,14 @@
     - 22
     - 26
     - 28
-    - 29 (3, 4)
+    - 29_3, 29_4
     - 37
     - 53
     - 60
+    - 63_4 (rain)
+    - 64
+    - 67 (snowing)
+    - 73
     - and more...
 - Known but unfinished command type
     - 7

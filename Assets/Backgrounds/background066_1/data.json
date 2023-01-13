@@ -4,7 +4,11 @@
     "Layer": [
         {
             "Name": "base",
-            "Textures": "base.png",
+            "Textures": "base.png"
+        },
+        {
+            "Name": "base_no_light",
+            "Textures": "base_no_light.png",
             "Type": "Sprite",
             "Width": 1334,
             "Height": 750,
@@ -12,10 +16,6 @@
                 "x": 0.5,
                 "y": 0.5
             }
-        },
-        {
-            "Name": "base_no_light",
-            "Textures": "base_no_light.png"
         }
     ],
     "CanvasScaler": {

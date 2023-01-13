@@ -3,6 +3,36 @@
     "SubId": 2,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 202.5,
+            "Height": 244.5,
+            "Position" : {
+                "x": 674.5,
+                "y": 296.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 973.5,
+            "Height": 255.5,
+            "Position" : {
+                "x": 675,
+                "y": 302
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -12,22 +42,37 @@
                 "x": 0.5,
                 "y": 0.5
             }
-        },
-        {
-            "Name": "cloud",
-            "Textures": "cloud.png"
-        },
+        },        
         {
             "Name": "light_left",
-            "Textures": "light_left.png"
+            "Textures": "light_left.png",
+            "Type": "Sprite",
+            "Width": 366,
+            "Height": 460.5,
+            "Position" : {
+                "x": 183,
+                "y": 296.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "light_right",
-            "Textures": "light_right.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
+            "Textures": "light_right.png",
+            "Type": "Sprite",
+            "Width": 351.5,
+            "Height": 192.5,
+            "Position" : {
+                "x": 1158,
+                "y": 359.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.4
         }
     ],
     "CanvasScaler": {

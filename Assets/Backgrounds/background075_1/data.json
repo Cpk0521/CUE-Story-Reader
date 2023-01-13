@@ -3,6 +3,66 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 429,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 300.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "city",
+            "Textures": "city.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 205.5,
+            "Position" : {
+                "x": 667,
+                "y": 375
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "window_glass",
+            "Textures": "window_glass.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 435,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,24 +74,8 @@
             }
         },
         {
-            "Name": "city",
-            "Textures": "city.png"
-        },
-        {
-            "Name": "cloud",
-            "Textures": "cloud.png"
-        },
-        {
             "Name": "Default-ParticleSystem",
             "Textures": "Default-ParticleSystem.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
-        },
-        {
-            "Name": "window_glass",
-            "Textures": "window_glass.png"
         }
     ],
     "CanvasScaler": {

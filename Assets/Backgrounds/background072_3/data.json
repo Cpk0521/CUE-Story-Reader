@@ -3,6 +3,51 @@
     "SubId": 3,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 342,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_A",
+            "Textures": "cloud_A.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 206,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud_B",
+            "Textures": "cloud_B.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 189,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -18,14 +63,6 @@
             "Textures": "book_left.png"
         },
         {
-            "Name": "cloud_A",
-            "Textures": "cloud_A.png"
-        },
-        {
-            "Name": "cloud_B",
-            "Textures": "cloud_B.png"
-        },
-        {
             "Name": "Default-ParticleSystem",
             "Textures": "Default-ParticleSystem.png"
         },
@@ -36,14 +73,11 @@
         {
             "Name": "light_left",
             "Textures": "light_left.png"
+            
         },
         {
             "Name": "light_right",
             "Textures": "light_right.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         }
     ],
     "CanvasScaler": {

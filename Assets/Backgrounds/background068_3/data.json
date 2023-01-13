@@ -15,15 +15,38 @@
         },
         {
             "Name": "light_1",
-            "Textures": "light_1.png"
+            "Textures": "light_1.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.6
         },
         {
             "Name": "light_2",
-            "Textures": "light_2.png"
+            "Textures": "light_2.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Alpha" : 0.6
         },
         {
             "Name": "light_3",
-            "Textures": "light_3.png"
+            "Textures": "light_3.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         }
     ],
     "CanvasScaler": {
