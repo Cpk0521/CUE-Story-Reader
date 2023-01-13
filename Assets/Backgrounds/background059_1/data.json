@@ -23,7 +23,29 @@
         },
         {
             "Name": "text",
-            "Textures": "text.png"
+            "Textures": "text.png",
+            "Type": "Sprite",
+            "Width": 1285.5,
+            "Height": 45.5,
+            "Position" : {
+                "x": 1896,
+                "y": 66
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "Mask" : {
+                "x" : 887,
+                "y" : 40,
+                "w" : 363,
+                "h" : 73
+            },
+            "Movingspeed" : 2.5,
+            "Aimation" : {
+                "min" : -600,
+                "max" : 1896
+            }
         }
     ],
     "CanvasScaler": {

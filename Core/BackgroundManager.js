@@ -147,6 +147,14 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                     tile.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
                 }
 
+                if(element.Mask){
+                    let mask = new PIXI.Graphics();
+                    mask.beginFill(0x000000);
+                    mask.drawRect(element.Mask.x*ratio, element.Mask.y*ratio - scale , element.Mask.w*ratio, element.Mask.h*ratio);
+                    mask.endFill();
+                    tile.mask = mask
+                }
+
                 if(element.Level == 'front'){
                     frontBgContainer.addChild(tile)
                 }
@@ -182,6 +190,14 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                 }
                 else {
                     sprite.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
+                }
+
+                if(element.Mask){
+                    let mask = new PIXI.Graphics();
+                    mask.beginFill(0x000000);
+                    mask.drawRect(element.Mask.x*ratio, element.Mask.y*ratio - scale , element.Mask.w*ratio, element.Mask.h*ratio);
+                    mask.endFill();
+                    sprite.mask = mask
                 }
 
                 if(element.Aimation) {

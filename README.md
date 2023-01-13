@@ -24,6 +24,7 @@
     - 29 (3, 4)
     - 37
     - 53
+    - 60
     - and more...
 - Known but unfinished command type
     - 7

@@ -81,6 +81,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
     async _loadMasterList(masterlist, language) {
 
         if(masterlist == undefined) {
+            alert('please enter the correct parameters <type, id, phase>')
             return
         }
 
@@ -99,23 +100,23 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         }
 
         return Promise.all([
-            this._L2dManager.initialize(Assets.heroines, this._checkHeroSort()),
-            this._BGManager.initialize(Assets.backgrounds),
-            this._MessageManager.initialize(Assets.heroines, this._TranLang),
-            this._MovieManager.initialize(Assets.movieNames),
-            new Promise((res)=>{
-                this._isTranslate ? res(this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId))) : res()
-            })
-            // this._BGManager.initialize([{
-            //     "id": 53,
-            //     "subId": 1
-            //   }
-            // ]),
+            // this._L2dManager.initialize(Assets.heroines, this._checkHeroSort()),
+            // this._BGManager.initialize(Assets.backgrounds),
+            // this._MessageManager.initialize(Assets.heroines, this._TranLang),
+            // this._MovieManager.initialize(Assets.movieNames),
+            // new Promise((res)=>{
+            //     this._isTranslate ? res(this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId))) : res()
+            // })
+            this._BGManager.initialize([{
+                "id": 59,
+                "subId": 4
+              }
+            ]),
         ]).then(async ()=>{
             this.emit('AssestsOnSetUp')
 
-            // this._BGManager.execute(53, 1)
-            this._waitingTouch()
+            this._BGManager.execute(59, 4)
+            // this._waitingTouch()
         })
     }
 
