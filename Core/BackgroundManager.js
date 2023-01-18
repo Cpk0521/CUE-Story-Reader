@@ -140,6 +140,14 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                 tile.tileScale.set(scalewidth, scaleheight)
                 tile.anchor.set(element.Anchor.x, element.Anchor.y)
 
+                if(element.Tint) {
+                    tile.tint = element.Tint
+                }
+
+                if(element.BlendMode) {
+                    tile.blendMode = element.BlendMode
+                }
+
                 if(element.Position) {
                     tile.position.set( Math.floor(element.Position.x * ratio) , Math.floor(element.Position.y * ratio - scale) )
                 }
@@ -181,6 +189,14 @@ class backgroundManager extends PIXI.utils.EventEmitter {
 
                 sprite.anchor.set(element.Anchor.x, element.Anchor.y)
 
+                if(element.Tint) {
+                    sprite.tint = element.Tint
+                }
+
+                if(element.BlendMode) {
+                    sprite.blendMode = element.BlendMode
+                }
+
                 if(element.Alpha) {
                     sprite.alpha = element.Alpha
                 }
@@ -200,10 +216,10 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                     sprite.mask = mask
                 }
 
-                if(element.Aimation) {
+                if(element.Animation) {
                     let movingspeed = 0.050
-                    let min = element.Aimation.min ?? 0
-                    let max = element.Aimation.max ?? GameApp.appSize.width
+                    let min = element.Animation.min ?? 0
+                    let max = element.Animation.max ?? GameApp.appSize.width
                     let updatemotion = ()=>{}
                     let count = max
                     if(element.Movingspeed != undefined) {
@@ -211,7 +227,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
 
                     }
 
-                    if(element.Aimation.type == "rotation") {
+                    if(element.Animation.type == "rotation") {
                         updatemotion = () => {
                             sprite.rotation += 0.01 * movingspeed
                         }

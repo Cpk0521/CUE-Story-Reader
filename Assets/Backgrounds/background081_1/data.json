@@ -14,20 +14,42 @@
             }
         },
         {
+            "Name": "water",
+            "Textures": "water.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 324,
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            }
+        },
+        {
+            "Name": "ground",
+            "Textures": "ground.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 173.5,
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            }
+        },
+        {
             "Name": "ef",
             "Textures": "ef.png"
         },
         {
-            "Name": "ground",
-            "Textures": "ground.png"
-        },
-        {
             "Name": "ground_no_light",
             "Textures": "ground_no_light.png"
-        },
-        {
-            "Name": "water",
-            "Textures": "water.png"
         },
         {
             "Name": "WaterNoise",

@@ -4,7 +4,6 @@ class StillManager {
     constructor(){
         this._container = new PIXI.Container();
         this._container.visible = false
-
     }
 
     async show(src) {
@@ -14,34 +13,30 @@ class StillManager {
         })
 
         if(!image){
-            // console.log(image)
 
-            let sprite = this._createEmptySprite({})
+            let sprite = this._createEmptySprite({color : 0x000000})//沒有卡圖時 按Naztar大佬的要求弄的黑屏
             this._container.addChild(sprite)
 
-            let text = src.split('/').pop()
-
-            let Text = new PIXI.Text(text, new PIXI.TextStyle({
-                fill: 0x000000,
-                fontSize: 30,
-                letterSpacing: 1,
-                dropShadow: true,
-                dropShadowAngle: 0,
-                dropShadowDistance: 1,
-            }));
-            Text.anchor.set(0.5)
-            Text.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
-
-            this._container.addChild(Text)
+            // let text = src.split('/').pop()
+            // let Text = new PIXI.Text(text, new PIXI.TextStyle({
+            //     fill: 0x000000,
+            //     fontSize: 30,
+            //     letterSpacing: 1,
+            //     dropShadow: true,
+            //     dropShadowAngle: 0,
+            //     dropShadowDistance: 1,
+            // }));
+            // Text.anchor.set(0.5)
+            // Text.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+            // this._container.addChild(Text)
 
             this._container.visible = true
             return Promise.resolve()
         }
-        
-        this._stillImage = PIXI.Sprite.from(image)
 
         let ratio = (GameApp.appSize.width / 1334)
-
+        
+        this._stillImage = PIXI.Sprite.from(image)
         this._stillImage.width = 1334 * ratio
         this._stillImage.height = 750 * ratio
         this._stillImage.anchor.set(0.5)

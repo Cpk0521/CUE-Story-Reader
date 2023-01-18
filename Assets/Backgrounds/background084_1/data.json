@@ -14,12 +14,36 @@
             }
         },
         {
-            "Name": "light",
-            "Textures": "light.png"
+            "Name": "light_left",
+            "Textures": "light_left.png",
+            "Type": "Sprite",
+            "Width": 542,
+            "Height": 750,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            },
+            "BlendMode" : 3
         },
         {
-            "Name": "light_left",
-            "Textures": "light_left.png"
+            "Name": "light",
+            "Textures": "light.png",
+            "Type": "Sprite",
+            "Width": 329,
+            "Height": 286.5,
+            "Position" : {
+                "x": 385.5,
+                "y": 145.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "BlendMode" : 3
         }
     ],
     "CanvasScaler": {

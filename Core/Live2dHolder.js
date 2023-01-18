@@ -5,6 +5,7 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         super()
         this.isBuild = false
         this._Model = {}
+        this._layer = new PIXI.Container()
     }
     
     static async create(jsonurl, onloaded, onError) {
@@ -22,7 +23,7 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         return Promise.resolve(this)
     }
 
-    async build(audioManager){
+    async build(audioManager){ // {scale, anchor, position}
         if(!this._modelsetting) {
             return Promise.reject(this)
         }
@@ -286,6 +287,10 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
 
     get IsBuild(){
         return this.isBuild
+    }
+
+    get Layer(){
+        return this._layer
     }
 
 }

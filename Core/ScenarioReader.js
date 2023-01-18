@@ -113,14 +113,14 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
                 this._isTranslate ? res(this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId))) : res()
             })
             // this._BGManager.initialize([{
-            //     "id": 75,
+            //     "id": 85,
             //     "subId": 2
             //   }
             // ]),
         ]).then(async ()=>{
             this.emit('AssestsOnSetUp')
 
-            // this._BGManager.execute(75, 2)
+            // this._BGManager.execute(85, 2)
             this._waitingTouch()
         })
     }
@@ -213,18 +213,19 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         let spritesheet = new PIXI.Spritesheet(PIXI.BaseTexture.from(atlasData.meta.image),atlasData);
         await spritesheet.parse();
 
-        let anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
-        anim.animationSpeed = 0.4;
-        anim.anchor.set(0.5);        
-        anim.position.set(GameApp.appSize.width / 2  , GameApp.appSize.height / 2);
-        anim.play();
-        this._loadingScene.addChild(anim)
+        this.anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
+        this.anim.animationSpeed = 0.4;
+        this.anim.anchor.set(0.5);        
+        this.anim.position.set(GameApp.appSize.width / 2  , GameApp.appSize.height / 2);
+        this.anim.play();
+        this._loadingScene.addChild(this.anim)
 
         this._gameapp.mainContainer.addChild(this._loadingScene)
     }
 
     async _waitingTouch(){
         this._isLoading = false
+        this.anim.stop()
         this._gameapp.mainContainer.removeChild(this._loadingScene)
 
         let touchToStartimg = await this._loader.load('./Assets/Images/ui/Common_TouchScreenText.png')

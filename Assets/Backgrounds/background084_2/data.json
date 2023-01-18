@@ -19,7 +19,19 @@
         },
         {
             "Name": "light",
-            "Textures": "light.png"
+            "Textures": "light.png",
+            "Type": "Sprite",
+            "Width": 329,
+            "Height": 286.5,
+            "Position" : {
+                "x": 385.5,
+                "y": 145.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "BlendMode" : 3
         }
     ],
     "CanvasScaler": {

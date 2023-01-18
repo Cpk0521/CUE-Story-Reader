@@ -3,14 +3,63 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 360,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 327.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base2",
             "Textures": "base2.png",
             "Type": "Sprite",
             "Width": 1334,
-            "Height": 750,
+            "Height": 615,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
             "Anchor": {
-                "x": 0.5,
-                "y": 0.5
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "glass",
+            "Textures": "glass.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 616.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
             }
         },
         {
@@ -25,20 +74,8 @@
             }
         },
         {
-            "Name": "cloud",
-            "Textures": "cloud.png"
-        },
-        {
             "Name": "Default-ParticleSystem",
             "Textures": "Default-ParticleSystem.png"
-        },
-        {
-            "Name": "glass",
-            "Textures": "glass.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         }
     ],
     "CanvasScaler": {

@@ -3,6 +3,51 @@
     "SubId": 2,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 345,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1444,
+            "Height": 253.5,
+            "Position" : {
+                "x": 667,
+                "y": 127
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "water",
+            "Textures": "water.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 46,
+            "Position" : {
+                "x": 667,
+                "y": 375
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
             "Name": "base_no_water",
             "Textures": "base_no_water.png",
             "Type": "Sprite",
@@ -14,28 +59,55 @@
             }
         },
         {
-            "Name": "bridge",
-            "Textures": "bridge.png"
-        },
-        {
-            "Name": "cloud",
-            "Textures": "cloud.png"
-        },
-        {
             "Name": "cloud_shadow_1",
-            "Textures": "cloud_shadow_1.png"
+            "Textures": "cloud_shadow_1.png",
+            "Type": "TilingSprite",
+            "Width": 1790,
+            "Height": 230,
+            "Position" : {
+                "x": 740,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 1
+            },
+            "BlendMode" : 2
         },
         {
             "Name": "cloud_shadow_2",
-            "Textures": "cloud_shadow_2.png"
+            "Textures": "cloud_shadow_2.png",
+            "Type": "Sprite",
+            "Width": 843,
+            "Height": 97.5,
+            "Position" : {
+                "x": 1334.50,
+                "y": 471
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "BlendMode" : 2,
+            "Animation" : {
+                "min" : 0 ,
+                "max" : 1755
+            }
         },
         {
-            "Name": "sky",
-            "Textures": "sky.png"
-        },
-        {
-            "Name": "water",
-            "Textures": "water.png"
+            "Name": "bridge",
+            "Textures": "bridge.png",
+            "Type": "Sprite",
+            "Width": 670.5,
+            "Height": 683.5,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
             "Name": "WaterNoise_GaussianNoise",

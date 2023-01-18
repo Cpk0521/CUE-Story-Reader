@@ -29,6 +29,8 @@
     - 64
     - 67 (snowing)
     - 73
+    - 77 
+    - 78 
     - and more...
 - Known but unfinished command type
     - 7

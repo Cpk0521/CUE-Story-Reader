@@ -3,28 +3,79 @@
     "SubId": 1,
     "Layer": [
         {
-            "Name": "base1",
-            "Textures": "base1.png"
-        },
-        {
-            "Name": "base2",
-            "Textures": "base2.png"
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 875.5,
+            "Height": 381,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
             "Name": "cloud",
-            "Textures": "cloud.png"
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1332.5,
+            "Height": 266,
+            "Position" : {
+                "x": 896.5,
+                "y": 133
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "water",
+            "Textures": "water.png",
+            "Type": "Sprite",
+            "Width": 1108,
+            "Height": 306,
+            "Position" : {
+                "x": 1334,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 1
+            }
+        },
+        {
+            "Name": "base2",
+            "Textures": "base2.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 750,
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "base1",
+            "Textures": "base1.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 388,
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            }
         },
         {
             "Name": "Default-ParticleSystem",
             "Textures": "Default-ParticleSystem.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
-        },
-        {
-            "Name": "water",
-            "Textures": "water.png"
         },
         {
             "Name": "WaterNoise_output",
