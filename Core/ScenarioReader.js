@@ -90,7 +90,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             alert('wromg parameters or please check your network')
         })
 
-        this._waitingload()
+        // this._waitingload()
          
         this._StoryType = storyType
         this._StoryId = storyID
@@ -113,14 +113,14 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
                 this._isTranslate ? res(this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId))) : res()
             })
             // this._BGManager.initialize([{
-            //     "id": 85,
-            //     "subId": 2
+            //     "id": 98,
+            //     "subId": 1
             //   }
             // ]),
         ]).then(async ()=>{
             this.emit('AssestsOnSetUp')
 
-            // this._BGManager.execute(85, 2)
+            // this._BGManager.execute(98, 1)
             this._waitingTouch()
         })
     }

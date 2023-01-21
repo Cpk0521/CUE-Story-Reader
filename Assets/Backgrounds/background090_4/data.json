@@ -3,6 +3,21 @@
     "SubId": 4,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 223.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -15,23 +30,49 @@
         },
         {
             "Name": "cloud1",
-            "Textures": "cloud1.png"
+            "Textures": "cloud1.png",
+            "Width": 365,
+            "Height": 108.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "cloud2",
-            "Textures": "cloud2.png"
+            "Textures": "cloud2.png",
+            "Width": 200.5,
+            "Height": 48,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "cloud3",
-            "Textures": "cloud3.png"
+            "Textures": "cloud3.png",
+            "Width": 633,
+            "Height": 210.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         },
         {
             "Name": "Default-ParticleSystem",
             "Textures": "Default-ParticleSystem.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         },
         {
             "Name": "Smoke_Alpha_012",

@@ -23,7 +23,7 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         return Promise.resolve(this)
     }
 
-    async build(audioManager){ // {scale, anchor, position}
+    async build(audioManager, config = {}){ // {scale, anchor, position}
         if(!this._modelsetting) {
             return Promise.reject(this)
         }

@@ -3,6 +3,52 @@
     "SubId": 3,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 489,
+            "Height": 213.5,
+            "Position" : {
+                "x": 666.5,
+                "y": 201
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "building",
+            "Textures": "building.png",
+            "Type": "Sprite",
+            "Width": 512,
+            "Height": 154,
+            "Position" : {
+                "x": 666,
+                "y": 259
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "light_building",
+            "Textures": "light_building.png",
+            "Type": "Sprite",
+            "Width": 489,
+            "Height": 162.5,
+            "Position" : {
+                "x": 661.5,
+                "y": 226.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "BlendMode" : 3
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -12,14 +58,6 @@
                 "x": 0.5,
                 "y": 0.5
             }
-        },
-        {
-            "Name": "building",
-            "Textures": "building.png"
-        },
-        {
-            "Name": "light_building",
-            "Textures": "light_building.png"
         },
         {
             "Name": "light_left_window",
@@ -32,10 +70,6 @@
         {
             "Name": "side",
             "Textures": "side.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
         }
     ],
     "CanvasScaler": {

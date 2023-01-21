@@ -31,6 +31,9 @@
     - 73
     - 77 
     - 78 
+    - 90
+    - 91
+    - 94
     - and more...
 - Known but unfinished command type
     - 7

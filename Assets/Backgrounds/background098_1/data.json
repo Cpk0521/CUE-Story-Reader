@@ -3,6 +3,66 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 1240,
+            "Height": 457.5,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
+        },
+        {
+            "Name": "clouds",
+            "Textures": "clouds.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 366.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "out",
+            "Textures": "out.png",
+            "Type": "Sprite",
+            "Width": 1240,
+            "Height": 399,
+            "Position" : {
+                "x": 714,
+                "y": 258.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "window_glass",
+            "Textures": "window_glass.png",
+            "Type": "Sprite",
+            "Width": 1240,
+            "Height": 457.5,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,36 +74,53 @@
             }
         },
         {
-            "Name": "chair",
-            "Textures": "chair.png"
+            "Name": "left_curtain",
+            "Textures": "left_curtain.png",
+            "Type": "Sprite",
+            "Width": 142,
+            "Height": 533.5,
+            "Position" : {
+                "x": 145,
+                "y": 267
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
-            "Name": "clouds",
-            "Textures": "clouds.png"
+            "Name": "right_curtain",
+            "Textures": "right_curtain.png",
+            "Type": "Sprite",
+            "Width": 128,
+            "Height": 512.5,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
+        },
+        {
+            "Name": "chair",
+            "Textures": "chair.png",
+            "Type": "Sprite",
+            "Width": 1334,
+            "Height": 279,
+            "Position" : {
+                "x": 0,
+                "y": 750
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 1
+            }
         },
         {
             "Name": "Default-ParticleSystem",
             "Textures": "Default-ParticleSystem.png"
-        },
-        {
-            "Name": "left_curtain",
-            "Textures": "left_curtain.png"
-        },
-        {
-            "Name": "out",
-            "Textures": "out.png"
-        },
-        {
-            "Name": "right_curtain",
-            "Textures": "right_curtain.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
-        },
-        {
-            "Name": "window_glass",
-            "Textures": "window_glass.png"
         }
     ],
     "CanvasScaler": {

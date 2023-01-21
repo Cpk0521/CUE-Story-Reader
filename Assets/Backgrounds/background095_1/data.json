@@ -3,6 +3,36 @@
     "SubId": 1,
     "Layer": [
         {
+            "Name": "sky",
+            "Textures": "sky.png",
+            "Type": "Sprite",
+            "Width": 964.5,
+            "Height": 279,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
+            "Name": "cloud",
+            "Textures": "cloud.png",
+            "Type": "TilingSprite",
+            "Width": 1334,
+            "Height": 256.5,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        {
             "Name": "base",
             "Textures": "base.png",
             "Type": "Sprite",
@@ -14,12 +44,49 @@
             }
         },
         {
-            "Name": "book",
-            "Textures": "book.png"
+            "Name": "flower_E",
+            "Textures": "flower_E.png",
+            "Type": "Sprite",
+            "Width": 606,
+            "Height": 288,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
-            "Name": "cloud",
-            "Textures": "cloud.png"
+            "Name": "book",
+            "Textures": "book.png",
+            "Type": "Sprite",
+            "Width": 222,
+            "Height": 124,
+            "Position" : {
+                "x": 1223,
+                "y": 641
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "Name": "stem",
+            "Textures": "stem.png",
+            "Type": "Sprite",
+            "Width": 641.5,
+            "Height": 702.5,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
             "Name": "Default-ParticleSystem",
@@ -27,39 +94,92 @@
         },
         {
             "Name": "flower_A",
-            "Textures": "flower_A.png"
+            "Textures": "flower_A.png",
+            "Type": "Sprite",
+            "Width": 693.5,
+            "Height": 150,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
             "Name": "flower_B",
-            "Textures": "flower_B.png"
+            "Textures": "flower_B.png",
+            "Type": "Sprite",
+            "Width": 464,
+            "Height": 217.5,
+            "Position" : {
+                "x": 974.00 ,
+                "y": 165.00 
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "flower_C",
-            "Textures": "flower_C.png"
+            "Textures": "flower_C.png",
+            "Type": "Sprite",
+            "Width": 245,
+            "Height": 136.5,
+            "Position" : {
+                "x": 1334,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 1,
+                "y": 0
+            }
         },
         {
             "Name": "flower_D1",
-            "Textures": "flower_D1.png"
+            "Textures": "flower_D1.png",
+            "Type": "Sprite",
+            "Width": 141,
+            "Height": 195,
+            "Position" : {
+                "x": 1263.5,
+                "y": 166.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "flower_D2",
-            "Textures": "flower_D2.png"
-        },
-        {
-            "Name": "flower_E",
-            "Textures": "flower_E.png"
+            "Textures": "flower_D2.png",
+            "Type": "Sprite",
+            "Width": 381.5,
+            "Height": 195,
+            "Position" : {
+                "x": 1014,
+                "y": 253.5
+            },
+            "Anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
         },
         {
             "Name": "leaf",
-            "Textures": "leaf.png"
-        },
-        {
-            "Name": "sky",
-            "Textures": "sky.png"
-        },
-        {
-            "Name": "stem",
-            "Textures": "stem.png"
+            "Textures": "leaf.png",
+            "Width": 964.5,
+            "Height": 279,
+            "Position" : {
+                "x": 0,
+                "y": 0
+            },
+            "Anchor": {
+                "x": 0,
+                "y": 0
+            }
         }
     ],
     "CanvasScaler": {
