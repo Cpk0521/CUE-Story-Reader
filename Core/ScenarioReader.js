@@ -90,7 +90,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             alert('wromg parameters or please check your network')
         })
 
-        // this._waitingload()
+        this._waitingload()
          
         this._StoryType = storyType
         this._StoryId = storyID
