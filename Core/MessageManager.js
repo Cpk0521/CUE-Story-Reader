@@ -11,6 +11,7 @@ class MessageManager extends PIXI.utils.EventEmitter {
         this._loader.addBundle('MessageAssets', {
             nameTag : './Assets/Images/ui/Scenario_NameBg1.png',
             messgaePanel : './Assets/Images/ui/Scenario_TalkPanel.png',
+            messgaePanel_long : './Assets/Images/ui/Scenario_TalkPanel_long.png',
             RodinCattleya_DB : './Assets/Font/FOT_RodinCattleya_Pro_DB.otf',
             RodinCattleya_B : './Assets/Font/FOT_RodinCattleya_Pro_B.otf',
             RodinCattleya_EB : './Assets/Font/FOT_RodinCattleya_Pro_EB.otf',
@@ -25,7 +26,7 @@ class MessageManager extends PIXI.utils.EventEmitter {
             'normal' : new PIXI.TextStyle({
                 fontFamily: "FOT RodinCattleya Pro DB",
                 fill: 0xffffff,
-                fontSize: 22.5,
+                fontSize: 25,
                 letterSpacing: 1,
             }),
             'zh' : new PIXI.TextStyle({
@@ -40,13 +41,13 @@ class MessageManager extends PIXI.utils.EventEmitter {
             'normal' : new PIXI.TextStyle({
                 fontFamily: "FOT RodinCattleya Pro B",
                 fill: 0x444444,
-                fontSize: 25,
+                fontSize: 27,
                 lineHeight: 37,
             }),
             'zh' : new PIXI.TextStyle({
                 fontFamily: "Notosanstc Bold",
                 fill: 0x444444,
-                fontSize: 25,
+                fontSize: 27,
                 lineHeight: 37,
             })
         }
@@ -68,7 +69,8 @@ class MessageManager extends PIXI.utils.EventEmitter {
         const Assets = await this._loader.loadBundle('MessageAssets')
 
         // // //message text width:1000 height:80 m_AnchoredPosition y:-11
-        this._messgaePanel = new PIXI.NineSlicePlane(Assets.messgaePanel, 19, 10, 19, 10)
+        // this._messgaePanel = new PIXI.NineSlicePlane(Assets.messgaePanel, 19, 10, 19, 10)
+        this._messgaePanel = new PIXI.Sprite(Assets.messgaePanel_long)
         this._messgaePanel.width = 1100
         this._messgaePanel.height = 142
         this._messgaePanel.position.set((GameApp.appSize.width - 1100)/2 , GameApp.appSize.height * .78)
@@ -85,6 +87,7 @@ class MessageManager extends PIXI.utils.EventEmitter {
             
             let nameTag = new PIXI.NineSlicePlane(Assets.nameTag, 5, 5, 5, 5)
             nameTag.width = 227
+            nameTag.height = 40
             nameTag.position.set((GameApp.appSize.width - 1100)/2 + 30 + ((227 + 10) * index), GameApp.appSize.height * .76)
             nameTag.tint = 0x7d7d7d
             this._container.addChild(nameTag)
