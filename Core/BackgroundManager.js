@@ -23,12 +23,12 @@ class backgroundManager extends PIXI.utils.EventEmitter {
             return new Promise((res) => {
                 this._backcontainer.removeChildren()
                 this._frontcontainer.removeChildren()
-                GameApp.Ticker.remove(this._update)
+                PixiApp.Ticker.remove(this._update)
     
                 let bg = new PIXI.Sprite(PIXI.Texture.WHITE)
                 bg.tint = 0x000000
-                bg.width = GameApp.appSize.width
-                bg.height = GameApp.appSize.height
+                bg.width = PixiApp.appSize.width
+                bg.height = PixiApp.appSize.height
                 
                 res(this._backcontainer.addChild(bg))
             })
@@ -43,15 +43,15 @@ class backgroundManager extends PIXI.utils.EventEmitter {
         return new Promise((res) => {
             this._frontcontainer.removeChildren()
             this._backcontainer.removeChildren()
-            this._animations.map((anim)=> GameApp.Ticker.remove(anim))
-            // GameApp.Ticker.remove(this._update)
+            this._animations.map((anim)=> PixiApp.Ticker.remove(anim))
+            // PixiApp.Ticker.remove(this._update)
 
             this._frontcontainer.addChild(new_bg.front)
             this._backcontainer.addChild(new_bg.back)
             this._animations = new_bg.motion
             // console.log(this._animations)
-            this._animations.map((anim)=> GameApp.Ticker.add(anim))
-            // GameApp.Ticker.add(this._update)
+            this._animations.map((anim)=> PixiApp.Ticker.add(anim))
+            // PixiApp.Ticker.add(this._update)
             res()
         })
 
@@ -117,8 +117,8 @@ class backgroundManager extends PIXI.utils.EventEmitter {
         let animations = []
         // let updatemotion = () => {}
 
-        let ratio = (GameApp.appSize.width / jsonResult.CanvasScaler.Width)
-        let scale = (jsonResult.CanvasScaler.Height * ratio - GameApp.appSize.height) /2
+        let ratio = (PixiApp.appSize.width / jsonResult.CanvasScaler.Width)
+        let scale = (jsonResult.CanvasScaler.Height * ratio - PixiApp.appSize.height) /2
 
         for (let index = 0; index < jsonResult.Layer.length; index++) {
             const element = jsonResult.Layer[index];
@@ -152,7 +152,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                     tile.position.set( Math.floor(element.Position.x * ratio) , Math.floor(element.Position.y * ratio - scale) )
                 }
                 else {
-                    tile.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
+                    tile.position.set( PixiApp.appSize.width /2  , PixiApp.appSize.height /2 )
                 }
 
                 if(element.Mask){
@@ -205,7 +205,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                     sprite.position.set( Math.floor(element.Position.x * ratio) , Math.floor(element.Position.y * ratio - scale) )
                 }
                 else {
-                    sprite.position.set( GameApp.appSize.width /2  , GameApp.appSize.height /2 )
+                    sprite.position.set( PixiApp.appSize.width /2  , PixiApp.appSize.height /2 )
                 }
 
                 if(element.Mask){
@@ -219,7 +219,7 @@ class backgroundManager extends PIXI.utils.EventEmitter {
                 if(element.Animation) {
                     let movingspeed = 0.050
                     let min = element.Animation.min ?? 0
-                    let max = element.Animation.max ?? GameApp.appSize.width
+                    let max = element.Animation.max ?? PixiApp.appSize.width
                     let updatemotion = ()=>{}
                     let count = max
                     if(element.Movingspeed != undefined) {

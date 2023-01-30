@@ -34,7 +34,7 @@ class MiscManager {
             dropShadowDistance: 1,
         }));
         Text.anchor.set(0.5)
-        Text.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+        Text.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
 
         this._TextContainer.addChild(Text)
 
@@ -61,7 +61,7 @@ class MiscManager {
                 // T9[index] = PIXI.Sprite.from('./Images/misc/T9.png')
                 T9[index] = PIXI.Sprite.from('./Assets/Images/misc/T9.png')
                 T9[index].anchor.set(0.5)
-                T9[index].position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+                T9[index].position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
                 T9[index].alpha = 0
     
                 this._TranContainer.addChild(T9[index])
@@ -74,7 +74,7 @@ class MiscManager {
                 // T4[index] = PIXI.Sprite.from('./Images/misc/T4.png')
                 T4[index] = PIXI.Sprite.from('./Assets/Images/misc/T4.png')
                 T4[index].anchor.set(0.5)
-                T4[index].position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+                T4[index].position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
                 T4[index].alpha = 0
     
                 this._TranContainer.addChild(T4[index])
@@ -173,10 +173,10 @@ class MiscManager {
 
     _createEmptySprite({color , alpha = 1}){
         let sprite = new PIXI.Sprite(PIXI.Texture.WHITE)
-        sprite.width = GameApp.appSize.width
-        sprite.height = GameApp.appSize.height
+        sprite.width = PixiApp.appSize.width
+        sprite.height = PixiApp.appSize.height
         sprite.anchor.set(0.5)
-        sprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+        sprite.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
         sprite.alpha = alpha
         if(color != undefined) {
             sprite.tint = color

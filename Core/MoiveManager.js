@@ -5,8 +5,8 @@ class MoiveManager {
         this._container = new PIXI.Container();
 
         let bg = new PIXI.Sprite(PIXI.Texture.WHITE)
-        bg.width = GameApp.appSize.width
-        bg.height = GameApp.appSize.height
+        bg.width = PixiApp.appSize.width
+        bg.height = PixiApp.appSize.height
         this._container.addChild(bg);
 
         this._container.visible = false
@@ -16,7 +16,7 @@ class MoiveManager {
 
     async initialize(Assets){
         //1920 1080
-        let ratio = (GameApp.appSize.height / 1080)
+        let ratio = (PixiApp.appSize.height / 1080)
 
         for (let index = 0; index < Assets.length; index++) {
 
@@ -28,7 +28,7 @@ class MoiveManager {
             videoSprite.width = 1920 * ratio
             videoSprite.height = 1080 * ratio;
             videoSprite.anchor.set(0.5)
-            videoSprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+            videoSprite.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
 
             this._movieMap.set(Assets[index], videoSprite)
             
@@ -36,7 +36,7 @@ class MoiveManager {
     }
 
     async show(name){
-        // let ratio = (GameApp.appSize.height / 1080)
+        // let ratio = (PixiApp.appSize.height / 1080)
 
         return new Promise((resolve, reject) => {
             let video = this._getMovie(name)
@@ -51,7 +51,7 @@ class MoiveManager {
                 // videoSprite.width = 1920 * ratio
                 // videoSprite.height = 1080 * ratio;
                 // videoSprite.anchor.set(0.5)
-                // videoSprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+                // videoSprite.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
     
                 let controller = video.texture.baseTexture.resource.source;
     

@@ -59,7 +59,7 @@ class Live2dManager extends PIXI.utils.EventEmitter {
         return holder.build(this._L2dAudioPlayer).then((modelholder)=>{
             modelholder.setScale(.32)
             modelholder.setAnchor(.5)
-            modelholder.setPosition(-740, GameApp.appSize.height * 0.895)
+            modelholder.setPosition(-740, PixiApp.appSize.height * 0.895)
             modelholder.setVisible(false)
             modelholder.addTo(this._container)
         })
@@ -69,10 +69,10 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
     async display(id, {from_x, to_x, fadeTime}, ...content){
         let holder = this._getBuiltHolder(id)
-        let new_to_x = ( GameApp.appSize.width / 2 ) + to_x
-        holder.setPosition(new_to_x, GameApp.appSize.height * 0.895)
+        let new_to_x = ( PixiApp.appSize.width / 2 ) + to_x
+        holder.setPosition(new_to_x, PixiApp.appSize.height * 0.895)
         if(from_x != to_x) {
-            let new_from_x = ( GameApp.appSize.width / 2 ) + from_x
+            let new_from_x = ( PixiApp.appSize.width / 2 ) + from_x
             await holder.moveFrom(new_from_x, fadeTime)
         }
 
@@ -116,7 +116,7 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
     async moving(id, {newpoint, rate}){
         let holder = this._getBuiltHolder(id)
-        let new_x = ( GameApp.appSize.width / 2 ) + newpoint
+        let new_x = ( PixiApp.appSize.width / 2 ) + newpoint
         await holder.moveTo(new_x, rate)
         return Promise.resolve(holder)
     }
@@ -148,9 +148,9 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
     async hide(id, newpoint, time) {
         let holder = this._getBuiltHolder(id)
-        let new_x = ( GameApp.appSize.width / 2 ) + newpoint
+        let new_x = ( PixiApp.appSize.width / 2 ) + newpoint
         await holder.moveTo(new_x, time)
-        // holder.setPosition(-740, GameApp.appSize.height * 0.895)
+        // holder.setPosition(-740, PixiApp.appSize.height * 0.895)
         // holder.setVisible(false)
         holder.rest()
 
@@ -170,7 +170,7 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
         this._holderMap.forEach(async(v, k, m) => {
             if(v.IsBuild) {
-                v.setPosition(-740, GameApp.appSize.height * 0.895)
+                v.setPosition(-740, PixiApp.appSize.height * 0.895)
                 // v.setVisible(false)
                 v.rest()
 

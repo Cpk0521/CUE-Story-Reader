@@ -3,30 +3,29 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
     static instance = null
     _loader = PIXI.Assets
 
-    constructor(gameapp, config){
+    constructor(pixiapp, config){
         super()
 
         if(ScenarioReader.instance != this) {
             ScenarioReader.instance = this
         }
 
-        //loading screen
-
         //Adv Managers and Contrller
-        this._gameapp = gameapp
+        this._pixiapp = pixiapp
         this._L2dManager = new Live2dManager() //Live2d
         this._BGManager = new backgroundManager() //Background
         this._MessageManager = new MessageManager() //message dialogue
         this._StillManager = new StillManager() // image 
         this._MovieManager = new MoiveManager() // movie
-        this._SoundManager = new SoundManager() // sound
-        this._TranslateReader = new TranslateReader() //translate
         this._MiscManager = new MiscManager() // Transitions & Text
         this._FilterManager = new FilterManager() // Filter
-
-
+        
+        //Controller
+        this._SoundManager = new SoundManager() // sound
+        this._TranslateReader = new TranslateReader() //translate
+        
         //add to main Container 
-        this._gameapp.mainContainer.addChild(
+        this._pixiapp.mainContainer.addChild(
             this._FilterManager.addContainer( // add to Filter Container 
                 this._BGManager.backcontainer,
                 this._L2dManager.container,
@@ -53,7 +52,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         this._autoplay = true
 
         //Loading Screen
-        this._loadingScene = new PIXI.Container()
+        this._loadingScene = LoadingScene.create()
         this._isLoading = true
 
         //Translate
@@ -66,15 +65,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
     static create(gameapp, config) {
         return new this(gameapp, config)
     }
-    
-    // static loadAssets(...args){
-    //     return this.instance?._loadAssets(...args)
-    // }
-
-    // async _loadAssets(...args){
-
-    // }
-
+  
     static loadMasterList(masterlist, language){
         return this.instance?._loadMasterList(masterlist, language)
     }
@@ -90,7 +81,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             alert('wromg parameters or please check your network')
         })
 
-        this._waitingload()
+        this._loadingScene.addTo(this._pixiapp.mainContainer)
          
         this._StoryType = storyType
         this._StoryId = storyID
@@ -125,125 +116,10 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         })
     }
 
-    async _waitingload(){
-        let atlasData = {
-            frames: {
-                book1: {
-                    frame: { x: 0, y:0, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book2: {
-                    frame: { x: 128, y:0, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book3: {
-                    frame: { x: 256, y:0, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book4: {
-                    frame: { x: 384, y:0, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-
-                book5: {
-                    frame: { x: 0, y:128, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book6: {
-                    frame: { x: 128, y:128, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book7: {
-                    frame: { x: 256, y:128, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book8: {
-                    frame: { x: 384, y:128, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-
-                book9: {
-                    frame: { x: 0, y:256, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book10: {
-                    frame: { x: 128, y:256, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book11: {
-                    frame: { x: 255, y:256, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-                book12: {
-                    frame: { x: 383, y:256, w:97, h:85 },
-                    sourceSize: { w: 97, h: 85 },
-                    spriteSourceSize: { x: 0, y: 0, w: 97, h: 85 }
-                },
-            },
-            meta: {
-                image: './Assets/Images/misc/ef_book_anm_reverse.png',
-                format: 'RGBA8888',
-                size: { w: 481, h: 341 },
-                scale: 1
-            },
-            animations: {
-                enemy: ['book1','book2','book3','book4',
-                        'book5','book6','book7','book8',
-                        'book9','book10','book11','book12',] 
-            }
-        }
-
-        let book_back_img = await this._loader.load('./Assets/Images/misc/ef_book_shadow.png')
-        let book_back = new PIXI.Sprite(book_back_img);
-        book_back.anchor.set(0.5);        
-        book_back.position.set(GameApp.appSize.width / 2  , GameApp.appSize.height / 2);
-        this._loadingScene.addChild(book_back)
-
-        let spritesheet = new PIXI.Spritesheet(PIXI.BaseTexture.from(atlasData.meta.image),atlasData);
-        await spritesheet.parse();
-
-        this.anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
-        this.anim.animationSpeed = 0.4;
-        this.anim.anchor.set(0.5);        
-        this.anim.position.set(GameApp.appSize.width / 2  , GameApp.appSize.height / 2);
-        this.anim.play();
-        this._loadingScene.addChild(this.anim)
-
-        this._gameapp.mainContainer.addChild(this._loadingScene)
-    }
-
     async _waitingTouch(){
         this._isLoading = false
-        this.anim.stop()
-        this._gameapp.mainContainer.removeChild(this._loadingScene)
-
-        let touchToStartimg = await this._loader.load('./Assets/Images/ui/Common_TouchScreenText.png')
-        let touchToStart = new PIXI.Sprite(touchToStartimg);
-        this._gameapp.mainContainer.addChild(touchToStart)
-
-        touchToStart.anchor.set(0.5);
-        touchToStart.position.set(GameApp.appSize.width / 2  , GameApp.appSize.height / 2);
-        
-        const callback = ()=>{
-            this._gameapp.mainContainer.removeChild(touchToStart)
-            GameApp.App.view.removeEventListener('click', callback)
-            GameApp.App.view.removeEventListener('touchstart', callback)
-            this.start()
-        }
-
-        GameApp.App.view.addEventListener('click', callback);
-        GameApp.App.view.addEventListener('touchstart', callback);
+        this._loadingScene.remove()
+        TouchScene.create().addTo(this._pixiapp.mainContainer).on('onStart', () => this.start())
     }   
 
     async start(){
@@ -269,8 +145,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
     async next(){
 
-        this._gameapp.mainContainer.removeAllListeners()
-        this._gameapp.mainContainer.cursor = ''
+        this._pixiapp.mainContainer.removeAllListeners()
+        this._pixiapp.mainContainer.cursor = ''
 
         if((this._current + 1) >= this._CommandSet?.length) {
             this._finish()
@@ -287,9 +163,9 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             }
         }
 
-        this._gameapp.mainContainer.on('click', ()=>this.next())
-        this._gameapp.mainContainer.on('touchstart', () => this.next());
-        this._gameapp.mainContainer.cursor = 'pointer'
+        this._pixiapp.mainContainer.on('click', ()=>this.next())
+        this._pixiapp.mainContainer.on('touchstart', () => this.next());
+        this._pixiapp.mainContainer.cursor = 'pointer'
     }
 
     _jumpTo(index){

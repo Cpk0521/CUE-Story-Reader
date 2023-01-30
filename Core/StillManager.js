@@ -27,20 +27,20 @@ class StillManager {
             //     dropShadowDistance: 1,
             // }));
             // Text.anchor.set(0.5)
-            // Text.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+            // Text.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
             // this._container.addChild(Text)
 
             this._container.visible = true
             return Promise.resolve()
         }
 
-        let ratio = (GameApp.appSize.width / 1334)
+        let ratio = (PixiApp.appSize.width / 1334)
         
         this._stillImage = PIXI.Sprite.from(image)
         this._stillImage.width = 1334 * ratio
         this._stillImage.height = 750 * ratio
         this._stillImage.anchor.set(0.5)
-        this._stillImage.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+        this._stillImage.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
 
         this._container.addChild(this._stillImage)
 
@@ -50,10 +50,10 @@ class StillManager {
 
     _createEmptySprite({color , alpha = 1}){
         let sprite = new PIXI.Sprite(PIXI.Texture.WHITE)
-        sprite.width = GameApp.appSize.width
-        sprite.height = GameApp.appSize.height
+        sprite.width = PixiApp.appSize.width
+        sprite.height = PixiApp.appSize.height
         sprite.anchor.set(0.5)
-        sprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+        sprite.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
         sprite.alpha = alpha
         if(color != undefined) {
             sprite.tint = color

@@ -8,7 +8,7 @@ window.onload = () => {
 
     const element = document.getElementById('app')
 
-    const app = GameApp.create(element, {
+    const app = PixiApp.create(element, {
         // width : 1480,
         // height : 720,
         width : 1334,

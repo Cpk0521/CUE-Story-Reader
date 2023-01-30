@@ -73,7 +73,7 @@ class MessageManager extends PIXI.utils.EventEmitter {
         this._messgaePanel = new PIXI.Sprite(Assets.messgaePanel_long)
         this._messgaePanel.width = 1100
         this._messgaePanel.height = 142
-        this._messgaePanel.position.set((GameApp.appSize.width - 1100)/2 , GameApp.appSize.height * .78)
+        this._messgaePanel.position.set((PixiApp.appSize.width - 1100)/2 , PixiApp.appSize.height * .78)
         // this._messgaePanel.position.set(190 , 560)
         this._container.addChild(this._messgaePanel)
 
@@ -88,7 +88,7 @@ class MessageManager extends PIXI.utils.EventEmitter {
             let nameTag = new PIXI.NineSlicePlane(Assets.nameTag, 5, 5, 5, 5)
             nameTag.width = 227
             nameTag.height = 40
-            nameTag.position.set((GameApp.appSize.width - 1100)/2 + 30 + ((227 + 10) * index), GameApp.appSize.height * .76)
+            nameTag.position.set((PixiApp.appSize.width - 1100)/2 + 30 + ((227 + 10) * index), PixiApp.appSize.height * .76)
             nameTag.tint = 0x7d7d7d
             this._container.addChild(nameTag)
 

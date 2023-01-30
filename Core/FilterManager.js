@@ -98,10 +98,10 @@ class FilterManager {
 
     _createEmptySprite({color , alpha = 0}){
         let sprite = new PIXI.Sprite(PIXI.Texture.WHITE)
-        sprite.width = GameApp.appSize.width
-        sprite.height = GameApp.appSize.height
+        sprite.width = PixiApp.appSize.width
+        sprite.height = PixiApp.appSize.height
         sprite.anchor.set(0.5)
-        sprite.position.set(GameApp.appSize.width /2 , GameApp.appSize.height /2)
+        sprite.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)
         sprite.alpha = alpha
         if(color != undefined) {
             sprite.tint = color
