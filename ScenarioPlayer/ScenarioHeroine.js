@@ -1,15 +1,14 @@
-class Live2dHolder extends PIXI.utils.EventEmitter {
+export class ScenarioHeroine {
 
     _loader = PIXI.Assets
     constructor(){
-        super()
         this.isBuild = false
-        this._Model = {}
+        this._Model = null
         this._layer = new PIXI.Container()
     }
-    
-    static async create(jsonurl, onloaded, onError) {
-        return new Live2dHolder().create(jsonurl).then(onloaded).catch(onError)
+
+    static async create(jsonurl, onloaded, onError){
+        return new ScenarioHeroine().create(jsonurl).then(onloaded).catch(onError)
     }
 
     async create(jsonurl){
@@ -18,12 +17,10 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
 
         this._modelsetting = new PIXI.live2d.Cubism4ModelSettings(settingsJSON);
 
-        this.emit('SettingOnLoaded', this)
-        
         return Promise.resolve(this)
     }
 
-    async build(audioManager, config = {}){ // {scale, anchor, position}
+    async build(audioManager){ // {scale, anchor, position}
         if(!this._modelsetting) {
             return Promise.reject(this)
         }
@@ -62,23 +59,20 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         })
 
         //set lipSync
-        this._audioManager = audioManager
-        this._Model.internalModel.lipSync = false
-        let lipSyncIds = this._Model.internalModel.lipSyncIds
+        // this._audioManager = audioManager
+        // this._Model.internalModel.lipSync = false
+        // let lipSyncIds = this._Model.internalModel.lipSyncIds
         
-        this._Model.internalModel.on('lipSyncUpdate', (dt)=>{
-            audioManager.update()
+        // this._Model.internalModel.on('lipSyncUpdate', (dt)=>{
+        //     audioManager.update()
 
-            for (let i = 0; i < lipSyncIds.length; i++) {
-                this.getCoreModel().setParameterValueById(lipSyncIds.at(i), audioManager.Rms)
-            }
-        })
+        //     for (let i = 0; i < lipSyncIds.length; i++) {
+        //         this.getCoreModel().setParameterValueById(lipSyncIds.at(i), audioManager.Rms)
+        //     }
+        // })
 
 
         this.isBuild = true
-
-        this.emit('ModelOnLoaded', this)
-
         return Promise.resolve(this)
     }
 
@@ -112,7 +106,6 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         this.isBuild = false
     }
 
-    //Motion
     async executeMotionByName(name, type = ''){
         let index = this._getMotionByName(type, name)
         return await this._playMotion(type, index, 'FORCE')
