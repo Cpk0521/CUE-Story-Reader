@@ -73,11 +73,6 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
     async _loadMasterList(masterlist, language) {
 
-        // if(masterlist == undefined) {
-        //     alert('please enter the correct parameters <type, id, phase>')
-        //     return
-        // }
-
         let {storyType, storyID, phase, heroineId, title, hasNext, mainCommands, Assets} = await this._loader.load(masterlist).catch(()=>{
             alert('wromg parameters or please check your network')
         })
@@ -115,21 +110,19 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
             // this._BGManager.execute(98, 1)
             this._waitingTouch()
-            // this.TestContainer()
         })
     }
 
-    // async TestContainer(){
+    // async Testing(){
     //     this._isLoading = false
     //     this._loadingContainer.remove()
-    //     EndingContainer.create().addTo(this._pixiapp.mainContainer)
     // }
 
     async _waitingTouch(){
         this._isLoading = false
         this._loadingContainer.remove()
         TouchContainer.create().addTo(this._pixiapp.mainContainer).on('onStart', () => this.start())
-    }   
+    }
 
     async start(){
         console.log('start')
@@ -138,6 +131,12 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             return
         }
         
+        //Title
+        let title = TilteContainer.create(this._Storytitle).addTo(this._pixiapp.mainContainer)
+        await this.delay(3000).then(()=>{
+            title.remove()
+        })
+
         // this.next()
         for (let index = 0; index < this._CommandSet.length; index++) {
             let _curr = this._CommandSet[index];

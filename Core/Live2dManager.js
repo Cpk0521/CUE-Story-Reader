@@ -32,7 +32,8 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
             await this._padModel()
         
-        }else{
+        }
+        else{
 
             for (let index = 0; index < Assets.length; index++) {
                 let holder = this._getHolder(Assets[index].dataId)
