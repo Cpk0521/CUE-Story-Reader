@@ -1,6 +1,6 @@
-class TouchScene extends PIXI.utils.EventEmitter {
+class TouchContainer extends PIXI.utils.EventEmitter {
 
-     _loader = PIXI.Assets
+    _loader = PIXI.Assets
     constructor(){
         super()
         this._container = new PIXI.Container()

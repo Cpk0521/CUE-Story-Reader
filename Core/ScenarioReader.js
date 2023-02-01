@@ -45,6 +45,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         this._StoryHeroine = 0
         this._Storytitle = ''
         this._CommandSet = []
+        this._hasNext = false
 
         //Command Counter
         this._current = -1
@@ -52,7 +53,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         this._autoplay = true
 
         //Loading Screen
-        this._loadingScene = LoadingScene.create()
+        this._loadingContainer = LoadingContainer.create()
         this._isLoading = true
 
         //Translate
@@ -77,11 +78,11 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         //     return
         // }
 
-        let {storyType, storyID, phase, heroineId, title, mainCommands, Assets} = await this._loader.load(masterlist).catch(()=>{
+        let {storyType, storyID, phase, heroineId, title, hasNext, mainCommands, Assets} = await this._loader.load(masterlist).catch(()=>{
             alert('wromg parameters or please check your network')
         })
 
-        this._loadingScene.addTo(this._pixiapp.mainContainer)
+        this._loadingContainer.addTo(this._pixiapp.mainContainer)
          
         this._StoryType = storyType
         this._StoryId = storyID
@@ -89,6 +90,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         this._StoryHeroine = heroineId ?? 0
         this._Storytitle = title
         this._CommandSet = mainCommands 
+        this._hasNext = hasNext
 
         if(language == 'zh' || language == 'eng' ) {
             this._isTranslate = true
@@ -113,13 +115,20 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
             // this._BGManager.execute(98, 1)
             this._waitingTouch()
+            // this.TestContainer()
         })
     }
 
+    // async TestContainer(){
+    //     this._isLoading = false
+    //     this._loadingContainer.remove()
+    //     EndingContainer.create().addTo(this._pixiapp.mainContainer)
+    // }
+
     async _waitingTouch(){
         this._isLoading = false
-        this._loadingScene.remove()
-        TouchScene.create().addTo(this._pixiapp.mainContainer).on('onStart', () => this.start())
+        this._loadingContainer.remove()
+        TouchContainer.create().addTo(this._pixiapp.mainContainer).on('onStart', () => this.start())
     }   
 
     async start(){
@@ -181,6 +190,12 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
     _finish() {
         console.log('故事完結')
         // this._destroy()
+        if(this._hasNext){
+            ToBeContiunedContainer.create().addTo(this._pixiapp.mainContainer)
+        }
+        else{
+            EndingContainer.create().addTo(this._pixiapp.mainContainer)
+        }
     }
 
     _destroy(){

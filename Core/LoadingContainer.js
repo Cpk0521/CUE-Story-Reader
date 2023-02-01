@@ -76,7 +76,7 @@ const atlasData = {
     }
 }
 
-class LoadingScene {
+class LoadingContainer {
 
     _loader = PIXI.Assets
     constructor(){
