@@ -1,6 +1,6 @@
-import { ADV_WIDTH, ADV_HIGHT } from './ScenarioConfig.js'
+import { AppConfig } from "../config/AppConfig.js";
 
-export function createEmptySprite({color = undefined, alpha = 1, width = ADV_WIDTH, height = ADV_HIGHT}){
+export function createEmptySprite({color = undefined, alpha = 1, width = AppConfig.APP_WIDTH, height = AppConfig.APP_HIGHT}){
     let sprite = new PIXI.Sprite(PIXI.Texture.WHITE)
     sprite.width = width
     sprite.height = height
@@ -15,7 +15,6 @@ export function createEmptySprite({color = undefined, alpha = 1, width = ADV_WID
 }
 
 export function checkScriptFormat(Script){
-
     let params = ['storyType', 'storyID', 'phase', 'heroineId', 'title', 'mainCommands', 'Assets']
     
     params.forEach((key) => {
@@ -26,3 +25,4 @@ export function checkScriptFormat(Script){
 
     return true
 }
+
