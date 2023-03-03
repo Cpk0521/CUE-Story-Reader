@@ -14,11 +14,11 @@ export function createEmptySprite({color = undefined, alpha = 1, width = AppConf
     return sprite
 }
 
-export function checkScriptFormat(Script){
+export function checkScriptFormat(jsonScript){
     let params = ['storyType', 'storyID', 'phase', 'heroineId', 'title', 'mainCommands', 'Assets']
     
     params.forEach((key) => {
-        if(!(key in Script)){
+        if(!(key in jsonScript)){
             return false
         }
     })

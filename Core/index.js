@@ -2,9 +2,22 @@
 export * from './config/AppConfig.js'
 export * from './config/HeroineConfig.js'
 export * from './config/AssetsConfig.js'
+export * from './config/TapEffectConfig.js'
 //ScenarioPlayer
-
+export * from './ScenarioPlayer/ScenarioPlayer.js'
+export * from './ScenarioPlayer/ScenarioScript.js'
+export * from './ScenarioPlayer/ScenarioStill.js'
+export * from './ScenarioPlayer/ScenarioTap.js'
+export * from './ScenarioPlayer/ScenarioMessage.js'
+export * from './ScenarioPlayer/ScenarioStage.js'
+export * from './ScenarioPlayer/ScenarioBackground.js'
+export * from './ScenarioPlayer/ScenarioMenu.js'
+export * from './ScenarioPlayer/ScenarioMovie.js'
+export * from './ScenarioPlayer/ScenarioSound.js'
 //utils
 export * from './utils/PixiApp.js'
 export * from './utils/ResourcePath.js'
 export * from './utils/Hello.js'
+export * from './utils/Helper.js'
+export * from './utils/AssetsCache.js'
+export * from './utils/ParticleSystem.js'

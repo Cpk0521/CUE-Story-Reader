@@ -20,9 +20,9 @@ export class PixiAppClass {
             autoStart: true,
             autoDensity: true,
             backgroundColor : background ?? 0x000000,
-            backgroundAlpha: alpha || 1,
-            width: width ?? APP_WIDTH,
-            height: height ?? APP_HIGHT,
+            backgroundAlpha: alpha ?? 1,
+            width: width ?? AppConfig.APP_WIDTH,
+            height: height ?? AppConfig.APP_HIGHT,
         })
         //add To HTML element
         element?.appendChild(this._app.view);
@@ -51,10 +51,7 @@ export class PixiAppClass {
     }
 
     _resize = () => {
-        let width = window.innerWidth
-        let height = window.innerHeight;
-
-        let ratio = Math.min(width / AppConfig.APP_WIDTH, height / AppConfig.APP_HIGHT)
+        let ratio = Math.min(window.innerWidth / AppConfig.APP_WIDTH, window.innerHeight / AppConfig.APP_HIGHT)
         let reX = AppConfig.APP_WIDTH * ratio
         let reY = AppConfig.APP_HIGHT * ratio
 
@@ -88,7 +85,7 @@ export class PixiAppClass {
         return this._mainStage
     }
 
-    get appSize(){
+    get AppSize(){
         return { width : this.App.renderer.width, height : this.App.renderer.height }
     }
 }
