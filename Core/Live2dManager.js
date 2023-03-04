@@ -4,72 +4,73 @@ class Live2dManager extends PIXI.utils.EventEmitter {
         super()
 
         this._container = new PIXI.Container();
+        this._container.sortableChildren = true
+
         this._L2dAudioPlayer = SoundManager.L2dAudioPlayer
         this._holderMap = new Map()
+        //this._currentOnTheStage = []
 
-        //
         this._savingMode = false
         this._heroShowList = []
         this._MaxModleCount = 6
         this._builtModelCount = 0
     }
 
-    async initialize(Assets, sortedlist) {
+    async initialize(Assets, sortedlist){
         if(!Assets) {
             return new Promise(()=>{})
         }
 
         for (let index = 0; index < Assets.length; index++) {
-            await this._createHolder(Assets[index])
-            // .then(async (holder)=>{
-            //     await this._buildModel(holder)
-            // })
+            await this._createHolder(Assets[index], index)            
         }
 
         if(Assets.length > this._MaxModleCount) {
             this._heroShowList = sortedlist
             this._savingMode = true
 
-            await this._padModel()
-        
+            return this._padModel() //順序填滿
         }
-        else{
-
-            for (let index = 0; index < Assets.length; index++) {
-                let holder = this._getHolder(Assets[index].dataId)
-                await this._buildModel(holder)
-            }
+    
+        for (let index = 0; index < Assets.length; index++) {
+            let holder = this._getHolder(Assets[index].dataId)
+            await this._buildModel(holder)
         }
 
         return Promise.resolve()
     }
 
-    async _createHolder(hero) {
+    async _createHolder(hero, zindex) {
         if(this._isExist(hero.dataId)){
             return new Promise(()=>{})
         }
 
         let modelsrc = ResourcePath.getL2dSrc2(hero.heroineId, hero.costumeId)
-        return Live2dHolder.create(modelsrc).then((holder)=>{
-            this._holderMap.set(hero.dataId, holder)
-            return holder
-        })
+        return Live2dHolder.create(modelsrc, zindex)
+                .then((holder)=>{
+                    this._holderMap.set(hero.dataId, holder)
+                    return holder
+                })
     }
 
     async _buildModel(holder){
-        return holder.build(this._L2dAudioPlayer).then((modelholder)=>{
-            modelholder.setScale(.32)
-            modelholder.setAnchor(.5)
-            modelholder.setPosition(-740, PixiApp.appSize.height * 0.895)
-            modelholder.setVisible(false)
-            modelholder.addTo(this._container)
-        })
+        return holder.build(this._L2dAudioPlayer)
+                .then((modelholder)=>{
+                    modelholder.setScale(.32)
+                    modelholder.setAnchor(.5)
+                    modelholder.setPosition(-740, PixiApp.appSize.height * 0.895)
+                    modelholder.setVisible(false)
+                    modelholder.addTo(this._container)
+                    modelholder.executeMotionByName('P_01')
+                })
     }
 
-    //==============================================
+    //============================================================
 
     async display(id, {from_x, to_x, fadeTime}, ...content){
         let holder = this._getBuiltHolder(id)
+        //this._currentOnTheStage[id] = holder //
+
         let new_to_x = ( PixiApp.appSize.width / 2 ) + to_x
         holder.setPosition(new_to_x, PixiApp.appSize.height * 0.895)
         if(from_x != to_x) {
@@ -149,10 +150,10 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
     async hide(id, newpoint, time) {
         let holder = this._getBuiltHolder(id)
+        //delete this._currentOnTheStage[id]
         let new_x = ( PixiApp.appSize.width / 2 ) + newpoint
         await holder.moveTo(new_x, time)
-        // holder.setPosition(-740, PixiApp.appSize.height * 0.895)
-        // holder.setVisible(false)
+
         holder.rest()
 
         if(this._savingMode) {
@@ -168,6 +169,24 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
     async hideAll() {
         let needpad = false
+
+        //Object.entries(this._currentOnTheStage).forEach(([id, holder])=>{
+        //     if(holder.IsBuild) {
+        //         holder.setPosition(-740, PixiApp.appSize.height * 0.895)
+        //         holder.rest()
+
+        //         if(this._savingMode) {
+        //             if(!this._isExistInList(id) && this._heroShowList.length > 0){
+        //                 this._destory(holder)
+                        
+        //                 //避免多次運行
+        //                 if(!needpad) {
+        //                     needpad = true
+        //                 }
+        //             }
+        //         }
+        //     }
+        // })
 
         this._holderMap.forEach(async(v, k, m) => {
             if(v.IsBuild) {
@@ -235,12 +254,9 @@ class Live2dManager extends PIXI.utils.EventEmitter {
             }
 
             await this._buildModel(holder).then(()=>{
-                // console.log(id)
                 this._builtModelCount ++
             })
         }
-
-        // console.log(this._heroShowList)
     }
 
     _getHolder(label) {
@@ -275,7 +291,7 @@ class Live2dManager extends PIXI.utils.EventEmitter {
 
         return result
     }
-
+    
     _isExist(label){
         return this._holderMap.has(label)
     }

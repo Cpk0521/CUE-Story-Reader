@@ -131,12 +131,6 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             return
         }
         
-        //Title
-        let title = TilteContainer.create(this._Storytitle).addTo(this._pixiapp.mainContainer)
-        await this.delay(3000).then(()=>{
-            title.remove()
-        })
-
         // this.next()
         for (let index = 0; index < this._CommandSet.length; index++) {
             let _curr = this._CommandSet[index];
@@ -249,6 +243,13 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             // console.log(index, '背景')
             _executes.push(() => this._BGManager.execute(values[0], values[1]))
             _executes.push(() => this._SoundManager.playBGMAudio(ResourcePath.getBGMAudioSrc(id)))
+            _executes.push(async() => {
+                //Title
+                let title = TilteContainer.create(this._Storytitle).addTo(this._pixiapp.mainContainer)
+                return this.delay(3000).then(()=>{
+                    title.remove()
+                })
+            })
         }
         else if(commandType == 2){
             console.log(index, '故事完結')

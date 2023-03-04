@@ -6,24 +6,26 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         this.isBuild = false
         this._Model = {}
         this._layer = new PIXI.Container()
+        this._zindex = 0
     }
     
     static async create(jsonurl, onloaded, onError) {
         return new Live2dHolder().create(jsonurl).then(onloaded).catch(onError)
     }
 
-    async create(jsonurl){
+    async create(jsonurl, zindex){
         let settingsJSON = await this._loader.load(jsonurl)
         settingsJSON.url = jsonurl
 
         this._modelsetting = new PIXI.live2d.Cubism4ModelSettings(settingsJSON);
+        this._zindex = zindex
 
         this.emit('SettingOnLoaded', this)
         
         return Promise.resolve(this)
     }
 
-    async build(audioManager, config = {}){ // {scale, anchor, position}
+    async build(audioManager, config = {}){ // {scale, anchor, position, zindex}
         if(!this._modelsetting) {
             return Promise.reject(this)
         }
@@ -34,6 +36,7 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         
         this._Model = await PIXI.live2d.Live2DModel.from(this._modelsetting, {autoUpdate : false});
 
+        this._Model.zindex = this._zindex
         this._Model.autoInteract = false; //pixi v7 need to set false
         this._Model.buttonMode = false;
         this._Model.interactive = false;
