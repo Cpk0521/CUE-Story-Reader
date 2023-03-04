@@ -16,7 +16,7 @@ class ScenarioScript {
         this._Storytitle = ScenarioScript.title
         this._CommandSet = ScenarioScript.mainCommands
         this._Assets = ScenarioScript.Assets
-        this._AllAssets = this._loadAllAssets()
+        this._AllAssets = this._getAllAssets()
 
         //Command Counter
         this._current = -1
@@ -25,7 +25,7 @@ class ScenarioScript {
         //Translate
         this._Translatebundle = null
         this._supportedLanguages = []
-        this._isTranslate = false
+        this._hasTranslate = false
         this._TranLang = 'default'
     }
 
@@ -33,22 +33,20 @@ class ScenarioScript {
         return new this(ScenarioScript)
     }
 
-    /**
-     * 
-     * @param {string | string[]} languages 
-     */
-    // async languageSupport(languages){
-    //     let url = getTranslateSrc(this._StoryType, this._StoryId, this._StoryPhaseID, this._StoryHeroineID)
-    //     let _languageScript = await Loader.load(url)
-    //     .then((json)=>{
-    //         this._Translatebundle = json
-    //         console.log(json)
-    //         this._supportedLanguages = this._supportedLanguages.concat(languages)
-    //     })
-    //     .catch(()=>{{
-    //         return
-    //     }})
-    // }
+    async languageSupport(){
+        let url = getTranslateSrc(this._StoryType, this._StoryId, this._StoryPhaseID, this._StoryHeroineID)
+        return Loader.load(url)
+            .then((_languageScript)=>{
+                if(_languageScript['Language'].length > 0){
+                    this._supportedLanguages = _languageScript['Language']
+                    this._Translatebundle = _languageScript
+                    this._hasTranslate = true
+                }
+            })
+            .catch(()=>{
+                console.log('Can not found the story translate script')
+            })
+    }
 
     next(){
         if((this._current + 1) >= this._CommandSet.length) {
@@ -80,15 +78,18 @@ class ScenarioScript {
         this._StoryHeroineID = 0
         this._Storytitle = ''
         this._CommandSet = []
-        this._current = -1
+        this._Assets = []
+        this._AllAssets = []
 
         //Command Counter
         this._current = -1
         this._isEnd = false
 
         //Translate
-        this._isTranslate = false
-        this._TranLang = 'normal'
+        this._Translatebundle = null
+        this._supportedLanguages = []
+        this._hasTranslate = false
+        this._TranLang = 'default'
     }
 
     Hero_Show_Order(){
@@ -102,7 +103,7 @@ class ScenarioScript {
         return list
     }
 
-    _loadAllAssets(){
+    _getAllAssets(){
         let _assetsResult = {}
         let {heroines, backgrounds, bgmIds, movieNames} = this._Assets
 
@@ -195,7 +196,7 @@ class ScenarioScript {
         return _assetsResult
     }
 
-    get FullAssets(){
+    get FullUrlAssets(){
         return this._AllAssets
     }
 

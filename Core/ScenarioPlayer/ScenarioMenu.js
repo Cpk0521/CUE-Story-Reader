@@ -1,8 +1,8 @@
 import { MENU_ASSETS_RESOURCE } from '../config/AssetsConfig.js'
+import AssetsCache from '../utils/AssetsCache.js'
 
 class ScenarioMenu extends PIXI.Container {
 
-    _assets = MENU_ASSETS_RESOURCE
     _auto = false
     constructor(){
         super()
@@ -13,7 +13,12 @@ class ScenarioMenu extends PIXI.Container {
     }
 
     async initialize(){
+        this._assets = await AssetsCache.addToCache(MENU_ASSETS_RESOURCE, {
+            Label : 'Menu',
+            objType : true
+        })
 
+        
     }
 
     get Assets(){

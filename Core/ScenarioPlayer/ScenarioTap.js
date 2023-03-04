@@ -1,4 +1,4 @@
-import { TapEffectConfig } from '../config/TapEffectConfig.js'
+import { TapEffectConfig2 } from '../config/TapEffectConfig.js'
 import ParticleSystem from '../utils/ParticleSystem.js'
 
 class ScenarioTap extends PIXI.Container {
@@ -8,7 +8,7 @@ class ScenarioTap extends PIXI.Container {
     }
 
     play(pos){
-        this._playEffect(TapEffectConfig, pos)
+        this._playEffect(TapEffectConfig2, pos)
     }
 
     addTo(parent){

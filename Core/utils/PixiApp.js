@@ -7,7 +7,9 @@ export class PixiAppClass {
         gsap.registerPlugin(PixiPlugin)
     }
 
-    create(element, {width, height, background, alpha}) {
+    create(element, config) {
+
+        let {width, height, background, alpha} = config
 
         //save width and height setting
         AppConfig.APP_WIDTH = width ?? DEFAULT_WIDTH

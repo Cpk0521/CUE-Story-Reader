@@ -108,53 +108,76 @@ export class AssetsCacheClass {
      * 
      * @param {string} name
      * @param {string | string[]} Label 
-     * @param {boolean} objType 
+     * @param {{objType : boolean, Single : boolean}} config 
      * @returns 
      */
-    get(name, Label, objType = false){
+    get(name, Label, config = {objType : false, Single : false}){
+
+        let {objType, Single} = config
+
         let result = this._assetsCache.filter(
                 record => 
                 record.name === name && 
                 record.label.every(label => Label.includes(label))
             )
 
-        
+        if(Single){
+            result = this._FirstItem(result)
+        }
+
         return objType ? this._switchType(result) : result
     }
     
     /**
      * 
      * @param {string} name 
-     * @param {boolean} objType 
+     * @param {{objType : boolean, Single : boolean}} config 
      * @returns 
      */
-    getByName(name, objType = false){
+    getByName(name, config = {objType : false, Single : false}){
+        let {objType, Single} = config
         let result = this._assetsCache.filter(record => record.name === name)
+
+        if(Single){
+            result = this._FirstItem(result)
+        }
+
         return objType ? this._switchType(result) : result
     }
 
     /**
      * 
      * @param {string | string[]} Label 
-     * @param {boolean} objType 
+     * @param {{objType : boolean, Single : boolean}} config 
      * @returns 
      */
-    getByLabel(Label, objType = false){
+    getByLabel(Label, config = {objType : false, Single : false}){
+        let {objType, Single} = config
         let result = this._assetsCache.filter(record => record.label.every(label => Label.includes(label)))
+
+        if(Single){
+            result = this._FirstItem(result)
+        }
+
         return objType ? this._switchType(result) : result
     }
 
     /**
      * 
      * @param {string} resource 
-     * @param {boolean} objType 
+     * @param {{objType : boolean, First : boolean, Single : boolean}} config 
      * @returns 
      */
-    getByResource(resource, objType = false){
+    getByResource(resource, config = {objType : false, Single : false}){
+        let {objType, Single} = config
         let result = this._assetsCache.filter(record => record.url === resource)
+
+        if(Single){
+            result = this._FirstItem(result)
+        }
+        
         return objType ? this._switchType(result) : result
     }
-
 
     /**
      * 
@@ -179,11 +202,17 @@ export class AssetsCacheClass {
 
     _switchType(result){
         let out = {}
-        result.forEach(_r => {
+        result?.forEach(_r => {
             out[_r.name] = _r.asset
         });
 
         return out
+    }
+
+    _FirstItem(result){
+        if(result){
+            return result.shift()
+        }
     }
 
     get Cache(){

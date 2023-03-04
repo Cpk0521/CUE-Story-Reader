@@ -1,4 +1,4 @@
-import { PixiApp, getScenarioSrc, ScenarioPlayer, AssetsCache, FONT_RESOURCE} from './Core/index.js'
+import { PixiApp, getScenarioSrc, ScenarioPlayer, AssetsCache, FONT_RESOURCE, TAP_TEXTURE} from './Core/index.js'
 
 //get params by url /?=
 var params = new URLSearchParams(window.location.search)
