@@ -63,12 +63,16 @@ class ScenarioStill extends PIXI.Container {
         }
 
         this.addChild(image)
-        return 
     }
 
     async hide(){
         this.removeChildren()
         this.visible = false
+    }
+
+    addTo(parent){
+        parent?.addChild(this)
+        return this
     }
 
 }

@@ -1,15 +1,17 @@
 import { AssetsCache, Loader } from '../utils/AssetsCache.js'
+import Hello from '../utils/Hello.js'
+import { checkScriptFormat, createEmptySprite } from '../utils/Helper.js'
+
 import ScenarioTap from './ScenarioTap.js'
+import ScenarioSound from './ScenarioSound.js'
+
 import ScenarioMenu from './ScenarioMenu.js'
 import ScenarioScript from './ScenarioScript.js'
 import ScenarioMessage from './ScenarioMessage.js'
 import ScenarioStill from './ScenarioStill.js'
 import ScenarioMovie from './ScenarioMovie.js'
 import ScenarioStage from './ScenarioStage.js'
-import ScenarioSound from './ScenarioSound.js'
-import ScenarioText from './ScenarioText.js'
-import Hello from '../utils/Hello.js'
-import { checkScriptFormat, createEmptySprite } from '../utils/Helper.js'
+// import ScenarioTelop from './ScenarioTelop.js'
 
 export class ScenarioPlayer extends PIXI.Container{
 
@@ -27,12 +29,12 @@ export class ScenarioPlayer extends PIXI.Container{
         this._StillLayer = ControllerConfig.Still ?? ScenarioStill.create()
         this._MovieLayer = ControllerConfig.Movie ?? ScenarioMovie.create()
         this._MessageLogLayer = ControllerConfig.MessageLog ?? ScenarioMessage.create()
-        this._TextLayer = ControllerConfig.Text ?? ScenarioText.create()
+        // this._TelopLayer = ControllerConfig.Telop ?? ScenarioTelop.create()
         
         //Contrller
         this._assetsCache = AssetsCache
         this._storyScript = null
-        this._SoundManager = ControllerConfig.Sound ?? ScenarioSound.create()
+        this._SoundManager = ControllerConfig.Sound ?? new ScenarioSound()
 
         //event
         this.on('pointerdown', this._tapEffect, this)

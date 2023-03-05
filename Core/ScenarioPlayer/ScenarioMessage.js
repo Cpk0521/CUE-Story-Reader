@@ -3,37 +3,39 @@ import AssetsCache from '../utils/AssetsCache.js'
 import { AppConfig } from '../config/AppConfig.js'
 import { HEROINE_CONFIG } from '../config/HeroineConfig.js'
 
+export const NameTextStyle = {
+    'default' : new PIXI.TextStyle({
+        fontFamily: "FOT RodinCattleya Pro DB",
+        fill: 0xffffff,
+        fontSize: 25,
+        letterSpacing: 1,
+    }),
+    'zh' : new PIXI.TextStyle({
+        fontFamily: "Notosanstc Medium",
+        fill: 0xffffff,
+        fontSize: 22.5,
+        letterSpacing: 1,
+    })
+}
+
+export const MessTextStyle = {
+    'default' : new PIXI.TextStyle({
+        fontFamily: "FOT RodinCattleya Pro B",
+        fill: 0x444444,
+        fontSize: 27,
+        lineHeight: 37,
+    }),
+    'zh' : new PIXI.TextStyle({
+        fontFamily: "Notosanstc Bold",
+        fill: 0x444444,
+        fontSize: 27,
+        lineHeight: 37,
+    })
+}
+
 class ScenarioMessage extends PIXI.Container {
 
     _charMap = new Map()
-    _NameTextStyle = {
-        'default' : new PIXI.TextStyle({
-            fontFamily: "FOT RodinCattleya Pro DB",
-            fill: 0xffffff,
-            fontSize: 25,
-            letterSpacing: 1,
-        }),
-        'zh' : new PIXI.TextStyle({
-            fontFamily: "Notosanstc Medium",
-            fill: 0xffffff,
-            fontSize: 22.5,
-            letterSpacing: 1,
-        })
-    }
-    _MessTextStyle = {
-        'default' : new PIXI.TextStyle({
-            fontFamily: "FOT RodinCattleya Pro B",
-            fill: 0x444444,
-            fontSize: 27,
-            lineHeight: 37,
-        }),
-        'zh' : new PIXI.TextStyle({
-            fontFamily: "Notosanstc Bold",
-            fill: 0x444444,
-            fontSize: 27,
-            lineHeight: 37,
-        })
-    }
     constructor(){
         super()
 
@@ -69,7 +71,7 @@ class ScenarioMessage extends PIXI.Container {
         this.addChild(this._messagePanel)
 
         //Message Text setup
-        this._messageText = new PIXI.Text('', this._MessTextStyle['default'])
+        this._messageText = new PIXI.Text('', MessTextStyle['default'])
         this._messageText.position.set(45, 35)
         this._messagePanel.addChild(this._messageText)
         
@@ -83,7 +85,7 @@ class ScenarioMessage extends PIXI.Container {
             nameTag.tint = 0x7d7d7d
             this.addChild(nameTag)
 
-            let nameText = new PIXI.Text('名前', this._NameTextStyle['default']);
+            let nameText = new PIXI.Text('名前', NameTextStyle['default']);
             nameText.anchor.set(0.5)
             nameText.position.set(nameTag.width/2, nameTag.height/2 - 1.5)
             nameTag.addChild(nameText)
@@ -177,9 +179,9 @@ class ScenarioMessage extends PIXI.Container {
      */
     switchStyle(style = 'default'){
         this._nameTag.forEach(nametag => {
-            nametag.nameText.style = this._NameTextStyle[style]
+            nametag.nameText.style = NameTextStyle[style]
         });
-        this._messageText.style = this._MessTextStyle[style]
+        this._messageText.style = MessTextStyle[style]
     }
 
 }

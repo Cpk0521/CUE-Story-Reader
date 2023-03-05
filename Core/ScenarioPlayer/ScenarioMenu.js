@@ -17,8 +17,6 @@ class ScenarioMenu extends PIXI.Container {
             Label : 'Menu',
             objType : true
         })
-
-        
     }
 
     get Assets(){

@@ -122,7 +122,7 @@ export class AssetsCacheClass {
             )
 
         if(Single){
-            result = this._FirstItem(result)
+            result = [this._FirstItem(result)]
         }
 
         return objType ? this._switchType(result) : result
@@ -139,7 +139,7 @@ export class AssetsCacheClass {
         let result = this._assetsCache.filter(record => record.name === name)
 
         if(Single){
-            result = this._FirstItem(result)
+            result = [this._FirstItem(result)]
         }
 
         return objType ? this._switchType(result) : result
@@ -156,7 +156,7 @@ export class AssetsCacheClass {
         let result = this._assetsCache.filter(record => record.label.every(label => Label.includes(label)))
 
         if(Single){
-            result = this._FirstItem(result)
+            result = [this._FirstItem(result)]
         }
 
         return objType ? this._switchType(result) : result
@@ -173,7 +173,7 @@ export class AssetsCacheClass {
         let result = this._assetsCache.filter(record => record.url === resource)
 
         if(Single){
-            result = this._FirstItem(result)
+            result = [this._FirstItem(result)]
         }
         
         return objType ? this._switchType(result) : result
@@ -202,10 +202,9 @@ export class AssetsCacheClass {
 
     _switchType(result){
         let out = {}
-        result?.forEach(_r => {
+        result.forEach(_r => {
             out[_r.name] = _r.asset
         });
-
         return out
     }
 

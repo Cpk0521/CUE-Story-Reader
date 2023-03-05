@@ -14,7 +14,7 @@ export * from './ScenarioPlayer/ScenarioBackground.js'
 export * from './ScenarioPlayer/ScenarioMenu.js'
 export * from './ScenarioPlayer/ScenarioMovie.js'
 export * from './ScenarioPlayer/ScenarioSound.js'
-export * from './ScenarioPlayer/ScenarioText.js'
+// export * from './ScenarioPlayer/ScenarioTelop.js'
 //utils
 export * from './utils/PixiApp.js'
 export * from './utils/ResourcePath.js'
