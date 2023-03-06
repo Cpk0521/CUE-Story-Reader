@@ -54,24 +54,15 @@ class PixiApp extends PIXI.utils.EventEmitter {
     }
 
     _resize = () => {
-        // let width = document.documentElement.clientWidth;
-        // let height = document.documentElement.clientHeight;
-        let width = window.innerWidth
-        let height = window.innerHeight;
+        let width = document.documentElement.clientWidth;
+        let height = document.documentElement.clientHeight;
+        // let width = window.innerWidth
+        // let height = window.innerHeight;
 
-        let ratioX = width / (this._width ?? 1334)
-        let ratioY = height / (this._height ?? 750)
-
-        let reX = 0;
-        let reY = 0;
-
-        if(ratioX > ratioY){
-            reX = (this._width ?? 1334) * ratioY 
-            reY = (this._height ?? 750) * ratioY
-        }else{
-            reX = (this._width ?? 1334) * ratioX
-            reY = (this._height ?? 750) * ratioX
-        }
+        let ratio = Math.min(width / (this._width ?? 1334), height / (this._height ?? 750))
+        
+        let reX = (this._width ?? 1334) * ratio;
+        let reY = (this._height ?? 750) * ratio;
 
         this._app.view.style.width = reX + 'px';
         this._app.view.style.height = reY + 'px';
