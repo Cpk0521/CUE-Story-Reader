@@ -131,7 +131,8 @@ class MessageManager extends PIXI.utils.EventEmitter {
         }else {
             this._setTagName(name)
         }
-        this._setTextContent(message)
+        // this._setTextContent(message)
+        return this._typewriteEffect(message, 50)
     }
 
     async multiShow(heros, message, translate = false){
@@ -147,7 +148,8 @@ class MessageManager extends PIXI.utils.EventEmitter {
             this._setTagName(name, index)
         }
 
-        this._setTextContent(message)
+        // this._setTextContent(message)
+        return this._typewriteEffect(message, 50)
     }
 
     async hide(){
@@ -156,6 +158,24 @@ class MessageManager extends PIXI.utils.EventEmitter {
         }
 
         this.visible = false
+    }
+
+    async _typewriteEffect(message, time){
+        return new Promise((res, rej)=>{
+            let string = ''
+            let index = 0
+
+            let timeout = setInterval(()=>{
+                if(index === message.length){
+                    clearInterval(timeout)
+                    res()
+                }
+            
+                string += message.charAt(index)
+                this._setTextContent(string)
+                index += 1
+            }, time)
+        })
     }
 
     /**

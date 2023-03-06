@@ -45,6 +45,8 @@ class PixiApp extends PIXI.utils.EventEmitter {
         this._resize();
         window.addEventListener('resize', this._resize)
 
+        //Dev Tool
+        // globalThis.__PIXI_APP__ = this._app;
     }
 
     static create(element, config = {}) {

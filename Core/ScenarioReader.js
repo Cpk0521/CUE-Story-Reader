@@ -241,14 +241,23 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
         if(commandType == 1){
             // console.log(index, '背景')
-            _executes.push(() => this._BGManager.execute(values[0], values[1]))
-            _executes.push(() => this._SoundManager.playBGMAudio(ResourcePath.getBGMAudioSrc(id)))
-            _executes.push(async() => {
-                //Title
+            // _executes.push(() => this._BGManager.execute(values[0], values[1]))
+            // _executes.push(() => this._SoundManager.playBGMAudio(ResourcePath.getBGMAudioSrc(id)))
+            // _executes.push(async() => {
+            //     //Title
+            //     let title = TilteContainer.create(this._Storytitle).addTo(this._pixiapp.mainContainer)
+            //     return this.delay(3000).then(()=>{
+            //         title.remove()
+            //     })
+            // })
+
+            _executes.push(async()=>{
+                this._BGManager.execute(values[0], values[1])
                 let title = TilteContainer.create(this._Storytitle).addTo(this._pixiapp.mainContainer)
-                return this.delay(3000).then(()=>{
+                await this.delay(3000).then(()=>{
                     title.remove()
                 })
+                this._SoundManager.playBGMAudio(ResourcePath.getBGMAudioSrc(id))
             })
         }
         else if(commandType == 2){
@@ -270,7 +279,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
             if(this._isTranslate) {
                 let log =  this._TranslateReader.getMessageLogsByScenarioIndex(index, this._TranLang)
-                console.log(log)
+                
                 if(log != undefined){
                     _executes.push(() => this._MessageManager.singleShow(id, log.message, log.name))
                 }
