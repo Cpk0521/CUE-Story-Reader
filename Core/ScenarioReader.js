@@ -92,14 +92,53 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             this._TranLang = language
         }
 
+        let AudioUrlSet = { BGM : {}, Voice : {}, SE : {}}
+        Assets.bgmIds.forEach(bgm => {
+            let src = ResourcePath.getBGMAudioSrc(bgm)
+            if(src){
+                AudioUrlSet['BGM'][`${bgm}`] = src
+            }
+        });
+
+        this._CommandSet.forEach((command)=>{
+            let {commandType, values, voieCueName, subCommands} = command
+            if(commandType == 4){
+                let voiceIndex = values[0] == 0? voieCueName : values[0]
+                let src = ResourcePath.getAudioSrc(voiceIndex, this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine)
+                if(src){
+                    AudioUrlSet['Voice'][voiceIndex] = src
+                }
+            }
+            if(commandType == 6){
+                let isvoice =  values.length > 1 ? values[0] > 0 : false
+                if(isvoice){
+                    let src = ResourcePath.getAudioSrc(values[0], this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine)
+                    if(src){
+                        AudioUrlSet['Voice'][values[0]] = src
+                    }
+                }
+            }
+            subCommands.forEach((sub)=>{
+                let {commandType, id} = sub
+
+                if(commandType == 23 || commandType == 24){
+                    if(!AudioUrlSet['SE'][id]){
+                        let src = ResourcePath.getSEAudioSrc(id)
+                        if(src){
+                            AudioUrlSet['SE'][id] = src
+                        }
+                    }
+                }
+            })
+        })
+
         return Promise.all([
             this._L2dManager.initialize(Assets.heroines, this._checkHeroSort()),
             this._BGManager.initialize(Assets.backgrounds),
             this._MessageManager.initialize(Assets.heroines, this._TranLang),
             this._MovieManager.initialize(Assets.movieNames),
-            new Promise((res)=>{
-                this._isTranslate ? res(this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId))) : res()
-            })
+            this._SoundManager.initialize(AudioUrlSet),
+            (this._isTranslate ? this._TranslateReader.initialize(ResourcePath.getTranslateSrc(storyType, storyID, phase, heroineId)) : async()=>{})
             // this._BGManager.initialize([{
             //     "id": 98,
             //     "subId": 1
@@ -113,10 +152,6 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         })
     }
 
-    // async Testing(){
-    //     this._isLoading = false
-    //     this._loadingContainer.remove()
-    // }
 
     async _waitingTouch(){
         this._isLoading = false
@@ -257,7 +292,9 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
                 await this.delay(3000).then(()=>{
                     title.remove()
                 })
-                this._SoundManager.playBGMAudio(ResourcePath.getBGMAudioSrc(id))
+                // this._SoundManager.playBGMAudio(ResourcePath.getBGMAudioSrc(values[2]))
+                let uid = values[2] > 0 ? values[2] : 1
+                this._SoundManager.playBGM(uid)
             })
         }
         else if(commandType == 2){
@@ -275,6 +312,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             let voiceIndex = values[0] == 0? voieCueName : values[0]
 
             _priority.push(() => this._L2dManager.loadAudio(ResourcePath.getAudioSrc(voiceIndex, this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine)))
+            // _priority.push(() => this._L2dManager.loadAudio(voiceIndex))
             _executes.push(() => this._L2dManager.speaking(id, rates))
 
             if(this._isTranslate) {
@@ -312,7 +350,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
 
             let isvoice =  values.length > 1 ? values[0] > 0 : false
             if(isvoice) {
-                _executes.push(() => this._SoundManager.playAudio_Full(ResourcePath.getAudioSrc(values[0], this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine))) 
+                // _executes.push(() => this._SoundManager.playAudio_Full(ResourcePath.getAudioSrc(values[0], this._StoryType, this._StoryId, this._StoryPhase, this._StoryHeroine))) 
+                _executes.push(() => this._SoundManager.playVoice(values[0])) 
             }
 
             if(this._isTranslate) {
@@ -475,7 +514,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
             // console.log(index, '播放音效')
             _executes.push(async() => {
                 await this.delay(time * 1000)
-                await this._SoundManager.playSEAudio_Full(ResourcePath.getSEAudioSrc(id))
+                // await this._SoundManager.playSEAudio_Full(ResourcePath.getSEAudioSrc(id))
+                await this._SoundManager.playSE_Full(id)
                 return Promise.resolve()
             })
 
@@ -487,7 +527,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
                 _executes.push(() => this._SoundManager.pause('SE'))
             }
             if(isActive == 1) {
-                _executes.push(() => this._SoundManager.playSEAudio_Part(ResourcePath.getSEAudioSrc(id)))
+                // _executes.push(() => this._SoundManager.playSEAudio_Part(ResourcePath.getSEAudioSrc(id)))
+                _executes.push(() => this._SoundManager.playSE_Part(id))
             }
         }
         else if(commandType == 25){
@@ -497,7 +538,8 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
                 _executes.push(() => this._SoundManager.pause('BGM'))
             }
             if(isActive == 1) {
-                _executes.push(() => this._SoundManager.playBGMAudio(ResourcePath.getBGMAudioSrc(id)))
+                // _executes.push(() => this._SoundManager.playBGMAudio(ResourcePath.getBGMAudioSrc(id)))
+                _executes.push(() => this._SoundManager.playBGM(id))
             }
         }
         else if(commandType == 26){

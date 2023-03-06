@@ -161,6 +161,7 @@ class MessageManager extends PIXI.utils.EventEmitter {
     }
 
     async _typewriteEffect(message, time){
+        this._clearContent()
         return new Promise((res, rej)=>{
             let string = ''
             let index = 0
