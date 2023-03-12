@@ -18,5 +18,6 @@ class ScenarioHeroine extends PIXI.Container {
     }
 
 
-
 }
+
+export default ScenarioHeroine

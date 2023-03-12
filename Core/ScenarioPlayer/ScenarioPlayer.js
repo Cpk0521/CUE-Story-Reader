@@ -7,10 +7,12 @@ import ScenarioSound from './ScenarioSound.js'
 
 import ScenarioMenu from './ScenarioMenu.js'
 import ScenarioScript from './ScenarioScript.js'
-import ScenarioMessage from './ScenarioMessage.js'
+import ScenarioBackground from './ScenarioBackground.js'
+import ScenarioHeroine from './ScenarioHeroine.js'
 import ScenarioStill from './ScenarioStill.js'
 import ScenarioMovie from './ScenarioMovie.js'
-import ScenarioStage from './ScenarioStage.js'
+import ScenarioMessage from './ScenarioMessage.js'
+// import ScenarioStage from './ScenarioStage.js'
 // import ScenarioTelop from './ScenarioTelop.js'
 
 export class ScenarioPlayer extends PIXI.Container{
@@ -32,9 +34,9 @@ export class ScenarioPlayer extends PIXI.Container{
         // this._TelopLayer = ControllerConfig.Telop ?? ScenarioTelop.create()
         
         //Contrller
-        this._assetsCache = AssetsCache
         this._storyScript = null
-        this._SoundManager = ControllerConfig.Sound ?? new ScenarioSound()
+        this._SoundManager = new ScenarioSound()
+
 
         //event
         this.on('pointerdown', this._tapEffect, this)

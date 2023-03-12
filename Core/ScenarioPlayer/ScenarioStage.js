@@ -2,7 +2,6 @@ class ScenarioStage extends PIXI.Container {
 
     constructor(){
         super()
-
         
     }
 
