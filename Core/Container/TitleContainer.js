@@ -14,12 +14,14 @@ class TilteContainer {
                 fill: 0xffffff,
                 fontSize: 38,
                 letterSpacing: 15,
+                strokeThickness: 1.5,
             }),
             'zh' : new PIXI.TextStyle({
                 fontFamily: "Notosanstc Medium",
                 fill: 0xffffff,
                 fontSize: 38,
                 letterSpacing: 15,
+                strokeThickness: 1.5,
             })
         }
 

@@ -32,6 +32,7 @@ class MiscManager {
             dropShadow: true,
             dropShadowAngle: 0,
             dropShadowDistance: 1,
+            strokeThickness: 1.5,
         }));
         Text.anchor.set(0.5)
         Text.position.set(PixiApp.appSize.width /2 , PixiApp.appSize.height /2)

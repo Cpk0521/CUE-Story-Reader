@@ -56,7 +56,7 @@ class Live2dManager extends PIXI.utils.EventEmitter {
     async _buildModel(holder){
         return holder.build(this._L2dAudioPlayer)
                 .then((modelholder)=>{
-                    modelholder.setScale(.32)
+                    modelholder.setScale(.345)
                     modelholder.setAnchor(.5)
                     modelholder.setPosition(-740, PixiApp.appSize.height * 0.895)
                     modelholder.setVisible(false)
