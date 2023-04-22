@@ -1448,7 +1448,7 @@ var __async = (__this, __arguments, generator) => {
   exports2.CubismConfig = void 0;
   ((CubismConfig2) => {
     CubismConfig2.supportMoreMaskDivisions = true;
-    CubismConfig2.setOpacityFromMotion = false;
+    CubismConfig2.setOpacityFromMotion = true;
   })(exports2.CubismConfig || (exports2.CubismConfig = {}));
   var CubismMotionCurveTarget = /* @__PURE__ */ ((CubismMotionCurveTarget2) => {
     CubismMotionCurveTarget2[CubismMotionCurveTarget2["CubismMotionCurveTarget_Model"] = 0] = "CubismMotionCurveTarget_Model";
@@ -1778,29 +1778,31 @@ var __async = (__this, __arguments, generator) => {
         }
       }
       //重寫讀取部件部分
-      for (let index = 0; index < curves.length; ++index) {
-        if(curves[index].type != CubismMotionCurveTarget.CubismMotionCurveTarget_PartOpacity) {
+      // for (let index = 0; index < curves.length; ++index) {
+      //   if(curves[index].type != CubismMotionCurveTarget.CubismMotionCurveTarget_PartOpacity) {
+      //       continue;
+      //   }
+      //   parameterIndex = model.getPartIndex(curves.at(index).id);
+      //   if (parameterIndex == -1) {
+      //       continue;
+      //   }
+      //   value = evaluateCurve(this._motionData, index, time);
+      //   model.setPartOpacityByIndex(parameterIndex, value);
+      // }
+      for (; c < this._motionData.curveCount && curves[c].type == CubismMotionCurveTarget.CubismMotionCurveTarget_PartOpacity; ++c) {
+        value = evaluateCurve(this._motionData, c, time);
+        if (exports2.CubismConfig.setOpacityFromMotion) {
+          if(time >= 0.15){
+            model.setPartOpacityById(curves[c].id, value);
+          }
+        } else {
+          parameterIndex = model.getParameterIndex(curves[c].id);
+          if (parameterIndex == -1) {
             continue;
+          }
+          model.setParameterValueByIndex(parameterIndex, value);
         }
-        parameterIndex = model.getPartIndex(curves.at(index).id);
-        if (parameterIndex == -1) {
-            continue;
-        }
-        value = evaluateCurve(this._motionData, index, time);
-        model.setPartOpacityByIndex(parameterIndex, value);
-    }
-    //   for (; c < this._motionData.curveCount && curves[c].type == CubismMotionCurveTarget.CubismMotionCurveTarget_PartOpacity; ++c) {
-    //     value = evaluateCurve(this._motionData, c, time);
-    //     if (exports2.CubismConfig.setOpacityFromMotion) {
-    //       model.setPartOpacityById(curves[c].id, value);
-    //     } else {
-    //       parameterIndex = model.getParameterIndex(curves[c].id);
-    //       if (parameterIndex == -1) {
-    //         continue;
-    //       }
-    //       model.setParameterValueByIndex(parameterIndex, value);
-    //     }
-    //   }
+      }
       if (timeOffsetSeconds >= this._motionData.duration) {
         if (this._isLoop) {
           motionQueueEntry.setStartTime(userTimeSeconds);
@@ -4812,14 +4814,15 @@ var __async = (__this, __arguments, generator) => {
         this.unregisterInteraction();
         if (this._autoInteract && manager) {
           this.interactionManager = manager;
-          manager.on("pointermove", onPointerMove, this);
+          // manager.on("pointermove", onPointerMove, this);
+          manager.domElement.addEventListener('pointermove', onPointerMove.bind(this))
         }
       }
     }
     unregisterInteraction() {
       var _a;
       if (this.interactionManager) {
-        (_a = this.interactionManager) == null ? void 0 : _a.off("pointermove", onPointerMove, this);
+        (_a = this.interactionManager) == null ? void 0 : _a.domElement.removeEventListener("pointermove", onPointerMove.bind(this));
         this.interactionManager = void 0;
       }
     }
@@ -4828,7 +4831,8 @@ var __async = (__this, __arguments, generator) => {
     this.tap(event.data.global.x, event.data.global.y);
   }
   function onPointerMove(event) {
-    this.focus(event.data.global.x, event.data.global.y);
+    // this.focus(event.data.global.x, event.data.global.y);
+    this.focus(event.x, event.y);
   }
   class Live2DTransform extends math.Transform {
   }

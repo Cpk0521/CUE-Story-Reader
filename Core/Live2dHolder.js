@@ -37,24 +37,24 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         this._Model = await PIXI.live2d.Live2DModel.from(this._modelsetting, {autoUpdate : false});
 
         this._Model.zindex = this._zindex
-        this._Model.autoInteract = false; //pixi v7 need to set false
+        this._Model.autoInteract = false; 
         this._Model.buttonMode = false;
         this._Model.interactive = false;
 
-        this.getMotionManager().on('motionLoaded', function (group, index, motion) {
-            const curves = [];
+        // this.getMotionManager().on('motionLoaded', function (group, index, motion) {
+        //     const curves = [];
 
-            motion._motionData.curves.forEach((f) => {
-                if (Array.isArray(curves[f.type])) curves[f.type].push(f);
-                else curves[f.type] = [f];
-            });
+        //     motion._motionData.curves.forEach((f) => {
+        //         if (Array.isArray(curves[f.type])) curves[f.type].push(f);
+        //         else curves[f.type] = [f];
+        //     });
 
-            motion._motionData.curves.splice(
-                0,
-                motion._motionData.curves.length,
-                ...curves.flat()
-            );
-        })
+        //     motion._motionData.curves.splice(
+        //         0,
+        //         motion._motionData.curves.length,
+        //         ...curves.flat()
+        //     );
+        // })
 
         //set eye Blink
         let eyesIds = this._Model.internalModel.idParamEyes
