@@ -207,15 +207,19 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
             this.getFocusController().focus(0, 0)
         }else{
 
-            let center = {x:0 , y:0}
+            let center = { x: this._Model.x , y: this._Model.y }
             let r = this._Model.width
 
-            let rand = (-value + 90) * (Math.PI * 2 / 360)
-            let x = center.x + Math.cos(rand)
-            let y = center.y + Math.sin(rand)
+            // let rand = (-value + 90) * (Math.PI * 2 / 360)
+            let rand = (value - 90) * (Math.PI / 180)
+            // let x = center.x + Math.cos(rand)
+            // let y = center.y + Math.sin(rand)
+            let x = center.x + r * Math.cos(rand) 
+            let y = center.y + r * Math.sin(rand)
 
             // console.log(x, y)
-            this.getFocusController().focus(x, y)
+            // this.getFocusController().focus(x, y)
+            this._Model.focus(x, y)
         }
     }
 
