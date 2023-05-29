@@ -1,3 +1,8 @@
+
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone|Opera Mini/i.test(navigator.userAgent);
+}
+
 class PixiApp extends PIXI.utils.EventEmitter {
 
     static instance = null
@@ -12,7 +17,7 @@ class PixiApp extends PIXI.utils.EventEmitter {
 
         this._width = width
         this._height = height
-        
+
         //create PIXI Application
         this._app = new PIXI.Application({
             hello: false,
@@ -46,7 +51,7 @@ class PixiApp extends PIXI.utils.EventEmitter {
         window.addEventListener('resize', this._resize)
 
         //Dev Tool
-        // globalThis.__PIXI_APP__ = this._app;
+        globalThis.__PIXI_APP__ = this._app;
     }
 
     static create(element, config = {}) {
@@ -54,18 +59,20 @@ class PixiApp extends PIXI.utils.EventEmitter {
     }
 
     _resize = () => {
+
         let width = document.documentElement.clientWidth;
         let height = document.documentElement.clientHeight;
-        // let width = window.innerWidth
-        // let height = window.innerHeight;
+        let isMobile = isMobileDevice()
 
-        let ratio = Math.min(width / (this._width ?? 1334), height / (this._height ?? 750))
-        
+        let ratio = isMobile ? Math.min(width / (this._height ?? 750), height / (this._width ?? 1334)) : Math.min(width / (this._width ?? 1334), height / (this._height ?? 750))
+
         let reX = (this._width ?? 1334) * ratio;
         let reY = (this._height ?? 750) * ratio;
 
         this._app.view.style.width = reX + 'px';
         this._app.view.style.height = reY + 'px';
+
+        this._app.view.style.transform = isMobile ? 'rotate(90deg)' : ''
 
         this.emit('AppOnResized')
     }

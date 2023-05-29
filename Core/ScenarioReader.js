@@ -25,7 +25,7 @@ class ScenarioReader extends PIXI.utils.EventEmitter {
         this._TranslateReader = new TranslateReader() //translate
         
         //add to main Container 
-        this._pixiapp.mainContainer.addChild(
+        this._pixiapp.mainContainer.addChild(            
             this._FilterManager.addContainer( // add to Filter Container 
                 this._BGManager.backcontainer,
                 this._L2dManager.container,

@@ -173,8 +173,9 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
         this._Model.internalModel.eyeAuto = bool
     }
 
-    setAnchor(val) {
-        this._Model.anchor.set(val);
+    setAnchor(x, y) {
+        if(!y) y = x;
+        this._Model.anchor.set(x, y);
     }
 
     setScale(val) {
@@ -209,16 +210,12 @@ class Live2dHolder extends PIXI.utils.EventEmitter {
 
             let center = { x: this._Model.x , y: this._Model.y }
             let r = this._Model.width
+            // let helf_h = this._Model.height / 2
 
-            // let rand = (-value + 90) * (Math.PI * 2 / 360)
             let rand = (value - 90) * (Math.PI / 180)
-            // let x = center.x + Math.cos(rand)
-            // let y = center.y + Math.sin(rand)
             let x = center.x + r * Math.cos(rand) 
             let y = center.y + r * Math.sin(rand)
 
-            // console.log(x, y)
-            // this.getFocusController().focus(x, y)
             this._Model.focus(x, y)
         }
     }
