@@ -24,6 +24,7 @@ class PixiApp extends PIXI.utils.EventEmitter {
             antialias: true,
             autoStart: true,
             autoDensity: true,
+            resolution : Math.max(window.devicePixelRatio, 2),
             backgroundColor : background ?? 0x000000,
             backgroundAlpha: alpha || 1,
             width: width ?? 1334,
