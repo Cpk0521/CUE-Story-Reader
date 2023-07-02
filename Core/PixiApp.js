@@ -24,7 +24,7 @@ class PixiApp extends PIXI.utils.EventEmitter {
             antialias: true,
             autoStart: true,
             autoDensity: true,
-            resolution : window.devicePixelRatio,
+            // resolution : window.devicePixelRatio,
             backgroundColor : background ?? 0x000000,
             backgroundAlpha: alpha || 1,
             width: width ?? 1334,
@@ -63,9 +63,10 @@ class PixiApp extends PIXI.utils.EventEmitter {
 
         let width = document.documentElement.clientWidth;
         let height = document.documentElement.clientHeight;
-        let isMobile = isMobileDevice()
+        // let isMobile = isMobileDevice()
 
-        let ratio = isMobile ? Math.min(width / (this._height ?? 750), height / (this._width ?? 1334)) : Math.min(width / (this._width ?? 1334), height / (this._height ?? 750))
+        // let ratio = isMobile ? Math.min(width / (this._height ?? 750), height / (this._width ?? 1334)) : Math.min(width / (this._width ?? 1334), height / (this._height ?? 750))
+        let ratio = Math.min(width / (this._width ?? 1334), height / (this._height ?? 750))
 
         let reX = (this._width ?? 1334) * ratio;
         let reY = (this._height ?? 750) * ratio;
@@ -73,7 +74,7 @@ class PixiApp extends PIXI.utils.EventEmitter {
         this._app.view.style.width = reX + 'px';
         this._app.view.style.height = reY + 'px';
 
-        this._app.view.style.transform = isMobile ? 'rotate(90deg)' : ''
+        // this._app.view.style.transform = isMobile ? 'rotate(90deg)' : ''
 
         this.emit('AppOnResized')
     }
